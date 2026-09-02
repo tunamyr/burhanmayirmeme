@@ -1,0 +1,247 @@
+---
+interface Props {
+  /** '', 'meme-kanseri', 'cerrahi', 'onkoplastik', 'rekonstruksiyon', 'iyi-huylu', 'hakkimda', 'blog', 'iletisim' */
+  active?: string;
+}
+const { active = '' } = Astro.props;
+
+const TOPICS = [
+  { label: 'Meme Kanseri', href: '/meme-kanseri', key: 'meme-kanseri' },
+  { label: 'Meme Kanseri Cerrahisi', href: '/meme-kanseri-cerrahisi', key: 'cerrahi' },
+  { label: 'Onkoplastik ve Meme Koruyucu Cerrahi', href: '/onkoplastik-cerrahi', key: 'onkoplastik' },
+  { label: 'Meme Rekonstrüksiyonu', href: '/meme-rekonstruksiyonu', key: 'rekonstruksiyon' },
+  { label: 'İyi Huylu Meme Hastalıkları', href: '/iyi-huylu-meme-hastaliklari', key: 'iyi-huylu' },
+];
+
+const LINKS = [
+  { label: 'Hakkımda', href: '/hakkimda', key: 'hakkimda' },
+  { label: 'Yazılar', href: '/blog', key: 'blog' },
+  { label: 'İletişim', href: '/iletisim', key: 'iletisim' },
+];
+
+const topicActive = TOPICS.some((t) => t.key === active);
+---
+
+<header class="nav">
+  <div class="nav__bar">
+    <a class="brand" href="/">
+      <span class="brand__name">Burhan Mayir</span>
+      <span class="brand__kicker">Meme Sağlığı</span>
+    </a>
+
+    <nav class="nav__links" aria-label="Ana menü">
+      <div class="drop">
+        <a
+          class="link drop__trigger"
+          href="/#konular"
+          aria-current={topicActive ? 'true' : undefined}
+        >
+          Konular <span class="drop__caret" aria-hidden="true">▾</span>
+        </a>
+        <div class="drop__panel">
+          {
+            TOPICS.map((t) => (
+              <a
+                class="drop__item"
+                href={t.href}
+                aria-current={t.key === active ? 'page' : undefined}
+              >
+                {t.label}
+              </a>
+            ))
+          }
+        </div>
+      </div>
+
+      {
+        LINKS.map((l) => (
+          <a class="link" href={l.href} aria-current={l.key === active ? 'page' : undefined}>
+            {l.label}
+          </a>
+        ))
+      }
+
+      <span class="rule" aria-hidden="true"></span>
+
+      <div class="langs">
+        <a class="lang lang--on" href="/" hreflang="tr">TR</a>
+        <a class="lang" href="/" hreflang="en">EN</a>
+        <a class="lang" href="/" hreflang="ru">RU</a>
+      </div>
+
+      <a class="cta" href="/iletisim">Randevu</a>
+    </nav>
+
+    <details class="mobile">
+      <summary aria-label="Menüyü aç"><span aria-hidden="true">☰</span></summary>
+      <div class="mobile__panel">
+        {TOPICS.map((t) => <a href={t.href}>{t.label}</a>)}
+        <span class="mobile__rule" aria-hidden="true"></span>
+        {LINKS.map((l) => <a href={l.href}>{l.label}</a>)}
+        <a class="cta cta--block" href="/iletisim">Randevu</a>
+      </div>
+    </details>
+  </div>
+</header>
+
+<style>
+  .nav {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    font-family: var(--sans);
+  }
+  .nav__bar {
+    padding: 0 var(--page-pad);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    height: 76px;
+    gap: 40px;
+  }
+
+  .brand {
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    color: var(--ink);
+  }
+  .brand:hover { color: var(--ink); }
+  .brand__name {
+    font-family: var(--serif);
+    font-size: 20px;
+    letter-spacing: -0.01em;
+  }
+  .brand__kicker {
+    font-size: 11px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+
+  .nav__links {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 14px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  .link {
+    color: var(--text-soft);
+    border-bottom: 1px solid transparent;
+    padding-bottom: 3px;
+    transition: color var(--ease), border-color var(--ease);
+  }
+  .link:hover { color: var(--accent); }
+  .link[aria-current] {
+    color: var(--accent);
+    border-bottom-color: var(--accent);
+  }
+
+  /* Tasarımdaki JS hover state'i yerine saf CSS: focus-within sayesinde
+     klavyeyle de açılıyor. */
+  .drop { position: relative; padding: 26px 0; }
+  .drop__trigger {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .drop__caret { font-size: 10px; letter-spacing: 0; }
+
+  .drop__panel {
+    position: absolute;
+    top: 100%;
+    left: -20px;
+    min-width: 320px;
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-top: 0;
+    display: grid;
+    padding: 8px 0;
+    box-shadow: 0 20px 40px -24px rgba(30, 26, 28, 0.3);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-6px);
+    transition: opacity var(--ease), transform var(--ease), visibility var(--ease);
+  }
+  .drop:hover .drop__panel,
+  .drop:focus-within .drop__panel {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+
+  .drop__item {
+    padding: 13px 24px;
+    font-size: 14px;
+    letter-spacing: 0.01em;
+    text-transform: none;
+    color: var(--ink);
+  }
+  .drop__item:hover { background: var(--surface); color: var(--accent); }
+  .drop__item[aria-current] { color: var(--accent); background: var(--surface); }
+
+  .rule { width: 1px; height: 20px; background: var(--line); }
+
+  .langs { display: flex; gap: 10px; font-size: 12px; letter-spacing: 0.12em; }
+  .lang { color: var(--fainter); }
+  .lang:hover { color: var(--accent); }
+  .lang--on { color: var(--ink); }
+
+  .cta {
+    background: var(--accent);
+    color: var(--bg);
+    padding: 12px 22px;
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    transition: background var(--ease);
+  }
+  .cta:hover { background: var(--accent-dark); color: var(--bg); }
+
+  /* --- Mobil: tasarımda yoktu, gerçek kullanım için eklendi --- */
+  .mobile { display: none; }
+  .mobile summary {
+    list-style: none;
+    cursor: pointer;
+    font-size: 22px;
+    line-height: 1;
+    padding: 10px;
+    color: var(--ink);
+  }
+  .mobile summary::-webkit-details-marker { display: none; }
+  .mobile__panel {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 76px;
+    background: var(--bg);
+    border-bottom: 1px solid var(--line);
+    display: grid;
+    gap: 2px;
+    padding: 12px var(--page-pad) 24px;
+    box-shadow: 0 20px 40px -24px rgba(30, 26, 28, 0.3);
+  }
+  .mobile__panel a {
+    padding: 13px 0;
+    font-size: 15px;
+    color: var(--ink);
+    border-bottom: 1px solid var(--line);
+  }
+  .mobile__rule { height: 8px; }
+  .cta--block {
+    margin-top: 14px;
+    text-align: center;
+    color: var(--bg);
+    border-bottom: 0;
+    text-transform: uppercase;
+  }
+
+  @media (max-width: 900px) {
+    .nav__links { display: none; }
+    .mobile { display: block; justify-self: end; }
+  }
+</style>

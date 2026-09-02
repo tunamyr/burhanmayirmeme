@@ -1,0 +1,146 @@
+---
+const TOPICS = [
+  { label: 'Meme kanseri', href: '/meme-kanseri' },
+  { label: 'Meme kanseri cerrahisi', href: '/meme-kanseri-cerrahisi' },
+  { label: 'Onkoplastik cerrahi', href: '/onkoplastik-cerrahi' },
+  { label: 'Meme rekonstrüksiyonu', href: '/meme-rekonstruksiyonu' },
+  { label: 'İyi huylu meme hastalıkları', href: '/iyi-huylu-meme-hastaliklari' },
+];
+
+const SITE = [
+  { label: 'Ana sayfa', href: '/' },
+  { label: 'Hakkımda', href: '/hakkimda' },
+  { label: 'Bilgi yazıları', href: '/blog' },
+  { label: 'İletişim ve randevu', href: '/iletisim' },
+  { label: 'Yol tarifi', href: 'https://www.google.com/maps/place/Prof.Dr.+Burhan+Mayir' },
+];
+---
+
+<footer class="foot">
+  <div class="foot__grid">
+    <div>
+      <div class="foot__name">Prof. Dr. Burhan Mayir</div>
+      <div class="foot__kicker">Meme Sağlığı · Antalya</div>
+      <p class="foot__note">
+        Bu sitedeki içerikler bilgilendirme amaçlıdır ve hekim muayenesinin yerine geçmez.
+        Şikâyetiniz varsa lütfen randevu alın.
+      </p>
+      <a class="foot__tel" href="tel:+905373573464">+90 537 357 34 64</a>
+      <address class="foot__addr">
+        Deveci Plaza, Tahılpazarı Mah., Çatalköprü Cd. No: 40, Kat 4 D:4<br />
+        07040 Muratpaşa / Antalya · <a href="mailto:burmay@yahoo.com">burmay@yahoo.com</a>
+      </address>
+    </div>
+
+    <nav class="foot__col" aria-label="Konular">
+      <div class="foot__head">Konular</div>
+      {TOPICS.map((t) => <a href={t.href}>{t.label}</a>)}
+    </nav>
+
+    <nav class="foot__col" aria-label="Site">
+      <div class="foot__head">Site</div>
+      {SITE.map((s) => <a href={s.href}>{s.label}</a>)}
+    </nav>
+
+    <nav class="foot__col" aria-label="Dil">
+      <div class="foot__head">Dil</div>
+      <a class="foot__lang--on" href="/" hreflang="tr">Türkçe</a>
+      <a href="/" hreflang="en">English</a>
+      <a href="/" hreflang="ru">Русский</a>
+    </nav>
+  </div>
+
+  <div class="foot__bar">
+    <span>© 2026 Prof. Dr. Burhan Mayir</span>
+    <span>Muratpaşa, Antalya</span>
+  </div>
+</footer>
+
+<style>
+  .foot {
+    font-family: var(--sans);
+    background: var(--bg);
+    border-top: 1px solid var(--line);
+  }
+
+  .foot__grid {
+    padding: 60px var(--page-pad) 34px;
+    display: grid;
+    grid-template-columns: 1.6fr 1fr 1fr 0.9fr;
+    gap: 52px;
+    color: var(--text-soft);
+  }
+
+  .foot__name {
+    font-family: var(--serif);
+    font-size: 21px;
+    color: var(--ink);
+    margin-bottom: 8px;
+  }
+  .foot__kicker {
+    font-size: 10.5px;
+    letter-spacing: 0.24em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 18px;
+  }
+  .foot__note {
+    margin: 0 0 20px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    max-width: 30em;
+    color: var(--muted);
+  }
+  .foot__tel {
+    font-family: var(--serif);
+    font-size: 20px;
+    color: var(--ink);
+  }
+  .foot__tel:hover { color: var(--accent); }
+
+  .foot__addr {
+    margin-top: 14px;
+    font-size: 14.5px;
+    line-height: 1.7;
+    color: var(--muted);
+    font-style: normal;
+  }
+  .foot__addr a { color: var(--text-soft); }
+  .foot__addr a:hover { color: var(--accent); }
+
+  .foot__col {
+    display: grid;
+    gap: 11px;
+    align-content: start;
+    font-size: 14.5px;
+  }
+  .foot__col a { color: var(--text-soft); }
+  .foot__col a:hover { color: var(--accent); }
+  .foot__lang--on { color: var(--ink) !important; }
+
+  .foot__head {
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fainter);
+    margin-bottom: 3px;
+  }
+
+  .foot__bar {
+    padding: 20px var(--page-pad) 40px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+    color: var(--fainter);
+    display: flex;
+    justify-content: space-between;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  @media (max-width: 1000px) {
+    .foot__grid { grid-template-columns: 1fr 1fr; gap: 40px; }
+  }
+  @media (max-width: 620px) {
+    .foot__grid { grid-template-columns: 1fr; gap: 34px; padding-top: 44px; }
+  }
+</style>
