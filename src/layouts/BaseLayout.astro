@@ -1,19 +1,66 @@
 ---
 import '../styles/tokens.css';
+import { SITE } from '../data/site';
+import { t, DEFAULT_LOCALE, type Locale, type Alternate } from '../i18n';
 
 interface Props {
+  lang: Locale;
   title: string;
   description: string;
   /** site-nav'daki aktif sekme anahtarı. */
   active?: string;
+  /** Paylaşım görseli; site köküne göre yol. */
+  ogImage?: string;
+  /** Aynı sayfanın üç dildeki adresi — hreflang için. */
+  alts: Alternate[];
 }
 
-const { title, description, active = '' } = Astro.props;
+const {
+  lang,
+  title,
+  description,
+  active = '',
+  ogImage = '/img/portre-kapi.png',
+  alts,
+} = Astro.props;
+
+const d = t(lang);
 const canonical = new URL(Astro.url.pathname, Astro.site);
+const ogImageUrl = new URL(ogImage, Astro.site);
+const defaultHref = alts.find((a) => a.lang === DEFAULT_LOCALE)?.href ?? '/';
+
+/** Google'ın hekim/muayenehane kartı için okuduğu yapısal veri. */
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Physician',
+  name: d.doctorName,
+  medicalSpecialty: 'Surgical',
+  url: canonical.toString(),
+  image: ogImageUrl.toString(),
+  telephone: SITE.phoneHref.replace('tel:', ''),
+  email: SITE.email,
+  address: {
+    '@type': 'PostalAddress',
+    streetAddress: SITE.addressStreet,
+    addressLocality: d.districtLabel,
+    addressRegion: d.cityLabel,
+    postalCode: SITE.postalCode,
+    addressCountry: 'TR',
+  },
+  hasMap: SITE.mapsUrl,
+  openingHoursSpecification: [
+    {
+      '@type': 'OpeningHoursSpecification',
+      dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+      opens: '09:00',
+      closes: '18:00',
+    },
+  ],
+};
 ---
 
 <!doctype html>
-<html lang="tr">
+<html lang={d.htmlLang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -21,11 +68,23 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonical} />
 
+    {
+      alts.map((a) => (
+        <link rel="alternate" hreflang={a.htmlLang} href={new URL(a.href, Astro.site)} />
+      ))
+    }
+    <link rel="alternate" hreflang="x-default" href={new URL(defaultHref, Astro.site)} />
+
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="tr_TR" />
+    <meta property="og:locale" content={d.ogLocale} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={d.doctorName} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
 
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -33,9 +92,11 @@ const canonical = new URL(Astro.url.pathname, Astro.site);
       href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Barlow:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
+
+    <script type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
   </head>
   <body data-active={active}>
-    <a class="skip" href="#icerik">İçeriğe geç</a>
+    <a class="skip" href="#icerik">{d.nav.skipToContent}</a>
     <slot />
   </body>
 </html>

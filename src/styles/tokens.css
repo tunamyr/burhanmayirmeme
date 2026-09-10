@@ -21,6 +21,25 @@
   --accent: #6E3B4E;
   --accent-dark: #48222F;
   --accent-tint: #EBD9E0;
+  /* Koyu zeminde accent'in hover'ı; --accent-dark orada okunmuyor. */
+  --accent-light: #8A4C63;
+
+  /* Makale gövdesi, ikinci seviye çizgi, form alanı çizgisi */
+  --text-strong: #3E3639;
+  --rule: #DFD7DA;
+  --field: #D5CCD0;
+  --hover-tint: #F3EEF0;
+  --placeholder: #EFEAEC;
+
+  /* Koyu bölümler (randevu bandı, hakkımda şeridi, kenar kutusu) */
+  --dark-bg: #1E1A1C;
+  --dark-surface: #33292D;
+  --dark-hair: #332B2E;
+  --dark-line: #453A3E;
+  --dark-ink: #FCFBFA;
+  --dark-soft: #E6DDE0;
+  --dark-text: #C4B9BE;
+  --dark-kicker: #C79BAD;
 
   --serif: 'Libre Baskerville', Georgia, serif;
   --sans: Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif;
@@ -84,3 +103,12 @@ img { max-width: 100%; display: block; }
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Konu ve blog sayfalarındaki uzun metin blokları aynı ölçüyü paylaşıyor. */
+.prose p {
+  font-size: 17.5px;
+  line-height: 1.8;
+  color: var(--text-strong);
+  margin: 0 0 18px;
+}
+.prose p:last-child { margin-bottom: 0; }

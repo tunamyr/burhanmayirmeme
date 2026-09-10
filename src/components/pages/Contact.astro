@@ -1,0 +1,303 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../SiteNav.astro';
+import SiteFooter from '../SiteFooter.astro';
+import RandevuFormu from '../RandevuFormu.astro';
+import { SITE } from '../../data/site';
+import { t, alternates, type Locale } from '../../i18n';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const d = t(lang);
+const alts = alternates('contact');
+---
+
+<BaseLayout
+  lang={lang}
+  title={d.contact.title}
+  description={d.contact.description}
+  active="contact"
+  alts={alts}
+>
+  <SiteNav lang={lang} active="contact" alts={alts} />
+
+  <main id="icerik">
+    <section class="hero">
+      <div class="shell">
+        <div class="hero__kicker">{d.contact.kicker}</div>
+        <h1 class="hero__title">{d.contact.h1}</h1>
+        <p class="hero__lede">{d.contact.lede}</p>
+      </div>
+    </section>
+
+    <section class="main">
+      <div class="shell main__grid">
+        <div class="col">
+          <div class="info">
+            <div>
+              <div class="label">{d.contact.phoneLabel}</div>
+              <a class="info__tel" href={SITE.phoneHref}>{SITE.phoneLabel}</a>
+            </div>
+
+            <div>
+              <div class="label">{d.contact.officeLabel}</div>
+              <address class="info__addr">
+                {SITE.addressLines.map((l) => <>{l}<br /></>)}
+                <span class="info__near">{d.common.addressNote}</span>
+              </address>
+            </div>
+
+            <div>
+              <div class="label">{d.contact.emailLabel}</div>
+              <a class="info__mail" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+            </div>
+
+            <div>
+              <div class="label">{d.contact.hoursLabel}</div>
+              <div class="hours">
+                {
+                  d.contact.hours.map((h) => (
+                    <div class="hours__row">
+                      <span>{h.day}</span>
+                      <span class:list={['hours__val', { 'hours__val--off': h.muted }]}>
+                        {h.value}
+                      </span>
+                    </div>
+                  ))
+                }
+              </div>
+            </div>
+          </div>
+
+          <iframe
+            class="map"
+            src={SITE.mapsEmbed}
+            title={d.common.mapTitle}
+            loading="lazy"
+            referrerpolicy="strict-origin-when-cross-origin"></iframe>
+
+          <a class="dirs" href={SITE.mapsUrl}>{d.common.directions}</a>
+
+          <div class="away">
+            <div class="label">{d.contact.awayHead}</div>
+            <p class="away__text">{d.contact.awayText}</p>
+          </div>
+        </div>
+
+        <div class="col">
+          <RandevuFormu lang={lang} />
+
+          <div class="bring">
+            <div class="bring__head">{d.contact.bringHead}</div>
+            <ul class="bring__list">
+              {d.contact.bring.map((g) => <li>{g}</li>)}
+            </ul>
+            <p class="bring__note">{d.contact.bringNote}</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter lang={lang} alts={alts} />
+</BaseLayout>
+
+<style>
+  .label {
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-bottom: 8px;
+  }
+
+  /* --- Hero --- */
+  .hero {
+    background: var(--surface);
+    border-bottom: 1px solid var(--line);
+    padding: 60px var(--page-pad) 64px;
+  }
+  .hero__kicker {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .hero__title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin: 0 0 22px;
+    max-width: 24em;
+    text-wrap: pretty;
+  }
+  .hero__lede {
+    font-size: 18.5px;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0;
+    max-width: 42em;
+    text-wrap: pretty;
+  }
+
+  /* --- Gövde --- */
+  .main {
+    padding: 72px var(--page-pad) 84px;
+  }
+  .main__grid {
+    display: grid;
+    grid-template-columns: 0.82fr 1.18fr;
+    gap: 72px;
+    align-items: start;
+  }
+  .col {
+    display: grid;
+    gap: 34px;
+    align-content: start;
+  }
+
+  .info {
+    display: grid;
+    gap: 26px;
+  }
+  .info__tel {
+    font-family: var(--serif);
+    font-size: 25px;
+    color: var(--ink);
+  }
+  .info__tel:hover {
+    color: var(--accent);
+  }
+  .info__addr {
+    font-size: 17px;
+    line-height: 1.62;
+    color: var(--text-strong);
+    font-style: normal;
+  }
+  .info__near {
+    font-size: 15px;
+    color: var(--faint);
+  }
+  .info__mail {
+    font-size: 17px;
+    color: var(--ink);
+  }
+  .info__mail:hover {
+    color: var(--accent);
+  }
+
+  .hours {
+    display: grid;
+    gap: 7px;
+    font-size: 16.5px;
+    color: var(--text-strong);
+  }
+  .hours__row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    max-width: 22em;
+  }
+  .hours__val {
+    color: var(--text-soft);
+  }
+  .hours__val--off {
+    color: var(--fainter);
+  }
+
+  .map {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border: 1px solid var(--line);
+    display: block;
+    filter: grayscale(0.35);
+  }
+
+  .dirs {
+    display: block;
+    text-align: center;
+    border: 1px solid var(--ink);
+    color: var(--ink);
+    padding: 16px;
+    font-size: 13.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: background var(--ease);
+  }
+  .dirs:hover {
+    background: var(--hover-tint);
+    color: var(--ink);
+  }
+
+  .away {
+    border-top: 1px solid var(--line);
+    padding-top: 26px;
+  }
+  .away .label {
+    margin-bottom: 14px;
+  }
+  .away__text {
+    margin: 0;
+    font-size: 16.5px;
+    line-height: 1.72;
+    color: var(--text-strong);
+  }
+
+  /* --- Ne getirmeli --- */
+  .bring {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 30px 32px 34px;
+  }
+  .bring__head {
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .bring__list {
+    margin: 0;
+    padding: 0 0 0 20px;
+    display: grid;
+    gap: 10px;
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--text-strong);
+  }
+  .bring__note {
+    margin: 20px 0 0;
+    font-size: 15.5px;
+    line-height: 1.65;
+    color: var(--text-soft);
+  }
+
+  /* --- Dar ekranlar --- */
+  @media (max-width: 1000px) {
+    .main {
+      padding: 48px var(--page-pad) 64px;
+    }
+    .main__grid {
+      grid-template-columns: 1fr;
+      gap: 48px;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .hero__title {
+      font-size: 34px;
+    }
+    .hero__lede {
+      font-size: 17px;
+    }
+    .bring {
+      padding: 24px 22px 28px;
+    }
+  }
+</style>

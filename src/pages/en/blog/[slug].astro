@@ -1,0 +1,15 @@
+---
+import Article from '../../../components/pages/Article.astro';
+import { DICTS } from '../../../i18n';
+
+export function getStaticPaths() {
+  return DICTS.en.blog.posts.map((post, index) => ({
+    params: { slug: post.slug },
+    props: { index },
+  }));
+}
+
+const { index } = Astro.props;
+---
+
+<Article lang="en" index={index} />

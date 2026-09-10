@@ -1,0 +1,235 @@
+---
+import { SITE, FORM_ENDPOINT } from '../data/site';
+import { t, type Locale } from '../i18n';
+
+interface Props {
+  lang: Locale;
+  /** Konu listesinde önden seçili gelecek başlık. */
+  konu?: string;
+}
+
+const { lang, konu } = Astro.props;
+const d = t(lang);
+const secili = konu ?? d.form.subjects[0];
+---
+
+<div class="form" data-randevu data-endpoint={FORM_ENDPOINT} data-sending={d.form.sending} data-submit-label={d.form.submit}>
+  <form class="form__body" data-form>
+    <div class="form__row">
+      <label class="field">
+        <span class="field__label">{d.form.name}</span>
+        <input class="field__input" type="text" name="isim" required autocomplete="name" />
+      </label>
+      <label class="field">
+        <span class="field__label">{d.form.phone}</span>
+        <input class="field__input" type="tel" name="tel" required autocomplete="tel" />
+      </label>
+    </div>
+
+    <label class="field">
+      <span class="field__label">{d.form.subject}</span>
+      <select class="field__input" name="konu">
+        {d.form.subjects.map((k) => <option selected={k === secili}>{k}</option>)}
+      </select>
+    </label>
+
+    <label class="field">
+      <span class="field__label">{d.form.message}</span>
+      <textarea class="field__area" name="not" rows="3"></textarea>
+    </label>
+
+    <button class="form__submit" type="submit" data-submit>{d.form.submit}</button>
+    <p class="form__note">{d.form.privacy}</p>
+  </form>
+
+  <div class="state" data-ok hidden>
+    <div class="state__title">{d.form.okTitle}</div>
+    <p class="state__text">{d.form.okText}</p>
+    <a class="state__tel" href={SITE.phoneHref}>{SITE.phoneLabel}</a>
+  </div>
+
+  <div class="state" data-fail hidden>
+    <div class="state__title state__title--fail">{d.form.failTitle}</div>
+    <p class="state__text">{d.form.failText}</p>
+    <a class="state__tel" href={SITE.phoneHref}>{SITE.phoneLabel}</a>
+    <a class="state__mail" href={`mailto:${SITE.email}`}>{SITE.email}</a>
+  </div>
+</div>
+
+<script>
+  const box = document.querySelector<HTMLElement>('[data-randevu]');
+  if (box) {
+    const form = box.querySelector<HTMLFormElement>('[data-form]')!;
+    const ok = box.querySelector<HTMLElement>('[data-ok]')!;
+    const fail = box.querySelector<HTMLElement>('[data-fail]')!;
+    const submit = box.querySelector<HTMLButtonElement>('[data-submit]')!;
+    const endpoint = box.dataset.endpoint ?? '';
+
+    const show = (el: HTMLElement) => {
+      form.hidden = true;
+      el.hidden = false;
+      el.scrollIntoView({ block: 'nearest', behavior: 'smooth' });
+    };
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      // Uç nokta tanımlı değilse "alındı" demiyoruz: hasta talebinin ulaştığını
+      // sanmasın diye doğrudan telefon/e-posta yönlendirmesi gösteriliyor.
+      if (!endpoint) {
+        console.warn('FORM_ENDPOINT bos — randevu talebi hicbir yere gonderilmiyor.');
+        show(fail);
+        return;
+      }
+
+      submit.disabled = true;
+      submit.textContent = box.dataset.sending ?? '…';
+      try {
+        const res = await fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+        });
+        show(res.ok ? ok : fail);
+      } catch {
+        show(fail);
+      } finally {
+        submit.disabled = false;
+        submit.textContent = box.dataset.submitLabel ?? '';
+      }
+    });
+  }
+</script>
+
+<style>
+  .form {
+    font-family: var(--sans);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    padding: 44px;
+  }
+
+  .form__body {
+    display: grid;
+    gap: 22px;
+  }
+  .form__row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 22px;
+  }
+
+  .field {
+    display: grid;
+    gap: 9px;
+  }
+  .field__label {
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+
+  .field__input {
+    border: 0;
+    border-bottom: 1px solid var(--field);
+    background: transparent;
+    padding: 9px 0;
+    font-size: 16.5px;
+    font-family: var(--sans);
+    color: var(--ink);
+    border-radius: 0;
+  }
+  .field__input:focus {
+    outline: none;
+    border-bottom-color: var(--accent);
+  }
+
+  .field__area {
+    border: 1px solid var(--field);
+    background: transparent;
+    padding: 12px;
+    font-size: 16.5px;
+    font-family: var(--sans);
+    color: var(--ink);
+    resize: vertical;
+    border-radius: 0;
+  }
+  .field__area:focus {
+    outline: none;
+    border-color: var(--accent);
+  }
+
+  .form__submit {
+    background: var(--ink);
+    color: var(--bg);
+    border: 0;
+    padding: 17px;
+    font-size: 13.5px;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    cursor: pointer;
+    font-family: var(--sans);
+    transition: background var(--ease);
+  }
+  .form__submit:hover {
+    background: var(--accent);
+  }
+  .form__submit:disabled {
+    background: var(--muted);
+    cursor: default;
+  }
+
+  .form__note {
+    margin: 0;
+    font-size: 12.5px;
+    line-height: 1.55;
+    color: var(--fainter);
+  }
+
+  /* --- Gönderim sonrası --- */
+  .state {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    padding: 52px 0;
+    text-align: center;
+  }
+  .state__title {
+    font-family: var(--serif);
+    font-size: 30px;
+    line-height: 1.25;
+    color: var(--accent);
+  }
+  .state__title--fail {
+    font-size: 26px;
+  }
+  .state__text {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.65;
+    color: var(--text);
+  }
+  .state__tel {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--ink);
+    margin-top: 8px;
+  }
+  .state__tel:hover {
+    color: var(--accent);
+  }
+  .state__mail {
+    font-size: 16px;
+    color: var(--text-soft);
+  }
+
+  @media (max-width: 620px) {
+    .form {
+      padding: 28px 22px 32px;
+    }
+    .form__row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

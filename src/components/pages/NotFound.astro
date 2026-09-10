@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../SiteNav.astro';
+import SiteFooter from '../SiteFooter.astro';
+import { SITE } from '../../data/site';
+import { t, pageHref, topicHref, alternates, type Locale } from '../../i18n';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const d = t(lang);
+const alts = alternates('home');
+---
+
+<BaseLayout
+  lang={lang}
+  title={d.notFound.title}
+  description={d.notFound.description}
+  alts={alts}
+>
+  <SiteNav lang={lang} alts={alts} />
+
+  <main id="icerik">
+    <section class="lost">
+      <div class="shell">
+        <div class="lost__kicker">{d.notFound.kicker}</div>
+        <h1 class="lost__title">{d.notFound.h1}</h1>
+        <p class="lost__text">{d.notFound.text}</p>
+
+        <div class="lost__links">
+          {d.topics.map((x, i) => <a href={topicHref(lang, i)}>{x.navTitle}</a>)}
+          <a href={pageHref(lang, 'blog')}>{d.notFound.blogLink}</a>
+          <a href={pageHref(lang, 'about')}>{d.notFound.aboutLink}</a>
+        </div>
+
+        <div class="lost__actions">
+          <a class="lost__cta" href={pageHref(lang, 'contact')}>{d.common.appointmentCta}</a>
+          <a class="lost__tel" href={SITE.phoneHref}>{SITE.phoneLabel}</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <SiteFooter lang={lang} alts={alts} />
+</BaseLayout>
+
+<style>
+  .lost {
+    padding: 96px var(--page-pad) 104px;
+  }
+  .lost__kicker {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 24px;
+  }
+  .lost__title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 44px;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    margin: 0 0 20px;
+    max-width: 16em;
+  }
+  .lost__text {
+    font-size: 18px;
+    line-height: 1.7;
+    color: var(--text);
+    margin: 0 0 40px;
+    max-width: 36em;
+  }
+
+  .lost__links {
+    display: grid;
+    border-top: 1px solid var(--line);
+    max-width: 40em;
+    margin-bottom: 44px;
+  }
+  .lost__links a {
+    padding: 16px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--ink);
+    font-size: 16.5px;
+    transition: color var(--ease);
+  }
+  .lost__links a:hover {
+    color: var(--accent);
+  }
+
+  .lost__actions {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+    flex-wrap: wrap;
+  }
+  .lost__cta {
+    background: var(--ink);
+    color: var(--bg);
+    padding: 17px 34px;
+    font-size: 14px;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    transition: background var(--ease);
+  }
+  .lost__cta:hover {
+    background: var(--accent);
+    color: var(--bg);
+  }
+  .lost__tel {
+    font-family: var(--serif);
+    font-size: 22px;
+    color: var(--ink);
+  }
+  .lost__tel:hover {
+    color: var(--accent);
+  }
+
+  @media (max-width: 620px) {
+    .lost {
+      padding: 64px var(--page-pad) 72px;
+    }
+    .lost__title {
+      font-size: 32px;
+    }
+    .lost__text {
+      font-size: 17px;
+    }
+  }
+</style>

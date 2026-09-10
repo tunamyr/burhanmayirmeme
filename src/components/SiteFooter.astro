@@ -1,58 +1,69 @@
 ---
-const TOPICS = [
-  { label: 'Meme kanseri', href: '/meme-kanseri' },
-  { label: 'Meme kanseri cerrahisi', href: '/meme-kanseri-cerrahisi' },
-  { label: 'Onkoplastik cerrahi', href: '/onkoplastik-cerrahi' },
-  { label: 'Meme rekonstrüksiyonu', href: '/meme-rekonstruksiyonu' },
-  { label: 'İyi huylu meme hastalıkları', href: '/iyi-huylu-meme-hastaliklari' },
-];
+import { SITE } from '../data/site';
+import { t, pageHref, topicHref, type Locale, type Alternate } from '../i18n';
 
-const SITE = [
-  { label: 'Ana sayfa', href: '/' },
-  { label: 'Hakkımda', href: '/hakkimda' },
-  { label: 'Bilgi yazıları', href: '/blog' },
-  { label: 'İletişim ve randevu', href: '/iletisim' },
-  { label: 'Yol tarifi', href: 'https://www.google.com/maps/place/Prof.Dr.+Burhan+Mayir' },
+interface Props {
+  lang: Locale;
+  alts: Alternate[];
+}
+
+const { lang, alts } = Astro.props;
+const d = t(lang);
+
+const TOPICS = d.footer.topicLinks.map((label, i) => ({ label, href: topicHref(lang, i) }));
+
+const SITE_LINKS = [
+  { label: d.footer.home, href: pageHref(lang, 'home') },
+  { label: d.footer.about, href: pageHref(lang, 'about') },
+  { label: d.footer.blog, href: pageHref(lang, 'blog') },
+  { label: d.footer.contact, href: pageHref(lang, 'contact') },
+  { label: d.footer.directions, href: SITE.mapsUrl },
 ];
 ---
 
 <footer class="foot">
   <div class="foot__grid">
     <div>
-      <div class="foot__name">Prof. Dr. Burhan Mayir</div>
-      <div class="foot__kicker">Meme Sağlığı · Antalya</div>
-      <p class="foot__note">
-        Bu sitedeki içerikler bilgilendirme amaçlıdır ve hekim muayenesinin yerine geçmez.
-        Şikâyetiniz varsa lütfen randevu alın.
-      </p>
-      <a class="foot__tel" href="tel:+905373573464">+90 537 357 34 64</a>
+      <div class="foot__name">{d.doctorName}</div>
+      <div class="foot__kicker">{d.nav.kicker} · {d.cityLabel}</div>
+      <p class="foot__note">{d.footer.note}</p>
+      <a class="foot__tel" href={SITE.phoneHref}>{SITE.phoneLabel}</a>
       <address class="foot__addr">
-        Deveci Plaza, Tahılpazarı Mah., Çatalköprü Cd. No: 40, Kat 4 D:4<br />
-        07040 Muratpaşa / Antalya · <a href="mailto:burmay@yahoo.com">burmay@yahoo.com</a>
+        {SITE.addressLines.join(', ')} ·
+        <a href={`mailto:${SITE.email}`}>{SITE.email}</a>
       </address>
     </div>
 
-    <nav class="foot__col" aria-label="Konular">
-      <div class="foot__head">Konular</div>
-      {TOPICS.map((t) => <a href={t.href}>{t.label}</a>)}
+    <nav class="foot__col" aria-label={d.footer.topicsHead}>
+      <div class="foot__head">{d.footer.topicsHead}</div>
+      {TOPICS.map((x) => <a href={x.href}>{x.label}</a>)}
     </nav>
 
-    <nav class="foot__col" aria-label="Site">
-      <div class="foot__head">Site</div>
-      {SITE.map((s) => <a href={s.href}>{s.label}</a>)}
+    <nav class="foot__col" aria-label={d.footer.siteHead}>
+      <div class="foot__head">{d.footer.siteHead}</div>
+      {SITE_LINKS.map((s) => <a href={s.href}>{s.label}</a>)}
     </nav>
 
-    <nav class="foot__col" aria-label="Dil">
-      <div class="foot__head">Dil</div>
-      <a class="foot__lang--on" href="/" hreflang="tr">Türkçe</a>
-      <a href="/" hreflang="en">English</a>
-      <a href="/" hreflang="ru">Русский</a>
+    <nav class="foot__col" aria-label={d.footer.langHead}>
+      <div class="foot__head">{d.footer.langHead}</div>
+      {
+        alts.map((a) => (
+          <a
+            class:list={{ 'foot__lang--on': a.lang === lang }}
+            href={a.href}
+            hreflang={a.htmlLang}
+            lang={a.htmlLang}
+          >
+            {a.label}
+          </a>
+        ))
+      }
     </nav>
   </div>
 
   <div class="foot__bar">
-    <span>© 2026 Prof. Dr. Burhan Mayir</span>
-    <span>Muratpaşa, Antalya</span>
+    <span>© {new Date().getFullYear()} {d.doctorName}</span>
+    <span>{d.districtLabel}, {d.cityLabel}</span>
   </div>
 </footer>
 

@@ -1,52 +1,65 @@
 ---
+import { t, pageHref, topicHref, type Locale, type Alternate } from '../i18n';
+
 interface Props {
-  /** '', 'meme-kanseri', 'cerrahi', 'onkoplastik', 'rekonstruksiyon', 'iyi-huylu', 'hakkimda', 'blog', 'iletisim' */
+  lang: Locale;
+  /** 'home' | 'about' | 'blog' | 'contact' ya da bir konu anahtarı. */
   active?: string;
+  /** Aynı sayfanın üç dildeki adresi. */
+  alts: Alternate[];
 }
-const { active = '' } = Astro.props;
 
-const TOPICS = [
-  { label: 'Meme Kanseri', href: '/meme-kanseri', key: 'meme-kanseri' },
-  { label: 'Meme Kanseri Cerrahisi', href: '/meme-kanseri-cerrahisi', key: 'cerrahi' },
-  { label: 'Onkoplastik ve Meme Koruyucu Cerrahi', href: '/onkoplastik-cerrahi', key: 'onkoplastik' },
-  { label: 'Meme Rekonstrüksiyonu', href: '/meme-rekonstruksiyonu', key: 'rekonstruksiyon' },
-  { label: 'İyi Huylu Meme Hastalıkları', href: '/iyi-huylu-meme-hastaliklari', key: 'iyi-huylu' },
+const { lang, active = '', alts } = Astro.props;
+const d = t(lang);
+
+const TOPICS = d.topics.map((topic, i) => ({
+  label: topic.navTitle,
+  href: topicHref(lang, i),
+  key: topic.key,
+}));
+
+/* Menü sırası: Ana Sayfa · Hakkımda · Hastalıklar · Blog · İletişim.
+   Hastalıklar dropdown'ı ortada durduğu için liste ikiye bölünüyor. */
+const LINKS_BEFORE = [
+  { label: d.nav.home, href: pageHref(lang, 'home'), key: 'home' },
+  { label: d.nav.about, href: pageHref(lang, 'about'), key: 'about' },
 ];
 
-const LINKS = [
-  { label: 'Hakkımda', href: '/hakkimda', key: 'hakkimda' },
-  { label: 'Yazılar', href: '/blog', key: 'blog' },
-  { label: 'İletişim', href: '/iletisim', key: 'iletisim' },
+const LINKS_AFTER = [
+  { label: d.nav.blog, href: pageHref(lang, 'blog'), key: 'blog' },
+  { label: d.nav.contact, href: pageHref(lang, 'contact'), key: 'contact' },
 ];
 
-const topicActive = TOPICS.some((t) => t.key === active);
+const topicActive = TOPICS.some((x) => x.key === active);
+const topicsHref = `${pageHref(lang, 'home')}#konular`;
+const contactHref = pageHref(lang, 'contact');
 ---
 
 <header class="nav">
   <div class="nav__bar">
-    <a class="brand" href="/">
-      <span class="brand__name">Burhan Mayir</span>
-      <span class="brand__kicker">Meme Sağlığı</span>
+    <a class="brand" href={pageHref(lang, 'home')}>
+      <span class="brand__name">{d.brandName}</span>
+      <span class="brand__kicker">{d.nav.kicker}</span>
     </a>
 
-    <nav class="nav__links" aria-label="Ana menü">
+    <nav class="nav__links" aria-label={d.nav.menuLabel}>
+      {
+        LINKS_BEFORE.map((l) => (
+          <a class="link" href={l.href} aria-current={l.key === active ? 'page' : undefined}>
+            {l.label}
+          </a>
+        ))
+      }
+
       <div class="drop">
-        <a
-          class="link drop__trigger"
-          href="/#konular"
-          aria-current={topicActive ? 'true' : undefined}
-        >
-          Konular <span class="drop__caret" aria-hidden="true">▾</span>
+        <a class="link drop__trigger" href={topicsHref} aria-current={topicActive ? 'true' : undefined}>
+          {d.nav.topics} <span class="drop__caret" aria-hidden="true">▾</span>
         </a>
         <div class="drop__panel">
           {
-            TOPICS.map((t) => (
-              <a
-                class="drop__item"
-                href={t.href}
-                aria-current={t.key === active ? 'page' : undefined}
-              >
-                {t.label}
+            TOPICS.map((x) => (
+              <a class="drop__item" href={x.href} aria-current={x.key === active ? 'page' : undefined}>
+                {x.label}
               </a>
             ))
           }
@@ -54,7 +67,7 @@ const topicActive = TOPICS.some((t) => t.key === active);
       </div>
 
       {
-        LINKS.map((l) => (
+        LINKS_AFTER.map((l) => (
           <a class="link" href={l.href} aria-current={l.key === active ? 'page' : undefined}>
             {l.label}
           </a>
@@ -64,21 +77,46 @@ const topicActive = TOPICS.some((t) => t.key === active);
       <span class="rule" aria-hidden="true"></span>
 
       <div class="langs">
-        <a class="lang lang--on" href="/" hreflang="tr">TR</a>
-        <a class="lang" href="/" hreflang="en">EN</a>
-        <a class="lang" href="/" hreflang="ru">RU</a>
+        {
+          alts.map((a) => (
+            <a
+              class:list={['lang', { 'lang--on': a.lang === lang }]}
+              href={a.href}
+              hreflang={a.htmlLang}
+              lang={a.htmlLang}
+              aria-current={a.lang === lang ? 'true' : undefined}
+            >
+              {a.short}
+            </a>
+          ))
+        }
       </div>
 
-      <a class="cta" href="/iletisim">Randevu</a>
+      <a class="cta" href={contactHref}>{d.nav.cta}</a>
     </nav>
 
     <details class="mobile">
-      <summary aria-label="Menüyü aç"><span aria-hidden="true">☰</span></summary>
+      <summary aria-label={d.nav.openMenu}><span aria-hidden="true">☰</span></summary>
       <div class="mobile__panel">
-        {TOPICS.map((t) => <a href={t.href}>{t.label}</a>)}
-        <span class="mobile__rule" aria-hidden="true"></span>
-        {LINKS.map((l) => <a href={l.href}>{l.label}</a>)}
-        <a class="cta cta--block" href="/iletisim">Randevu</a>
+        {LINKS_BEFORE.map((l) => <a href={l.href}>{l.label}</a>)}
+        <span class="mobile__head">{d.nav.topics}</span>
+        {TOPICS.map((x) => <a class="mobile__topic" href={x.href}>{x.label}</a>)}
+        {LINKS_AFTER.map((l) => <a href={l.href}>{l.label}</a>)}
+        <span class="mobile__langs">
+          {
+            alts.map((a) => (
+              <a
+                class:list={['mobile__lang', { 'lang--on': a.lang === lang }]}
+                href={a.href}
+                hreflang={a.htmlLang}
+                lang={a.htmlLang}
+              >
+                {a.short}
+              </a>
+            ))
+          }
+        </span>
+        <a class="cta cta--block" href={contactHref}>{d.nav.cta}</a>
       </div>
     </details>
   </div>
@@ -113,18 +151,20 @@ const topicActive = TOPICS.some((t) => t.key === active);
     font-family: var(--serif);
     font-size: 20px;
     letter-spacing: -0.01em;
+    white-space: nowrap;
   }
   .brand__kicker {
     font-size: 11px;
     letter-spacing: 0.24em;
     text-transform: uppercase;
     color: var(--accent);
+    white-space: nowrap;
   }
 
   .nav__links {
     display: flex;
     align-items: center;
-    gap: 32px;
+    gap: 26px;
     font-size: 14px;
     letter-spacing: 0.04em;
     text-transform: uppercase;
@@ -135,6 +175,7 @@ const topicActive = TOPICS.some((t) => t.key === active);
     border-bottom: 1px solid transparent;
     padding-bottom: 3px;
     transition: color var(--ease), border-color var(--ease);
+    white-space: nowrap;
   }
   .link:hover { color: var(--accent); }
   .link[aria-current] {
@@ -199,6 +240,7 @@ const topicActive = TOPICS.some((t) => t.key === active);
     font-size: 13px;
     letter-spacing: 0.08em;
     transition: background var(--ease);
+    white-space: nowrap;
   }
   .cta:hover { background: var(--accent-dark); color: var(--bg); }
 
@@ -231,7 +273,29 @@ const topicActive = TOPICS.some((t) => t.key === active);
     color: var(--ink);
     border-bottom: 1px solid var(--line);
   }
-  .mobile__rule { height: 8px; }
+  /* Hastalıklar grubu artık listenin ortasında; başlık olmadan araya karışıyor. */
+  .mobile__head {
+    padding: 18px 0 7px;
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fainter);
+  }
+  .mobile__topic { padding-left: 14px; }
+
+  .mobile__langs {
+    display: flex;
+    gap: 18px;
+    padding-top: 16px;
+  }
+  .mobile__lang {
+    border-bottom: 0 !important;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--fainter) !important;
+  }
+  .mobile__lang.lang--on { color: var(--ink) !important; }
+
   .cta--block {
     margin-top: 14px;
     text-align: center;
@@ -240,7 +304,7 @@ const topicActive = TOPICS.some((t) => t.key === active);
     text-transform: uppercase;
   }
 
-  @media (max-width: 900px) {
+  @media (max-width: 1100px) {
     .nav__links { display: none; }
     .mobile { display: block; justify-self: end; }
   }

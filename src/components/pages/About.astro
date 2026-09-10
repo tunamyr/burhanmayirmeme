@@ -1,0 +1,423 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import SiteNav from '../SiteNav.astro';
+import SiteFooter from '../SiteFooter.astro';
+import RandevuBand from '../RandevuBand.astro';
+import { SITE } from '../../data/site';
+import { t, alternates, type Locale } from '../../i18n';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const d = t(lang);
+const alts = alternates('about');
+---
+
+<BaseLayout
+  lang={lang}
+  title={d.about.title}
+  description={d.about.description}
+  active="about"
+  ogImage="/img/portre-masa.png"
+  alts={alts}
+>
+  <SiteNav lang={lang} active="about" alts={alts} />
+
+  <main id="icerik">
+    <section class="intro">
+      <div class="intro__media">
+        <img
+          src="/img/portre-masa.png"
+          alt={d.about.portraitAlt}
+          width="1024"
+          height="1024"
+          fetchpriority="high"
+        />
+        <div class="stats">
+          {
+            SITE.stats.map((n, i) => (
+              <div>
+                <div class="stats__n">{n}</div>
+                <div class="stats__l">{d.common.statLabels[i]}</div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+
+      <div class="intro__text">
+        <div class="kicker">{d.about.kicker}</div>
+        <h1 class="intro__title">{d.doctorName}</h1>
+        <p class="intro__lede">{d.about.lede}</p>
+        <p class="intro__body">{d.about.body}</p>
+        <div class="fields">
+          <div class="fields__head">{d.about.fieldsHead}</div>
+          <div class="fields__list">{d.about.fields}</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="shell split__grid">
+        <h2 class="split__title split__title--sticky">{d.about.timelineTitle}</h2>
+        <div class="timeline">
+          {
+            d.about.timeline.map((x) => (
+              <div class="timeline__row">
+                <span class="timeline__year">{x.year}</span>
+                <div>
+                  <div class="timeline__what">{x.title}</div>
+                  <div class="timeline__where">{x.place}</div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="acad">
+      <div class="shell">
+        <div class="acad__kicker">{d.about.academicKicker}</div>
+        <div class="acad__grid">
+          {
+            d.about.academic.map((a) => (
+              <div class="acad__item">
+                <div class="acad__n">{a.n}</div>
+                <div class="acad__l">{a.l}</div>
+              </div>
+            ))
+          }
+        </div>
+        <div class="acad__bottom">
+          <p class="acad__text">{d.about.academicText}</p>
+          <div class="acad__memb">
+            <div class="acad__membHead">{d.about.membershipsHead}</div>
+            {d.about.memberships.map((m) => <div class="acad__membItem">{m}</div>)}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="split">
+      <div class="shell split__grid">
+        <h2 class="split__title">{d.about.principlesTitle}</h2>
+        <div class="principles">
+          {
+            d.about.principles.map((p) => (
+              <div class="principles__item">
+                <div class="principles__k">{p.k}</div>
+                <p class="principles__v">{p.v}</p>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <RandevuBand lang={lang} title={d.about.bandTitle} text={d.about.bandText} />
+  <SiteFooter lang={lang} alts={alts} />
+</BaseLayout>
+
+<style>
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 26px;
+  }
+
+  /* --- Giriş --- */
+  .intro {
+    display: grid;
+    grid-template-columns: 0.95fr 1.05fr;
+    border-bottom: 1px solid var(--line);
+  }
+  .intro__media {
+    padding: 84px 68px 84px var(--page-pad);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 32px;
+    border-right: 1px solid var(--line);
+  }
+  .intro__media img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+  }
+  .stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 32px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .stats__n {
+    font-family: var(--serif);
+    font-size: 30px;
+    line-height: 1;
+    color: var(--accent);
+  }
+  .stats__l {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--faint);
+    margin-top: 9px;
+  }
+
+  .intro__text {
+    padding: 84px var(--page-pad) 84px 68px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .intro__title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 48px;
+    line-height: 1.18;
+    letter-spacing: -0.02em;
+    margin: 0 0 26px;
+  }
+  .intro__lede {
+    font-size: 19px;
+    line-height: 1.7;
+    color: var(--text-strong);
+    margin: 0 0 20px;
+    max-width: 34em;
+    text-wrap: pretty;
+  }
+  .intro__body {
+    font-size: 17.5px;
+    line-height: 1.8;
+    color: var(--text);
+    margin: 0 0 34px;
+    max-width: 34em;
+  }
+  .fields {
+    display: grid;
+    gap: 12px;
+    padding-top: 28px;
+    border-top: 1px solid var(--line);
+  }
+  .fields__head {
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .fields__list {
+    font-size: 16.5px;
+    line-height: 1.75;
+    color: var(--text-strong);
+  }
+
+  /* --- İki sütunlu bölümler --- */
+  .split {
+    padding: 80px var(--page-pad);
+  }
+  .split__grid {
+    display: grid;
+    grid-template-columns: 0.42fr 1.58fr;
+    gap: 72px;
+    align-items: start;
+  }
+  .split__title {
+    font-family: var(--serif);
+    font-weight: 400;
+    font-size: 32px;
+    line-height: 1.25;
+    margin: 0;
+    letter-spacing: -0.01em;
+  }
+  .split__title--sticky {
+    position: sticky;
+    top: 108px;
+  }
+
+  .timeline {
+    border-top: 1px solid var(--line);
+  }
+  .timeline__row {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 34px;
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .timeline__year {
+    font-size: 14px;
+    letter-spacing: 0.06em;
+    color: var(--accent);
+    padding-top: 4px;
+  }
+  .timeline__what {
+    font-size: 19px;
+    font-weight: 500;
+    margin-bottom: 7px;
+  }
+  .timeline__where {
+    font-size: 16.5px;
+    line-height: 1.65;
+    color: var(--text-soft);
+  }
+
+  /* --- Akademik --- */
+  .acad {
+    background: var(--dark-bg);
+    color: var(--dark-soft);
+    padding: 80px var(--page-pad);
+  }
+  .acad__kicker {
+    font-size: 11px;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--dark-kicker);
+    margin-bottom: 28px;
+  }
+  .acad__grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+    background: var(--dark-hair);
+    margin-bottom: 44px;
+  }
+  .acad__item {
+    background: var(--dark-bg);
+    padding: 28px 26px 28px 0;
+  }
+  .acad__n {
+    font-family: var(--serif);
+    font-size: 30px;
+    line-height: 1;
+    color: var(--dark-ink);
+    margin-bottom: 12px;
+  }
+  .acad__l {
+    font-size: 15.5px;
+    line-height: 1.6;
+    color: var(--dark-text);
+  }
+  .acad__bottom {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+  }
+  .acad__text {
+    margin: 0;
+    font-size: 17px;
+    line-height: 1.8;
+    color: var(--dark-text);
+  }
+  .acad__memb {
+    display: grid;
+    gap: 14px;
+    align-content: start;
+  }
+  .acad__membHead {
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--faint);
+  }
+  .acad__membItem {
+    font-size: 16.5px;
+    line-height: 1.7;
+    color: var(--dark-ink);
+  }
+
+  /* --- İlkeler --- */
+  .principles {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+  }
+  .principles__item {
+    background: var(--bg);
+    padding: 32px 32px 36px;
+  }
+  .principles__k {
+    font-size: 10.5px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 14px;
+  }
+  .principles__v {
+    margin: 0;
+    font-size: 16.5px;
+    line-height: 1.72;
+    color: var(--text-strong);
+  }
+
+  /* --- Dar ekranlar --- */
+  @media (max-width: 1000px) {
+    .intro {
+      grid-template-columns: 1fr;
+    }
+    .intro__media {
+      padding: 56px var(--page-pad) 40px;
+      border-right: 0;
+    }
+    .intro__text {
+      padding: 0 var(--page-pad) 64px;
+    }
+    .split {
+      padding: 60px var(--page-pad);
+    }
+    .split__grid {
+      grid-template-columns: 1fr;
+      gap: 32px;
+    }
+    .split__title--sticky {
+      position: static;
+    }
+    .acad__grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .acad__item {
+      padding: 24px 22px;
+    }
+    .acad__bottom {
+      grid-template-columns: 1fr;
+      gap: 34px;
+    }
+    .principles {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .intro__title {
+      font-size: 36px;
+    }
+    .intro__lede {
+      font-size: 17.5px;
+    }
+    .stats {
+      gap: 16px;
+    }
+    .stats__n {
+      font-size: 24px;
+    }
+    .stats__l {
+      font-size: 11px;
+    }
+    .timeline__row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .acad__grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
