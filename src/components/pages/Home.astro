@@ -67,7 +67,6 @@ const oneCikanlar = d.blog.posts.slice(0, 3);
     <section id="konular" class="topics">
       <div class="topics__head">
         <h2 class="h2">{d.home.topicsTitle}</h2>
-        <p class="topics__intro">{d.home.topicsIntro}</p>
       </div>
 
       <div class="topics__grid" data-acc>
@@ -375,18 +374,9 @@ const oneCikanlar = d.blog.posts.slice(0, 3);
     background: var(--surface);
     padding: 84px var(--page-pad);
   }
+  /* Başlığın yanındaki açıklama kaldırıldı; iki sütunlu düzene gerek kalmadı. */
   .topics__head {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
-    align-items: end;
     margin-bottom: 48px;
-  }
-  .topics__intro {
-    margin: 0;
-    font-size: 17px;
-    line-height: 1.7;
-    color: var(--text);
   }
   .topics__grid {
     display: grid;
@@ -756,7 +746,6 @@ const oneCikanlar = d.blog.posts.slice(0, 3);
     .hero__img {
       max-width: none;
     }
-    .topics__head,
     .topics__grid {
       grid-template-columns: 1fr;
       gap: 32px;

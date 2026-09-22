@@ -17,6 +17,8 @@ export const TR = {
   doctorName: 'Prof. Dr. Burhan Mayir',
   /** Menüdeki kısa marka adı. */
   brandName: 'Burhan Mayir',
+  /** Marka bloğunun üst satırı — unvan. */
+  brandPre: 'Prof. Dr.',
   cityLabel: 'Antalya',
   districtLabel: 'Muratpaşa',
 
@@ -31,7 +33,8 @@ export const TR = {
     kicker: 'Meme Sağlığı',
     home: 'Ana Sayfa',
     about: 'Hakkımda',
-    topics: 'Hastalıklar',
+    cancer: 'Meme Kanseri',
+    conditions: 'Meme Hastalıkları',
     blog: 'Blog',
     contact: 'İletişim',
     cta: 'Randevu',
@@ -50,14 +53,6 @@ export const TR = {
     contact: 'İletişim ve randevu',
     directions: 'Yol tarifi',
     note: 'Bu sitedeki içerikler bilgilendirme amaçlıdır ve hekim muayenesinin yerine geçmez. Şikâyetiniz varsa lütfen randevu alın.',
-    /** Footer'daki kısa konu adları. */
-    topicLinks: [
-      'Meme kanseri',
-      'Meme kanseri cerrahisi',
-      'Onkoplastik cerrahi',
-      'Meme rekonstrüksiyonu',
-      'İyi huylu meme hastalıkları',
-    ],
   },
 
   band: {
@@ -88,6 +83,7 @@ export const TR = {
       'Meme rekonstrüksiyonu',
       'İyi huylu meme hastalıkları',
       'İkinci görüş',
+      'Diğer',
     ],
   },
 
@@ -116,19 +112,17 @@ export const TR = {
     kicker: 'Antalya · Meme Hastalıkları',
     /** h1 iki vurgulu kelime içeriyor. */
     h1: {
-      pre: 'Meme sağlığı, ',
-      em1: 'acele',
-      mid: ' değil ',
-      em2: 'açıklık',
-      post: ' ister.',
+      pre: 'Tedavinin ',
+      em1: 'her adımında',
+      mid: ' yanınızda, ',
+      em2: 'size özel',
+      post: ' bir yol haritasıyla.',
     },
-    lede: 'Prof. Dr. Burhan Mayir, meme kanseri cerrahisi, meme koruyucu onkoplastik cerrahi ve iyi huylu meme hastalıklarıyla ilgilenir. Her adımı önce anlatır, sonra uygular.',
+    lede: 'Meme kanseri cerrahisi, meme koruyucu ve onkoplastik cerrahi ile iyi huylu meme hastalıklarında güncel tedavi yöntemlerini her hastanın kendi tablosuna göre planlıyoruz. Hangi adımın neden atıldığını önce anlatıyor, sonra uyguluyoruz.',
     heroAlt: "Prof. Dr. Burhan Mayir, Antalya'daki muayenehanesinde",
     topicsButton: 'Hastalıklar',
 
     topicsTitle: 'İlgilendiğimiz konular',
-    topicsIntro:
-      'Başlığa dokunun; ne olduğu ve sizin için ne anlama geldiği açılır. Muayene öncesinde okumanız, görüşmede daha çok soru sormanızı sağlar.',
 
     aboutKicker: 'Hakkımda',
     aboutAlt: 'Prof. Dr. Burhan Mayir, muayenehanesindeki çalışma masasında',
@@ -159,7 +153,7 @@ export const TR = {
       "Prof. Dr. Burhan Mayir'in eğitimi, görev yaptığı kurumlar, akademik çalışmaları ve muayenehanedeki çalışma ilkeleri.",
     kicker: 'Hakkımda',
     portraitAlt: 'Prof. Dr. Burhan Mayir, muayenehanesindeki çalışma masasında',
-    lede: "Genel cerrahi uzmanıyım. Meme hastalıkları, meme kanseri cerrahisi ve meme koruyucu cerrahi başlıca ilgi alanlarım arasında yer alıyor. Antalya'daki özel muayenehanemde hasta kabul ediyorum.",
+    lede: "Genel cerrahi uzmanıyım. Yirmi beş yılı aşkın süredir genel cerrahinin farklı alanlarında ameliyat yapıyor, aynı alanda akademik çalışmalar yürütüyorum. Antalya'daki özel muayenehanemde hasta kabul ediyorum.",
     body: 'Hastalarımla çalışma biçimim tek bir ilkeye dayanıyor: kararı birlikte vermek. Bunun için seçenekleri, alternatiflerini ve beklenen sonuçları anlaşılır bir dille anlatmak gerekiyor. Ne olacağını bilen bir hasta, tedaviye daha güçlü başlıyor.',
     fieldsHead: 'İlgi alanları',
     fields:
@@ -304,11 +298,13 @@ export const TR = {
     {
       slug: 'meme-kanseri',
       key: 'meme-kanseri',
+      group: 'kanser',
       no: '01',
       title: 'Meme kanseri',
       crumb: 'Meme kanseri',
-      navTitle: 'Meme Kanseri',
-      meta: 'Meme kanserinde hangi belirtilere dikkat edilmeli, tanı nasıl konur, evre ne anlama gelir ve tarama ne zaman başlar. Prof. Dr. Burhan Mayir, Antalya.',
+      navTitle: 'Meme Kanseri Nedir',
+      seoTitle: 'Antalya Meme Kanseri Belirtileri, Tanısı ve Tedavisi | Prof. Dr. Burhan Mayir',
+      meta: "Antalya'da meme kanseri belirtileri, erken tanı yöntemleri ve güncel tedavi seçenekleri. Meme kanseri taraması ve muayene için Prof. Dr. Burhan Mayir.",
       lede: 'Meme kanseri, kadınlarda en sık görülen kanser türüdür. Aynı zamanda erken yakalandığında tedavi başarısı en yüksek olan kanserlerden biridir. Bu sayfa, tanı sürecinde karşınıza çıkacak kavramları sade bir dille anlatıyor.',
       img: '/img/konu-meme-kanseri.jpg',
       imgAlt: 'Görüşme odası: çalışma masası, koltuklar ve muayene lavabosu',
@@ -334,9 +330,9 @@ export const TR = {
           text: 'Kanseri çıkarırken memenin şeklini korumak.',
         },
         {
-          key: 'iyi-huylu',
-          title: 'İyi Huylu Meme Hastalıkları',
-          text: 'Fibroadenom, kist, meme ağrısı ve akıntı.',
+          key: 'kitle',
+          title: 'Memede Kitle ve Fibroadenom',
+          text: 'Ele gelen kitlelerin çoğu iyi huyludur.',
         },
       ],
       band: {
@@ -437,7 +433,9 @@ export const TR = {
     {
       slug: 'meme-kanseri-cerrahisi',
       key: 'cerrahi',
+      group: 'kanser',
       no: '02',
+      seoTitle: 'Antalya Meme Kanseri Ameliyatı ve Onkoplastik Cerrahi | Prof. Dr. Burhan Mayir',
       title: 'Meme kanseri cerrahisi',
       crumb: 'Meme kanseri cerrahisi',
       navTitle: 'Meme Kanseri Cerrahisi',
@@ -574,7 +572,9 @@ export const TR = {
     {
       slug: 'onkoplastik-cerrahi',
       key: 'onkoplastik',
+      group: 'kanser',
       no: '03',
+      seoTitle: 'Antalya Onkoplastik ve Meme Koruyucu Cerrahi | Prof. Dr. Burhan Mayir',
       title: 'Onkoplastik ve meme koruyucu cerrahi',
       crumb: 'Onkoplastik ve meme koruyucu cerrahi',
       navTitle: 'Onkoplastik ve Meme Koruyucu Cerrahi',
@@ -681,7 +681,9 @@ export const TR = {
     {
       slug: 'meme-rekonstruksiyonu',
       key: 'rekonstruksiyon',
+      group: 'kanser',
       no: '04',
+      seoTitle: 'Antalya Meme Rekonstrüksiyonu ve Meme Onarımı | Prof. Dr. Burhan Mayir',
       title: 'Meme rekonstrüksiyonu',
       crumb: 'Meme rekonstrüksiyonu',
       navTitle: 'Meme Rekonstrüksiyonu',
@@ -711,9 +713,9 @@ export const TR = {
           text: 'Ameliyat seçenekleri ve koltuk altının değerlendirilmesi.',
         },
         {
-          key: 'iyi-huylu',
-          title: 'İyi Huylu Meme Hastalıkları',
-          text: 'Fibroadenom, kist, meme ağrısı ve akıntı.',
+          key: 'kitle',
+          title: 'Memede Kitle ve Fibroadenom',
+          text: 'Ele gelen kitlelerin çoğu iyi huyludur.',
         },
       ],
       band: {
@@ -796,111 +798,595 @@ export const TR = {
     },
 
     {
-      slug: 'iyi-huylu-meme-hastaliklari',
-      key: 'iyi-huylu',
+      slug: 'meme-agrisi',
+      key: 'agri',
+      group: 'hastalik',
       no: '05',
-      title: 'İyi huylu meme hastalıkları',
-      crumb: 'İyi huylu meme hastalıkları',
-      navTitle: 'İyi Huylu Meme Hastalıkları',
-      meta: 'Fibroadenom, meme kisti, meme ağrısı ve meme başı akıntısı: hangileri takip, hangileri işlem gerektirir. Prof. Dr. Burhan Mayir, Antalya.',
-      lede: 'Memeyle ilgili şikâyetlerin büyük bölümü kanser değildir. Yine de hangisinin takip, hangisinin işlem gerektirdiğine muayene ve görüntüleme karar verir.',
-      img: '/img/konu-iyi-huylu.jpg',
-      imgAlt: 'Muayene odasındaki lavabo ve boy-kilo ölçer',
+      title: 'Meme ağrısı',
+      crumb: 'Meme ağrısı',
+      navTitle: 'Meme Ağrısı — Mastalji',
+      seoTitle: 'Antalya Meme Ağrısı Neden Olur? Geçmeyen Meme Ağrısı Tedavisi',
+      meta: "Antalya'da meme ağrısı nedenleri, adet öncesi meme ağrısı ve tedavi yöntemleri. Sürekli meme ağrısı kanser midir? Prof. Dr. Burhan Mayir yanıtlıyor.",
+      lede: "Meme ağrısıyla gelen hastaların ilk sorusu genellikle aynı oluyor: “Acaba kanser miyim?” Net olarak söyleyelim: meme ağrısının %90'dan fazlası kanserle ilişkili değildir. Hatta meme kanserinin kendisi çoğu zaman ağrı yapmaz.",
+      img: '/img/blog-tedaviler.jpg',
+      imgAlt: 'Görüşme odasının oturma alanı',
       quickFacts: [
-        { label: 'En sık kitle', value: 'Fibroadenom' },
-        { label: 'İlk görüntüleme', value: 'Genç yaşta ultrason' },
-        { label: 'Basit kist', value: 'Genellikle tedavi gerekmez' },
-        { label: 'Kanlı akıntı', value: 'Her zaman incelenir' },
+        { label: 'Kanserle ilişkisi', value: "%90'dan fazlası ilişkisiz" },
+        { label: 'En sık nedeni', value: 'Adet öncesi hormonal ağrı' },
+        { label: 'İlk adım', value: 'Muayene, gerekirse ultrason' },
+        { label: 'Çoğu hastada', value: 'Ameliyat gerekmez' },
       ],
       ctaBox: {
-        title: 'Bir şey fark ettiyseniz',
-        text: 'Muayene ve ultrason çoğu zaman aynı gün tamamlanır. Beklemek yerine kontrol ettirin.',
+        title: 'Ağrınız geçmiyor mu?',
+        text: 'Ağrının nedenini bulmak çoğu zaman tek bir muayeneyle mümkün. Kanser olmadığını görmek, ağrının kendisini de hafifletiyor.',
       },
       related: [
         {
+          key: 'kist',
+          title: 'Meme Kistleri',
+          text: 'Gergin kistler aniden şiddetli ağrı yapabilir.',
+        },
+        {
+          key: 'kitle',
+          title: 'Memede Kitle ve Fibroadenom',
+          text: 'Ağrıya kitle eşlik ediyorsa değerlendirme değişir.',
+        },
+        {
           key: 'meme-kanseri',
-          title: 'Meme Kanseri',
-          text: 'Belirtiler, tanı yöntemleri ve evreleme.',
-        },
-        {
-          key: 'cerrahi',
-          title: 'Meme Kanseri Cerrahisi',
-          text: 'Ameliyat seçenekleri ve koltuk altının değerlendirilmesi.',
-        },
-        {
-          key: 'blog',
-          title: 'Bilgi Yazıları',
-          text: 'Tarama, kendi kendine muayene ve sık sorulanlar.',
+          title: 'Meme Kanseri Nedir',
+          text: 'Hangi bulgular beklemeden başvurmayı gerektirir.',
         },
       ],
       band: {
-        title: 'Şüphede kalmanıza gerek yok',
-        text: 'Muayene ve ultrasonla çoğu şikâyet aynı görüşmede netleşir. Randevu talebinizi bırakın, sizi arayalım.',
+        title: 'Ağrının nedenini birlikte bulalım',
+        text: 'Ne zaman başladığını, adet dönemiyle ilişkisini ve nerede hissettiğinizi konuşalım. Çoğu hastada tablo ilk görüşmede netleşiyor.',
       },
       indexBody:
-        'Fibroadenom, kist, meme ağrısı ve akıntı. Bu şikâyetlerin çoğu kanser değildir; yine de hepsi değerlendirilmelidir.',
+        'Meme ağrısının nedenleri, hangisinin hormonal hangisinin araştırma gerektirdiği ve tedavi seçenekleri.',
       indexWhen:
-        'Adet dönemlerinden bağımsız süren meme ağrısı, büyüyen bir kist ya da tekrarlayan akıntı varsa kontrol gerekir.',
+        'Ağrı tek bir noktada ve sürekliyse, giderek artıyorsa ya da yanında kitle, akıntı veya ciltte değişiklik varsa muayene olun.',
       sections: [
         {
-          h2: 'En sık karşılaşılan tablolar',
+          h2: 'Meme ağrısı neden olur',
           blocks: [
+            {
+              kind: 'steps',
+              items: [
+                {
+                  k: 'Hormonal (siklik) ağrı',
+                  v: 'En sık nedenidir. Adetten 3-5 gün önce başlar, iki memede birden gerginlik, dolgunluk ve hassasiyet yapar, adetle birlikte geçer.',
+                },
+                {
+                  k: 'Fibrokistik meme yapısı',
+                  v: 'Memesinde çok sayıda küçük kist ve sertlik olan kadınlarda ağrı daha sık görülür.',
+                },
+                {
+                  k: 'Kas-iskelet kaynaklı ağrı',
+                  v: 'Büyük meme dokusunun boyun ve sırt kaslarına yük bindirmesi ve yanlış sütyen kullanımı ağrı yapar.',
+                },
+                {
+                  k: 'Kistler ve iltihaplar',
+                  v: 'İçinde sıvı biriken gergin bir kist aniden ve şiddetli ağrıyabilir.',
+                },
+                {
+                  k: 'Stres, kafein ve beslenme',
+                  v: 'Fazla kahve, çay ve çikolata ile stres ağrıyı tetikleyebilir.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          h2: 'Ne zaman doktora gitmeli',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Adet döneminizle birlikte gelip geçen, iki memede birden hissedilen ağrı için acele etmeniz gerekmez. Aşağıdaki durumlarda ise muayene olmayı ertelemeyin.',
+            },
+            {
+              kind: 'ul',
+              items: [
+                { text: 'Ağrı tek bir noktada ve sürekliyse' },
+                { text: 'Giderek artıyorsa ya da uykunuzu bölüyorsa' },
+                { text: 'Ele gelen bir kitle eşlik ediyorsa' },
+                { text: 'Meme başından akıntı geliyorsa' },
+                { text: 'Meme derisinde kızarıklık, çekinti ya da kalınlaşma varsa' },
+              ],
+            },
+          ],
+        },
+        {
+          h2: 'Tedavi nasıl yapılır',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Tedavi nedene yöneliktir. Kanser olmadığı gösterildikten sonra hastaların önemli bir bölümünde ağrının şiddeti kendiliğinden azalır; tedirginliğin ağrıyı büyüttüğünü pratikte sık görüyoruz.',
+            },
+            {
+              kind: 'p',
+              text: 'Doğru destekli sütyen, kafein ve tuz kısıtlaması gibi basit önlemler ile gerektiğinde ağrı kesici düzeyinde ilaç tedavisi çoğu hastada yeterli oluyor. Hormon tedavilerine nadiren ihtiyaç duyulur.',
+            },
+          ],
+        },
+      ] as Section[],
+    },
+
+    {
+      slug: 'memede-kitle-fibroadenom',
+      key: 'kitle',
+      group: 'hastalik',
+      no: '06',
+      title: 'Memede kitle ve fibroadenom',
+      crumb: 'Memede kitle',
+      navTitle: 'Memede Kitle — Fibroadenom',
+      seoTitle: 'Antalya Memede Kitle ve Fibroadenom Tedavisi | İyi Huylu Kitle',
+      meta: "Antalya'da memede kitle neden olur? Fibroadenom nedir, tehlikeli mi? Memede iyi huylu kitlelerin takibi ve ameliyatı hakkında bilgiler.",
+      lede: "Memede kitle hissetmek çok korkutucudur. Ama şunu baştan bilin: 30 yaş altı kadınlarda ele gelen kitlelerin %90'ı iyi huyludur. Yine de her yeni kitle muayene edilmelidir.",
+      img: '/img/blog-fibroadenom.jpg',
+      imgAlt: 'Pansuman odası: muayene masası ve muayene lambası',
+      quickFacts: [
+        { label: '30 yaş altında', value: "Kitlelerin %90'ı iyi huylu" },
+        { label: 'En sık iyi huylu tümör', value: 'Fibroadenom' },
+        { label: 'Görüldüğü yaş', value: '15-35 arası' },
+        { label: 'Kesin tanı', value: 'Ultrason ve gerekirse biyopsi' },
+      ],
+      ctaBox: {
+        title: 'Elinizde bir ultrason var mı?',
+        text: 'Daha önce çekilmiş ultrason ya da mamografinizi görüşmeye getirin. Kitlenin büyüyüp büyümediğini karşılaştırarak anlamak en güvenilir yoldur.',
+      },
+      related: [
+        {
+          key: 'kist',
+          title: 'Meme Kistleri',
+          text: 'Ele gelen her kitle katı değildir; kistler sıvı doludur.',
+        },
+        {
+          key: 'agri',
+          title: 'Meme Ağrısı',
+          text: 'Kitleye ağrı eşlik ediyorsa ne anlama gelir.',
+        },
+        {
+          key: 'meme-kanseri',
+          title: 'Meme Kanseri Nedir',
+          text: 'Hangi kitle özellikleri araştırma gerektirir.',
+        },
+      ],
+      band: {
+        title: 'Kitleyi bekletmeyin, baktırın',
+        text: 'Muayene ve ultrason çoğu zaman aynı gün sonuç verir. İyi huylu olduğunu öğrenmek için haftalarca tedirgin olmanız gerekmiyor.',
+      },
+      indexBody:
+        'Fibroadenom nedir, hangi kitleler takip edilir, hangileri çıkarılır ve tanı nasıl konur.',
+      indexWhen:
+        'Yeni fark ettiğiniz, sert, hareketi kısıtlı bir kitle varsa ya da eskiden beri bildiğiniz kitle büyüdüyse başvurun.',
+      sections: [
+        {
+          h2: 'Fibroadenom nedir',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Fibroadenom, memenin en sık görülen iyi huylu tümörüdür. Genellikle 15-35 yaş arası genç kadınlarda ortaya çıkar.',
+            },
+            {
+              kind: 'p',
+              text: 'Tipik olarak 1-3 santimetre boyutunda, lastik kıvamında, yuvarlak ve parmaklar arasında kolayca kayan hareketli bir kitledir. Hormonlara duyarlıdır; gebelikte büyüyebilir.',
+            },
+          ],
+        },
+        {
+          h2: 'Her kitle alınmalı mı',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Hayır. Ultrason ve gerektiğinde biyopsi ile fibroadenom olduğu kesinleşmiş, küçük ve büyüme göstermeyen bir kitlede yıllık ultrason takibi yeterlidir.',
+            },
+            {
+              kind: 'p',
+              text: 'Çıkarılmasını önerdiğimiz durumlar sınırlıdır:',
+            },
+            {
+              kind: 'ul',
+              items: [
+                { text: 'Hızla büyüyorsa' },
+                { text: 'Boyutu kişiyi rahatsız edecek düzeydeyse' },
+                { text: 'Biyopside şüpheli bir bulgu varsa (filloides tümör şüphesi)' },
+                { text: 'Hastanın endişesi takiple giderilemiyorsa' },
+              ],
+            },
+          ],
+        },
+        {
+          h2: 'Tanı nasıl konur',
+          blocks: [
+            {
+              kind: 'steps',
+              items: [
+                {
+                  k: 'Muayene',
+                  v: 'Kitlenin kıvamı, hareketliliği ve sınırları elle değerlendirilir.',
+                },
+                {
+                  k: 'Ultrason',
+                  v: 'Genç yaşta ilk tercihtir; kitlenin katı mı kistik mi olduğunu ayırır.',
+                },
+                {
+                  k: 'Gerekirse biyopsi',
+                  v: 'Şüpheli görünümde iğneyle alınan küçük bir parça kesin tanıyı verir.',
+                },
+              ],
+            },
+          ],
+        },
+      ] as Section[],
+    },
+
+    {
+      slug: 'meme-kistleri',
+      key: 'kist',
+      group: 'hastalik',
+      no: '07',
+      title: 'Meme kistleri',
+      crumb: 'Meme kistleri',
+      navTitle: 'Meme Kistleri',
+      seoTitle: 'Antalya Meme Kisti Tehlikeli mi? Kist Tedavisi ve Takibi',
+      meta: 'Memede kist neden oluşur? Antalya meme kisti belirtileri, basit ve kompleks kist farkı ve tedavi yöntemleri. Prof. Dr. Burhan Mayir.',
+      lede: 'Meme kistleri içi sıvı dolu keseciklerdir ve kadınların yaklaşık yarısında hayatın bir döneminde görülür. Özellikle 30-50 yaş arasında çok sıktır.',
+      img: '/img/blog-kitle.jpg',
+      imgAlt: 'Pansuman odası ve muayene masası',
+      quickFacts: [
+        { label: 'Ne sıklıkta', value: 'Kadınların yaklaşık yarısında' },
+        { label: 'En sık yaş', value: '30-50 arası' },
+        { label: 'Ayrımı yapan', value: 'Meme ultrasonu' },
+        { label: 'Basit kist', value: 'Kansere dönüşmez' },
+      ],
+      ctaBox: {
+        title: 'Kistiniz ağrı mı yapıyor?',
+        text: 'Gergin bir kist ağrının kaynağı olabilir. Gerekirse iğneyle boşaltmak hem rahatlatır hem de içeriğin incelenmesini sağlar.',
+      },
+      related: [
+        {
+          key: 'kitle',
+          title: 'Memede Kitle ve Fibroadenom',
+          text: 'Katı kitleler kistlerden farklı değerlendirilir.',
+        },
+        {
+          key: 'agri',
+          title: 'Meme Ağrısı',
+          text: 'Fibrokistik yapıda ağrı daha sık görülür.',
+        },
+        {
+          key: 'akinti',
+          title: 'Meme Başı Akıntısı',
+          text: 'Akıntı eşlik ediyorsa ayrı değerlendirme gerekir.',
+        },
+      ],
+      band: {
+        title: 'Kist mi, başka bir şey mi?',
+        text: 'Bu ayrım muayeneyle değil ultrasonla yapılır. Tek bir görüntüleme çoğu zaman bütün soruyu kapatır.',
+      },
+      indexBody:
+        'Basit ve kompleks kist ayrımı, fibrokistik meme yapısının ne anlama geldiği ve takip düzeni.',
+      indexWhen:
+        'Aniden ortaya çıkan gergin ve ağrılı bir şişlik ya da ultrasonda "kompleks kist" denen bir bulgu varsa başvurun.',
+      sections: [
+        {
+          h2: 'Basit kist mi, kompleks kist mi',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Bu ayrım çok önemlidir ve yalnızca meme ultrasonu ile yapılır. Elle muayene basit ile kompleksi ayırmaya yetmez.',
+            },
             {
               kind: 'cards',
               items: [
                 {
-                  k: 'Fibroadenom',
-                  v: 'Genç kadınlarda en sık görülen iyi huylu kitledir. Elde hareketli, sınırları belirgin ve ağrısızdır. Küçük ve tipik görünümlü olanlar aralıklı ultrason ile izlenebilir; büyüyen, rahatsızlık veren ya da görüntülemede şüpheli görünen fibroadenomlar çıkarılır.',
+                  k: 'Basit kist',
+                  v: 'İçi tamamen sıvı dolu, duvarı ince kistlerdir. Tamamen iyi huyludur, kansere dönüşmez ve kanser riskini artırmaz. Genellikle tedavi gerektirmez; çok büyükse ve ağrı yapıyorsa enjektörle boşaltılabilir.',
                 },
                 {
-                  k: 'Meme kisti',
-                  v: 'Sıvı dolu keseciklerdir; özellikle menopoza yakın dönemde sıktır. Basit kistler tedavi gerektirmez. Gerginlik ve ağrı yapan büyük kistler iğne ile boşaltılabilir. İçinde katı bileşen bulunan kistler ayrıca değerlendirilir.',
-                },
-                {
-                  k: 'Meme ağrısı',
-                  v: 'Adet döneminden önce artan, iki tarafta hissedilen yaygın ağrı çoğunlukla hormonaldir ve ciddi bir hastalık göstergesi değildir. Tek bir noktada yerleşen, adetten bağımsız ve giderek artan ağrı ise değerlendirilmelidir.',
-                },
-                {
-                  k: 'Meme başı akıntısı',
-                  v: 'İki taraflı, birden fazla kanaldan gelen ve sıkmayla ortaya çıkan berrak ya da süt renginde akıntı genellikle önemsizdir. Tek taraflı, tek kanaldan gelen, kendiliğinden akan ve kanlı akıntı ise ayrıntılı incelenir.',
-                },
-                {
-                  k: 'Meme iltihabı ve apse',
-                  v: 'En sık emzirme döneminde görülür; ağrı, kızarıklık ve ateşle seyreder. Antibiyotik tedavisi çoğu zaman yeterlidir. Apse geliştiyse boşaltılması gerekir. Emzirme dışı dönemde tekrarlayan iltihaplar mutlaka araştırılmalıdır.',
+                  k: 'Kompleks kist',
+                  v: 'İçinde katı alan bulunan ya da duvarı kalınlaşmış kistlerdir. Yakın takip, bazı durumlarda da biyopsi gerektirir.',
                 },
               ],
             },
           ],
         },
         {
-          h2: 'Bu şikâyetler kanser riskini artırır mı',
+          h2: 'Fibrokistik meme nedir',
           blocks: [
             {
               kind: 'p',
-              text: 'Büyük bölümü artırmaz. Fibroadenom, basit kist ve hormonal meme ağrısı, ileride kanser gelişme riskiyle ilişkilendirilmez. Yalnızca patoloji raporunda belirli hücresel değişiklikler saptanan sınırlı bir grupta risk bir miktar yükselir; bu hastalarda izlem programı ayrıca planlanır.',
+              text: 'Çok sayıda kistiniz varsa buna fibrokistik meme denir. Bu bir hastalık değil, memenin yapısıdır ve kanser riskini artırmaz.',
             },
             {
               kind: 'p',
-              text: 'İyi huylu tanısı almak, tarama programınızı bırakmanız anlamına gelmez. Yaşınıza uygun mamografi ve muayene takvimi devam eder.',
+              text: 'Ancak muayeneyi ve mamografinin yorumlanmasını zorlaştırdığı için düzenli ultrason takibi önem kazanır. Takvimi birlikte belirleriz.',
+            },
+          ],
+        },
+      ] as Section[],
+    },
+
+    {
+      slug: 'meme-basi-akintisi',
+      key: 'akinti',
+      group: 'hastalik',
+      no: '08',
+      title: 'Meme başı akıntısı',
+      crumb: 'Meme başı akıntısı',
+      navTitle: 'Meme Başı Akıntısı',
+      seoTitle: 'Antalya Meme Başı Akıntısı Neden Olur? Kanlı Akıntı Tedavisi',
+      meta: 'Memeden akıntı gelmesi tehlikeli mi? Antalya meme başı akıntısı nedenleri, kanlı akıntı ve tedavi seçenekleri. Prof. Dr. Burhan Mayir.',
+      lede: 'Meme başı akıntısı, kadınları en çok endişelendiren şikâyetlerden biridir. Değerlendirmede belirleyici olan akıntının miktarı değil, karakteridir.',
+      img: '/img/blog-patoloji.jpg',
+      imgAlt: 'Görüşme odasının genel görünümü',
+      quickFacts: [
+        { label: 'Belirleyici olan', value: 'Rengi ve tek kanaldan gelmesi' },
+        { label: 'Tehlikesiz tip', value: 'İki memeden, sıkmakla gelen' },
+        { label: 'Araştırılması gereken', value: 'Tek taraflı, kendiliğinden, kanlı' },
+        { label: 'En sık neden', value: 'İntraduktal papillom' },
+      ],
+      ctaBox: {
+        title: 'Akıntının rengini not edin',
+        text: 'Akıntının rengi, tek memeden mi geldiği ve kendiliğinden mi olduğu tanıyı büyük ölçüde belirler. Görüşmeye bu bilgilerle gelin.',
+      },
+      related: [
+        {
+          key: 'kitle',
+          title: 'Memede Kitle ve Fibroadenom',
+          text: 'Akıntıya kitle eşlik ediyor mu.',
+        },
+        {
+          key: 'meme-kanseri',
+          title: 'Meme Kanseri Nedir',
+          text: 'Kanlı akıntı nadiren kanser belirtisi olabilir.',
+        },
+        {
+          key: 'mastit',
+          title: 'Meme İltihabı ve Apse',
+          text: 'İltihaplı tabloda irinli akıntı görülebilir.',
+        },
+      ],
+      band: {
+        title: 'Kanlı akıntıyı bekletmeyin',
+        text: 'Tek memeden kendiliğinden gelen kanlı akıntı, sonucu çoğunlukla iyi huylu çıksa da araştırılması gereken bir bulgudur.',
+      },
+      indexBody:
+        'Hangi akıntı tehlikesizdir, hangisi araştırma gerektirir ve tedavi nasıl planlanır.',
+      indexWhen:
+        'Tek memeden, tek kanaldan, sıkmadan gelen kanlı ya da berrak akıntı varsa vakit kaybetmeden başvurun.',
+      sections: [
+        {
+          h2: 'Tehlikesiz akıntılar hangileridir',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Her iki memeden, çok sayıda kanaldan gelen, ancak sıkmakla ortaya çıkan beyaz, sarı veya yeşil akıntılar genellikle hormonal kaynaklıdır. Prolaktin yüksekliği ve tiroit bozuklukları bu tablonun sık nedenleridir ve kanserle ilişkisi nadirdir.',
             },
           ],
         },
         {
-          h2: 'Ne zaman gecikmemeli',
+          h2: 'Araştırılması gereken akıntı',
           blocks: [
             {
-              kind: 'ul',
+              kind: 'p',
+              text: 'Tek memeden, tek bir kanaldan, kendiliğinden — yani sıkmadan — gelen akıntı farklı değerlendirilir. Özellikle kanlı, berrak suya benzer ya da kahverengi akıntı mutlaka araştırılmalıdır.',
+            },
+            {
+              kind: 'p',
+              text: 'Bu tip akıntının en sık nedeni intraduktal papillomdur: meme kanalının içinde gelişen, siğil benzeri iyi huylu bir oluşum. Nadiren kanser de ilk belirtisini bu şekilde verebilir.',
+            },
+          ],
+        },
+        {
+          h2: 'Tanı ve tedavi',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Değerlendirmede muayenenin yanı sıra ultrason ve yaşa göre mamografi kullanılır; bazı hastalarda ek görüntüleme gerekebilir.',
+            },
+            {
+              kind: 'p',
+              text: 'Tedavi, akıntının geldiği kanalın küçük bir kesiyle çıkarılmasıdır. Bu işlem hem tanı hem de tedavi anlamına gelir: çıkarılan doku patolojiye gönderilir ve akıntı da sonlanır.',
+            },
+          ],
+        },
+      ] as Section[],
+    },
+
+    {
+      slug: 'meme-iltihabi-mastit',
+      key: 'mastit',
+      group: 'hastalik',
+      no: '09',
+      title: 'Meme iltihabı, apse ve mastit',
+      crumb: 'Meme iltihabı',
+      navTitle: 'Meme İltihabı — Mastit',
+      seoTitle: 'Antalya Meme İltihabı ve Meme Apsesi Tedavisi | Mastit',
+      meta: "Antalya'da emziren annelerde mastit, meme iltihabı ve meme apsesi belirtileri ve tedavisi. Meme apsesi nasıl boşaltılır? Prof. Dr. Burhan Mayir.",
+      lede: 'Mastit, meme dokusunun iltihaplanmasıdır. En sık emziren annelerde, sütün kanalda birikmesi ve meme başındaki çatlaklardan mikrop girmesiyle ortaya çıkar.',
+      img: '/img/blog-emzirme.jpg',
+      imgAlt: 'Görüşme odasının pencere tarafı',
+      quickFacts: [
+        { label: 'En sık kimde', value: 'Emziren annelerde' },
+        { label: 'Belirtileri', value: 'Kızarıklık, şiddetli ağrı, ateş' },
+        { label: 'En büyük yanlış', value: 'Emzirmeyi kesmek' },
+        { label: 'Erken tedavide', value: 'Çoğu hasta 48 saatte düzelir' },
+      ],
+      ctaBox: {
+        title: 'Emzirirken ateşiniz mi çıktı?',
+        text: 'Mastitte erken başvuru apseye dönüşmeyi engeller. Emzirmeyi kesmeden, aynı gün değerlendirilmeniz en doğrusu.',
+      },
+      related: [
+        {
+          key: 'granulomatoz',
+          title: 'Granülomatöz Mastit',
+          text: 'Geçmeyen, tekrarlayan iltihap tablosu.',
+        },
+        {
+          key: 'agri',
+          title: 'Meme Ağrısı',
+          text: 'İltihap dışı ağrı nedenleri.',
+        },
+        {
+          key: 'kitle',
+          title: 'Memede Kitle ve Fibroadenom',
+          text: 'İltihap geçtikten sonra kalan sertlik.',
+        },
+      ],
+      band: {
+        title: 'Emzirmeyi kesmeden çözelim',
+        text: 'Mastitte sütün boşalması tedavinin parçasıdır. Doğru emzirme desteğiyle birlikte ilaç tedavisi çoğu hastada hızla sonuç verir.',
+      },
+      indexBody:
+        'Emziren annelerde mastit ve apse, doğru tedavi sırası ve emzirmeyen kadınlarda tekrarlayan apseler.',
+      indexWhen:
+        'Memede kızarıklık, şiddetli ağrı ve ateş varsa; ya da iltihap tedaviye rağmen 48 saatte gerilemiyorsa başvurun.',
+      sections: [
+        {
+          h2: 'Emziren annelerde mastit ve apse',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Mastit, memede kızarıklık, şiddetli ağrı, ateş ve grip benzeri halsizlik yapar. Tablo genellikle hızlı başlar ve anneyi ciddi biçimde yorar.',
+            },
+            {
+              kind: 'p',
+              text: 'Geç kalınırsa meme içinde irin birikir ve meme apsesi gelişir. Bu noktada tek başına antibiyotik yetmez, apsenin boşaltılması gerekir.',
+            },
+          ],
+        },
+        {
+          h2: 'Mastit nasıl tedavi edilir',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'En büyük yanlış emzirmeyi kesmektir. Tam tersine, sütün boşalması gerekir; süt kanalda kaldıkça iltihap beslenir.',
+            },
+            {
+              kind: 'steps',
               items: [
-                { text: 'Yeni fark edilen, sert ve hareketsiz bir kitle' },
-                { text: 'Kanlı ya da tek kanaldan kendiliğinden gelen akıntı' },
-                { text: 'Meme derisinde çekilme, kalınlaşma veya portakal kabuğu görünümü' },
-                { text: 'Meme başında içe çekilme ya da geçmeyen kabuklanma' },
-                { text: 'Koltuk altında ele gelen sertlik' },
+                {
+                  k: 'Erken dönem',
+                  v: 'Antibiyotik, ağrı kesici, sıcak kompres ve doğru emzirme danışmanlığı ile hastaların büyük bölümü 48 saatte düzelir.',
+                },
+                {
+                  k: 'Apse geliştiyse',
+                  v: 'Artık büyük kesiler yerine ultrason eşliğinde iğneyle boşaltma ya da küçük bir kesiyle drenaj yapıyoruz.',
+                },
+                {
+                  k: 'Sonrasında',
+                  v: 'Apse boşaltıldıktan sonra da emzirmeye devam edilebilir; bu, iyileşmeyi hızlandırır.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          h2: 'Emzirmeyen kadınlarda iltihap',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Emzirmeyen kadınlarda da meme iltihabı görülebilir. Özellikle sigara içenlerde meme başı altındaki kanallarda tekrarlayan apseler ortaya çıkabilir.',
+            },
+            {
+              kind: 'p',
+              text: 'Bu tabloda tekrarları önlemek için iltihabın kaynağındaki kanal dokusunun ele alınması gerekebilir. Sigaranın bırakılması tedavinin ayrılmaz parçasıdır.',
+            },
+          ],
+        },
+      ] as Section[],
+    },
+
+    {
+      slug: 'granulomatoz-mastit',
+      key: 'granulomatoz',
+      group: 'hastalik',
+      no: '10',
+      title: 'Granülomatöz mastit',
+      crumb: 'Granülomatöz mastit',
+      navTitle: 'Granülomatöz Mastit',
+      seoTitle: 'Antalya Granülomatöz Mastit Nedir? Tedavisi ve Ameliyatı',
+      meta: 'Geçmeyen meme iltihabı granülomatöz mastit olabilir. Antalya granülomatöz mastit belirtileri, yanlış kanser teşhisi ve güncel tedavi yöntemleri.',
+      lede: 'Granülomatöz mastit, en çok kanserle karıştırılan meme hastalığıdır. Mikrobik değildir; vücudun kendi meme dokusuna karşı verdiği kronik bir iltihaptır.',
+      img: '/img/konu-iyi-huylu.jpg',
+      imgAlt: 'Muayene odasındaki lavabo ve boy-kilo ölçer',
+      quickFacts: [
+        { label: 'Kanser mi', value: 'Değil — ama görüntüde kanseri taklit eder' },
+        { label: 'Kimde görülür', value: 'Genellikle 30-40 yaş, doğum yapmış kadınlar' },
+        { label: 'Kesin tanı', value: 'Tru-cut biyopsi' },
+        { label: 'Tedavi süresi', value: '6 ay - 1 yıl, ama tamamen iyileşir' },
+      ],
+      ctaBox: {
+        title: 'Geçmeyen bir iltihabınız mı var?',
+        text: 'Aylardır düzelmeyen, tekrarlayan meme iltihabı granülomatöz mastit olabilir. Elinizdeki biyopsi ve görüntüleme sonuçlarını getirin.',
+      },
+      related: [
+        {
+          key: 'mastit',
+          title: 'Meme İltihabı ve Apse',
+          text: 'Mikrobik iltihaptan farkı nedir.',
+        },
+        {
+          key: 'kitle',
+          title: 'Memede Kitle ve Fibroadenom',
+          text: 'Sert kitle her zaman tümör anlamına gelmez.',
+        },
+        {
+          key: 'meme-kanseri',
+          title: 'Meme Kanseri Nedir',
+          text: 'Ayırıcı tanıda neden karışabiliyor.',
+        },
+      ],
+      band: {
+        title: 'Gereksiz ameliyattan kaçınmak mümkün',
+        text: 'Bu hastalıkta geniş cerrahi çoğu zaman tabloyu kötüleştirir. Doğru tanı ve sabırlı bir tedavi planı, ameliyatsız iyileşmeyi mümkün kılıyor.',
+      },
+      indexBody:
+        'Kanserle neden karıştığı, kesin tanının nasıl konduğu ve güncel tedavi yaklaşımı.',
+      indexWhen:
+        'Tekrarlayan meme iltihabınız, akıntı yapan delikler ya da antibiyotiğe rağmen geçmeyen sert bir kitleniz varsa başvurun.',
+      sections: [
+        {
+          h2: 'Kanserle karışır mı',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Granülomatöz mastit kanser değildir. Ancak hem muayenede hem ultrasonda hem de mamografide kanseri çok yakından taklit eder. Bu yüzden hastalar aylarca yanlış tanı alabiliyor.',
+            },
+            {
+              kind: 'p',
+              text: 'Genellikle 30-40 yaşlarında, doğum yapmış ve emzirmiş kadınlarda görülür. Memede kızarıklık, sert kitle, apseleşme, akıntı yapan delikler ve bir türlü iyileşmeyen bir iltihap tablosu vardır. Sık sık tekrarlar.',
+            },
+          ],
+        },
+        {
+          h2: 'Tanısı ve tedavisi',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Kesin tanı yalnızca tru-cut biyopsi ile konur. Tedavi ise sabır ister. Eskiden hemen ameliyat önerilirdi; bugün biliyoruz ki gereksiz ve geniş ameliyatlar hastalığı daha da kötüleştiriyor.',
+            },
+            {
+              kind: 'steps',
+              items: [
+                {
+                  k: 'İlaç tedavisi',
+                  v: 'Kortizon ve bağışıklık düzenleyici ilaçlar tedavinin temelini oluşturur.',
+                },
+                {
+                  k: 'Gerekirse drenaj',
+                  v: 'Apse geliştiyse ultrason eşliğinde boşaltılır.',
+                },
+                {
+                  k: 'Dirençli vakalarda',
+                  v: 'Çok dirençli hastalarda sınırlı cerrahi gündeme gelir; geniş ameliyattan kaçınılır.',
+                },
               ],
             },
             {
               kind: 'p',
-              text: 'Bu bulgular kanser olduğunuz anlamına gelmez; ancak beklenmemesi gereken bulgulardır. Bir haftalık bir randevu, aylarca sürecek bir tedirginliğin yerini alır.',
+              text: 'Bu hastalıkta deneyimli bir hekimin takibi önemlidir. Tedavi 6 ay ile 1 yıl arasında sürebilir, ancak tamamen iyileşir.',
             },
           ],
         },

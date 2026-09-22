@@ -11,6 +11,8 @@ export const EN: Dict = {
 
   doctorName: 'Prof. Burhan Mayir, MD',
   brandName: 'Burhan Mayir',
+  /** Marka bloğunun üst satırı — unvan. */
+  brandPre: 'Prof.',
   cityLabel: 'Antalya',
   districtLabel: 'Muratpaşa',
 
@@ -24,7 +26,8 @@ export const EN: Dict = {
     kicker: 'Breast Health',
     home: 'Home',
     about: 'About',
-    topics: 'Conditions',
+    cancer: 'Breast Cancer',
+    conditions: 'Breast Conditions',
     blog: 'Blog',
     contact: 'Contact',
     cta: 'Appointment',
@@ -43,13 +46,6 @@ export const EN: Dict = {
     contact: 'Contact and appointments',
     directions: 'Directions',
     note: 'The content on this site is for general information and does not replace an examination by a physician. If you have symptoms, please book an appointment.',
-    topicLinks: [
-      'Breast cancer',
-      'Breast cancer surgery',
-      'Oncoplastic surgery',
-      'Breast reconstruction',
-      'Benign breast conditions',
-    ],
   },
 
   band: {
@@ -79,6 +75,7 @@ export const EN: Dict = {
       'Breast reconstruction',
       'Benign breast conditions',
       'Second opinion',
+      'Other',
     ],
   },
 
@@ -106,19 +103,17 @@ export const EN: Dict = {
       'Prof. Burhan Mayir, MD: breast cancer surgery, oncoplastic and breast-conserving surgery, breast reconstruction and benign breast conditions. Antalya, Muratpaşa.',
     kicker: 'Antalya · Breast Conditions',
     h1: {
-      pre: 'Breast health calls for ',
-      em1: 'clarity',
-      mid: ', not ',
-      em2: 'haste',
+      pre: 'Beside you at ',
+      em1: 'every step',
+      mid: ' of treatment, with a plan ',
+      em2: 'made for you',
       post: '.',
     },
-    lede: 'Prof. Burhan Mayir treats breast cancer, performs breast-conserving and oncoplastic surgery, and manages benign breast conditions. Every step is explained before it is taken.',
+    lede: 'We bring current treatment for breast cancer surgery, breast-conserving and oncoplastic surgery and benign breast conditions together with a plan shaped around each patient. What happens next is explained before it is done.',
     heroAlt: 'Prof. Burhan Mayir, MD at his practice in Antalya',
     topicsButton: 'Conditions',
 
     topicsTitle: 'What we treat',
-    topicsIntro:
-      'Tap a heading to see what the condition is and what it means for you. Reading before your visit helps you ask more during it.',
 
     aboutKicker: 'About',
     aboutAlt: 'Prof. Burhan Mayir, MD at the desk in his practice',
@@ -149,7 +144,7 @@ export const EN: Dict = {
       'The training, hospital appointments, academic work and consulting principles of Prof. Burhan Mayir, MD.',
     kicker: 'About',
     portraitAlt: 'Prof. Burhan Mayir, MD at the desk in his practice',
-    lede: 'I am a general surgeon. Breast conditions, breast cancer surgery and breast-conserving surgery are among my main areas of interest. I see patients at my private practice in Antalya.',
+    lede: 'I am a general surgeon. For more than twenty-five years I have operated across the breadth of general surgery and pursued academic work in the same field. I see patients at my private practice in Antalya.',
     body: 'The way I work with patients rests on a single principle: the decision is made together. That requires explaining the options, their alternatives and the expected outcomes in plain language. A patient who knows what lies ahead starts treatment on stronger ground.',
     fieldsHead: 'Areas of interest',
     fields:
@@ -297,10 +292,12 @@ export const EN: Dict = {
     {
       slug: 'breast-cancer',
       key: 'meme-kanseri',
+      group: 'kanser',
       no: '01',
+      seoTitle: 'Breast Cancer in Antalya: Symptoms, Diagnosis and Treatment',
       title: 'Breast cancer',
       crumb: 'Breast cancer',
-      navTitle: 'Breast Cancer',
+      navTitle: 'What Breast Cancer Is',
       meta: 'Which signs to watch for, how the diagnosis is made, what the stage means and when screening starts. Prof. Burhan Mayir, MD, Antalya.',
       lede: 'Breast cancer is the most common cancer in women. It is also one of the cancers with the highest treatment success when caught early. This page explains, in plain language, the terms you will meet during diagnosis.',
       img: '/img/konu-meme-kanseri.jpg',
@@ -327,9 +324,9 @@ export const EN: Dict = {
           text: 'Preserving the shape of the breast while removing the cancer.',
         },
         {
-          key: 'iyi-huylu',
-          title: 'Benign Breast Conditions',
-          text: 'Fibroadenoma, cysts, breast pain and discharge.',
+          key: 'kitle',
+          title: 'Breast Lumps and Fibroadenoma',
+          text: 'Most palpable lumps turn out to be benign.',
         },
       ],
       band: {
@@ -430,7 +427,9 @@ export const EN: Dict = {
     {
       slug: 'breast-cancer-surgery',
       key: 'cerrahi',
+      group: 'kanser',
       no: '02',
+      seoTitle: 'Breast Cancer Surgery and Oncoplastic Surgery in Antalya',
       title: 'Breast cancer surgery',
       crumb: 'Breast cancer surgery',
       navTitle: 'Breast Cancer Surgery',
@@ -567,11 +566,13 @@ export const EN: Dict = {
     {
       slug: 'oncoplastic-surgery',
       key: 'onkoplastik',
+      group: 'kanser',
       no: '03',
+      seoTitle: 'Oncoplastic and Breast-Conserving Surgery in Antalya',
       title: 'Oncoplastic and breast-conserving surgery',
       crumb: 'Oncoplastic and breast-conserving surgery',
       navTitle: 'Oncoplastic and Breast-Conserving Surgery',
-      meta: 'Oncoplastic surgery removes the cancer with clear margins while preserving the shape of the breast: who it suits and what to expect afterwards. Prof. Burhan Mayir, MD.',
+      meta: 'Oncoplastic surgery removes the cancer with clear margins while preserving the shape of the breast: who it suits and what to expect afterwards.',
       lede: 'Removing the cancer completely and preserving the appearance of the breast are not alternatives to one another. Oncoplastic surgery combines the two in a single operation.',
       img: '/img/konu-onkoplastik.jpg',
       imgAlt: 'Consulting room: desk and seating area with a slatted wood wall',
@@ -674,7 +675,9 @@ export const EN: Dict = {
     {
       slug: 'breast-reconstruction',
       key: 'rekonstruksiyon',
+      group: 'kanser',
       no: '04',
+      seoTitle: 'Breast Reconstruction and Repair in Antalya | Prof. Burhan Mayir, MD',
       title: 'Breast reconstruction',
       crumb: 'Breast reconstruction',
       navTitle: 'Breast Reconstruction',
@@ -704,9 +707,9 @@ export const EN: Dict = {
           text: 'Surgical options and assessment of the armpit.',
         },
         {
-          key: 'iyi-huylu',
-          title: 'Benign Breast Conditions',
-          text: 'Fibroadenoma, cysts, breast pain and discharge.',
+          key: 'kitle',
+          title: 'Breast Lumps and Fibroadenoma',
+          text: 'Most palpable lumps turn out to be benign.',
         },
       ],
       band: {
@@ -792,115 +795,599 @@ export const EN: Dict = {
     },
 
     {
-      slug: 'benign-breast-conditions',
-      key: 'iyi-huylu',
+      slug: 'breast-pain',
+      key: 'agri',
+      group: 'hastalik',
       no: '05',
-      title: 'Benign breast conditions',
-      crumb: 'Benign breast conditions',
-      navTitle: 'Benign Breast Conditions',
-      meta: 'Fibroadenoma, breast cysts, breast pain and nipple discharge: which need follow-up and which need a procedure. Prof. Burhan Mayir, MD, Antalya.',
-      lede: 'Most breast complaints are not cancer. Even so, it is examination and imaging that decide which ones need follow-up and which need a procedure.',
-      img: '/img/konu-iyi-huylu.jpg',
-      imgAlt: 'Sink and height-and-weight scale in the examination room',
+      title: 'Breast pain',
+      crumb: 'Breast pain',
+      navTitle: 'Breast Pain — Mastalgia',
+      seoTitle: 'Breast Pain in Antalya: Why It Happens and How It Is Treated',
+      meta: 'Causes of breast pain in Antalya, pain before your period and how it is treated. Is constant breast pain a sign of cancer? Prof. Burhan Mayir, MD answers.',
+      lede: 'The first question from patients who come in with breast pain is almost always the same: "Could this be cancer?" Let us be clear: more than 90% of breast pain has nothing to do with cancer, and breast cancer itself usually causes no pain at all.',
+      img: '/img/blog-tedaviler.jpg',
+      imgAlt: 'The seating area of the consulting room',
       quickFacts: [
-        { label: 'Most common lump', value: 'Fibroadenoma' },
-        { label: 'First imaging', value: 'Ultrasound at a young age' },
-        { label: 'Simple cyst', value: 'Usually needs no treatment' },
-        { label: 'Bloody discharge', value: 'Always investigated' },
+        { label: 'Link to cancer', value: 'More than 90% is unrelated' },
+        { label: 'Most common cause', value: 'Hormonal pain before a period' },
+        { label: 'First step', value: 'Examination, ultrasound if needed' },
+        { label: 'For most patients', value: 'No surgery is required' },
       ],
       ctaBox: {
-        title: 'If you have noticed something',
-        text: 'The examination and ultrasound are usually completed on the same day. Have it checked rather than waiting.',
+        title: 'Is the pain not settling?',
+        text: 'A single examination is usually enough to find the cause. Seeing that it is not cancer often eases the pain itself.',
       },
       related: [
         {
+          key: 'kist',
+          title: 'Breast Cysts',
+          text: 'A tense cyst can cause sudden, severe pain.',
+        },
+        {
+          key: 'kitle',
+          title: 'Breast Lumps and Fibroadenoma',
+          text: 'If a lump comes with the pain, the assessment changes.',
+        },
+        {
           key: 'meme-kanseri',
-          title: 'Breast Cancer',
-          text: 'Signs, diagnostic methods and staging.',
-        },
-        {
-          key: 'cerrahi',
-          title: 'Breast Cancer Surgery',
-          text: 'Surgical options and assessment of the armpit.',
-        },
-        {
-          key: 'blog',
-          title: 'Articles',
-          text: 'Screening, self-examination and frequently asked questions.',
+          title: 'What Breast Cancer Is',
+          text: 'Which findings mean you should not wait.',
         },
       ],
       band: {
-        title: 'There is no need to stay in doubt',
-        text: 'With an examination and an ultrasound, most complaints become clear in the same visit. Leave your appointment request and we will call you.',
+        title: 'Let us find the cause together',
+        text: 'We will go through when it started, how it relates to your cycle and where you feel it. For most patients the picture becomes clear at the first visit.',
       },
       indexBody:
-        'Fibroadenoma, cysts, breast pain and discharge. Most of these complaints are not cancer; even so, all of them should be assessed.',
+        'The causes of breast pain, which kinds are hormonal, which need investigation, and the treatment options.',
       indexWhen:
-        'If you have breast pain unrelated to your cycle, a growing cyst or recurrent discharge, you need to be checked.',
+        'Come in if the pain is in one spot and constant, if it keeps increasing, or if a lump, discharge or a skin change comes with it.',
       sections: [
         {
-          h2: 'The most common presentations',
+          h2: 'Why breast pain happens',
           blocks: [
+            {
+              kind: 'steps',
+              items: [
+                {
+                  k: 'Hormonal (cyclical) pain',
+                  v: 'The most common cause. It starts three to five days before a period, brings tightness, fullness and tenderness in both breasts, and passes with the period.',
+                },
+                {
+                  k: 'Fibrocystic breast tissue',
+                  v: 'Women whose breasts contain many small cysts and firm areas tend to have pain more often.',
+                },
+                {
+                  k: 'Musculoskeletal pain',
+                  v: 'Large breast tissue loading the neck and back muscles, and a poorly fitted bra, both cause pain.',
+                },
+                {
+                  k: 'Cysts and inflammation',
+                  v: 'A tense cyst filling with fluid can become painful suddenly and severely.',
+                },
+                {
+                  k: 'Stress, caffeine and diet',
+                  v: 'Excess coffee, tea and chocolate, along with stress, can trigger the pain.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          h2: 'When to see a doctor',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Pain that comes and goes with your period and is felt in both breasts is not urgent. In the situations below, however, do not put off being examined.',
+            },
+            {
+              kind: 'ul',
+              items: [
+                { text: 'The pain is in one spot and constant' },
+                { text: 'It keeps increasing or wakes you at night' },
+                { text: 'A palpable lump comes with it' },
+                { text: 'There is discharge from the nipple' },
+                { text: 'The skin is red, dimpled or thickened' },
+              ],
+            },
+          ],
+        },
+        {
+          h2: 'How it is treated',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Treatment follows the cause. Once cancer has been ruled out, the pain eases on its own in a good number of patients; in practice we often see that worry makes the pain larger than it is.',
+            },
+            {
+              kind: 'p',
+              text: 'A properly supportive bra, cutting back on caffeine and salt, and where needed medication at the level of a painkiller are enough for most patients. Hormonal treatment is rarely necessary.',
+            },
+          ],
+        },
+      ] as Section[],
+    },
+
+    {
+      slug: 'breast-lump-fibroadenoma',
+      key: 'kitle',
+      group: 'hastalik',
+      no: '06',
+      title: 'Breast lumps and fibroadenoma',
+      crumb: 'Breast lumps',
+      navTitle: 'Breast Lump — Fibroadenoma',
+      seoTitle: 'Breast Lumps and Fibroadenoma in Antalya | Benign Breast Lumps',
+      meta: 'Why does a lump appear in the breast? What is a fibroadenoma and is it dangerous? Follow-up and surgery for benign breast lumps in Antalya.',
+      lede: 'Feeling a lump in your breast is frightening. But know this from the start: in women under 30, 90% of palpable lumps are benign. Even so, every new lump should be examined.',
+      img: '/img/blog-fibroadenom.jpg',
+      imgAlt: 'Dressing room: examination couch and examination lamp',
+      quickFacts: [
+        { label: 'Under the age of 30', value: '90% of lumps are benign' },
+        { label: 'Most common benign tumour', value: 'Fibroadenoma' },
+        { label: 'Typical age', value: 'Between 15 and 35' },
+        { label: 'Definite diagnosis', value: 'Ultrasound and, if needed, biopsy' },
+      ],
+      ctaBox: {
+        title: 'Do you have an ultrasound report?',
+        text: 'Bring any earlier ultrasound or mammogram with you. Comparing them is the most reliable way to tell whether the lump has grown.',
+      },
+      related: [
+        {
+          key: 'kist',
+          title: 'Breast Cysts',
+          text: 'Not every palpable lump is solid; cysts are filled with fluid.',
+        },
+        {
+          key: 'agri',
+          title: 'Breast Pain',
+          text: 'What it means when pain comes with a lump.',
+        },
+        {
+          key: 'meme-kanseri',
+          title: 'What Breast Cancer Is',
+          text: 'Which features of a lump call for investigation.',
+        },
+      ],
+      band: {
+        title: 'Do not sit on a lump — have it checked',
+        text: 'An examination and an ultrasound usually give an answer the same day. You should not have to spend weeks worrying to learn that it is benign.',
+      },
+      indexBody:
+        'What a fibroadenoma is, which lumps are followed, which are removed, and how the diagnosis is made.',
+      indexWhen:
+        'Come in if you have noticed a new lump that is firm and does not move easily, or if a lump you have known about has grown.',
+      sections: [
+        {
+          h2: 'What a fibroadenoma is',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'The fibroadenoma is the most common benign tumour of the breast. It usually appears in younger women between the ages of 15 and 35.',
+            },
+            {
+              kind: 'p',
+              text: 'Typically it is one to three centimetres across, rubbery, round and mobile — it slips easily between the fingers. It responds to hormones and can grow during pregnancy.',
+            },
+          ],
+        },
+        {
+          h2: 'Does every lump have to be removed',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'No. When ultrasound and, where needed, a biopsy have confirmed a fibroadenoma that is small and not growing, a yearly ultrasound is enough.',
+            },
+            {
+              kind: 'p',
+              text: 'The situations in which we recommend removal are limited:',
+            },
+            {
+              kind: 'ul',
+              items: [
+                { text: 'It is growing quickly' },
+                { text: 'Its size is uncomfortable for the patient' },
+                { text: 'The biopsy shows a suspicious finding (possible phyllodes tumour)' },
+                { text: 'Follow-up does not settle the patient’s anxiety' },
+              ],
+            },
+          ],
+        },
+        {
+          h2: 'How the diagnosis is made',
+          blocks: [
+            {
+              kind: 'steps',
+              items: [
+                {
+                  k: 'Examination',
+                  v: 'The consistency, mobility and borders of the lump are assessed by hand.',
+                },
+                {
+                  k: 'Ultrasound',
+                  v: 'The first choice at a younger age; it separates a solid lump from a cystic one.',
+                },
+                {
+                  k: 'Biopsy if needed',
+                  v: 'Where the appearance is suspicious, a small sample taken with a needle gives the definite diagnosis.',
+                },
+              ],
+            },
+          ],
+        },
+      ] as Section[],
+    },
+
+    {
+      slug: 'breast-cysts',
+      key: 'kist',
+      group: 'hastalik',
+      no: '07',
+      title: 'Breast cysts',
+      crumb: 'Breast cysts',
+      navTitle: 'Breast Cysts',
+      seoTitle: 'Are Breast Cysts Dangerous? Treatment and Follow-up in Antalya',
+      meta: 'Why do cysts form in the breast? Symptoms of breast cysts in Antalya, the difference between simple and complex cysts, and treatment. Prof. Burhan Mayir, MD.',
+      lede: 'Breast cysts are sacs filled with fluid, and about half of all women have them at some point in life. They are especially common between the ages of 30 and 50.',
+      img: '/img/blog-kitle.jpg',
+      imgAlt: 'Dressing room and examination couch',
+      quickFacts: [
+        { label: 'How common', value: 'In about half of all women' },
+        { label: 'Most common age', value: 'Between 30 and 50' },
+        { label: 'What tells them apart', value: 'Breast ultrasound' },
+        { label: 'A simple cyst', value: 'Does not turn into cancer' },
+      ],
+      ctaBox: {
+        title: 'Is your cyst painful?',
+        text: 'A tense cyst can be the source of the pain. Draining it with a needle, where needed, both relieves it and allows the fluid to be examined.',
+      },
+      related: [
+        {
+          key: 'kitle',
+          title: 'Breast Lumps and Fibroadenoma',
+          text: 'Solid lumps are assessed differently from cysts.',
+        },
+        {
+          key: 'agri',
+          title: 'Breast Pain',
+          text: 'Pain is more common with fibrocystic tissue.',
+        },
+        {
+          key: 'akinti',
+          title: 'Nipple Discharge',
+          text: 'Discharge alongside a cyst calls for separate assessment.',
+        },
+      ],
+      band: {
+        title: 'A cyst, or something else?',
+        text: 'This distinction is not made by hand but by ultrasound. A single scan usually closes the question entirely.',
+      },
+      indexBody:
+        'The difference between simple and complex cysts, what fibrocystic breast tissue means, and how follow-up is arranged.',
+      indexWhen:
+        'Come in for a swelling that appears suddenly and is tense and painful, or for a finding reported on ultrasound as a complex cyst.',
+      sections: [
+        {
+          h2: 'A simple cyst or a complex one',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'This distinction matters a great deal, and it is made by breast ultrasound alone. Examination by hand cannot separate a simple cyst from a complex one.',
+            },
             {
               kind: 'cards',
               items: [
                 {
-                  k: 'Fibroadenoma',
-                  v: 'The most common benign lump in young women. It is mobile under the fingers, well defined and painless. Small ones with a typical appearance can be followed with periodic ultrasound; fibroadenomas that grow, cause discomfort or look suspicious on imaging are removed.',
+                  k: 'Simple cyst',
+                  v: 'Filled entirely with fluid and thin-walled. Entirely benign: it does not turn into cancer and does not raise the risk of cancer. It usually needs no treatment; if it is very large and painful it can be drained with a syringe.',
                 },
                 {
-                  k: 'Breast cyst',
-                  v: 'Fluid-filled sacs, common especially around the menopause. Simple cysts need no treatment. Large cysts causing tension and pain can be drained with a needle. Cysts with a solid component are assessed separately.',
-                },
-                {
-                  k: 'Breast pain',
-                  v: 'Diffuse pain felt on both sides that increases before menstruation is mostly hormonal and not a sign of serious disease. Pain fixed at a single point, unrelated to the cycle and steadily increasing, does need assessment.',
-                },
-                {
-                  k: 'Nipple discharge',
-                  v: 'Clear or milky discharge from both sides, from several ducts and only on squeezing, is usually unimportant. One-sided discharge from a single duct that appears on its own, and any bloody discharge, is investigated in detail.',
-                },
-                {
-                  k: 'Breast infection and abscess',
-                  v: 'Most often seen while breastfeeding, with pain, redness and fever. Antibiotic treatment is usually enough. If an abscess has formed it must be drained. Recurrent infections outside breastfeeding must always be investigated.',
+                  k: 'Complex cyst',
+                  v: 'A cyst containing a solid area or with a thickened wall. It calls for close follow-up and, in some cases, a biopsy.',
                 },
               ],
             },
           ],
         },
         {
-          h2: 'Do these complaints increase cancer risk',
+          h2: 'What fibrocystic breast tissue is',
           blocks: [
             {
               kind: 'p',
-              text: 'Most do not. Fibroadenoma, simple cysts and hormonal breast pain are not linked to a future risk of cancer. Only in a limited group, in whom certain cellular changes are found in the pathology report, does the risk rise somewhat; a follow-up programme is planned separately for those patients.',
+              text: 'If you have many cysts, this is called fibrocystic breast tissue. It is not a disease but the make-up of the breast, and it does not raise the risk of cancer.',
             },
             {
               kind: 'p',
-              text: 'A benign diagnosis does not mean you can drop your screening programme. Mammography and examinations continue on the schedule appropriate for your age.',
+              text: 'It does, however, make examination and the reading of a mammogram harder, which is why regular ultrasound follow-up matters. We set the schedule together.',
             },
           ],
         },
+      ] as Section[],
+    },
+
+    {
+      slug: 'nipple-discharge',
+      key: 'akinti',
+      group: 'hastalik',
+      no: '08',
+      title: 'Nipple discharge',
+      crumb: 'Nipple discharge',
+      navTitle: 'Nipple Discharge',
+      seoTitle: 'Nipple Discharge in Antalya: Causes and Treatment of Bloody Discharge',
+      meta: 'Is discharge from the breast dangerous? Causes of nipple discharge in Antalya, bloody discharge and treatment options. Prof. Burhan Mayir, MD.',
+      lede: 'Nipple discharge is one of the complaints that worries women most. What decides the assessment is not how much there is, but what kind it is.',
+      img: '/img/blog-patoloji.jpg',
+      imgAlt: 'A general view of the consulting room',
+      quickFacts: [
+        { label: 'What decides', value: 'Its colour and whether one duct is involved' },
+        { label: 'Harmless type', value: 'From both breasts, only on squeezing' },
+        { label: 'Needs investigation', value: 'One-sided, spontaneous, bloody' },
+        { label: 'Most common cause', value: 'Intraductal papilloma' },
+      ],
+      ctaBox: {
+        title: 'Note the colour of the discharge',
+        text: 'Its colour, whether it comes from one breast only and whether it appears on its own largely determine the diagnosis. Bring that information with you.',
+      },
+      related: [
         {
-          h2: 'When not to delay',
-          blocks: [
-            {
-              kind: 'ul',
-              items: [
-                { text: 'A newly noticed lump that is firm and does not move' },
-                { text: 'Bloody discharge, or discharge appearing on its own from a single duct' },
-                { text: 'Dimpling, thickening or orange-peel texture of the breast skin' },
-                { text: 'Inward pulling of the nipple or persistent crusting' },
-                { text: 'A firm area felt in the armpit' },
-              ],
-            },
-            {
-              kind: 'p',
-              text: 'These findings do not mean you have cancer, but they are findings that should not be left to wait. A week-long wait for an appointment takes the place of months of worry.',
-            },
-          ],
+          key: 'kitle',
+          title: 'Breast Lumps and Fibroadenoma',
+          text: 'Whether a lump comes with the discharge.',
+        },
+        {
+          key: 'meme-kanseri',
+          title: 'What Breast Cancer Is',
+          text: 'Bloody discharge can rarely be a sign of cancer.',
+        },
+        {
+          key: 'mastit',
+          title: 'Breast Infection and Abscess',
+          text: 'Purulent discharge can appear with inflammation.',
         },
       ],
+      band: {
+        title: 'Do not wait on bloody discharge',
+        text: 'Spontaneous bloody discharge from one breast usually turns out to be benign, but it is a finding that has to be investigated.',
+      },
+      indexBody:
+        'Which discharge is harmless, which needs investigation, and how treatment is planned.',
+      indexWhen:
+        'Come in without delay for bloody or clear discharge that comes from one breast, from a single duct, without squeezing.',
+      sections: [
+        {
+          h2: 'Which kinds are harmless',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'White, yellow or green discharge that comes from both breasts, from many ducts, and only on squeezing is usually hormonal in origin. A raised prolactin level and thyroid disorders are common causes of this picture, and its link to cancer is rare.',
+            },
+          ],
+        },
+        {
+          h2: 'The discharge that needs investigation',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Discharge from one breast, from a single duct, appearing on its own — that is, without squeezing — is assessed differently. Bloody, clear watery or brown discharge in particular must be investigated.',
+            },
+            {
+              kind: 'p',
+              text: 'The most common cause of this kind of discharge is an intraductal papilloma: a benign, wart-like growth inside a milk duct. Rarely, cancer can also announce itself this way.',
+            },
+          ],
+        },
+        {
+          h2: 'Diagnosis and treatment',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Alongside examination, ultrasound and — depending on age — mammography are used; some patients need further imaging.',
+            },
+            {
+              kind: 'p',
+              text: 'Treatment is the removal of the duct the discharge comes from, through a small incision. This is both diagnosis and treatment: the tissue removed goes to pathology, and the discharge stops.',
+            },
+          ],
+        },
+      ] as Section[],
+    },
+
+    {
+      slug: 'mastitis-breast-abscess',
+      key: 'mastit',
+      group: 'hastalik',
+      no: '09',
+      title: 'Breast infection, abscess and mastitis',
+      crumb: 'Breast infection',
+      navTitle: 'Breast Infection — Mastitis',
+      seoTitle: 'Breast Infection and Abscess Treatment in Antalya | Mastitis',
+      meta: 'Mastitis, breast infection and breast abscess in breastfeeding mothers in Antalya: symptoms and treatment. How is an abscess drained? Prof. Burhan Mayir, MD.',
+      lede: 'Mastitis is inflammation of the breast tissue. It arises most often in breastfeeding mothers, when milk builds up in a duct and bacteria enter through cracks in the nipple.',
+      img: '/img/blog-emzirme.jpg',
+      imgAlt: 'The window side of the consulting room',
+      quickFacts: [
+        { label: 'Who it affects most', value: 'Breastfeeding mothers' },
+        { label: 'Symptoms', value: 'Redness, severe pain, fever' },
+        { label: 'The biggest mistake', value: 'Stopping breastfeeding' },
+        { label: 'Treated early', value: 'Most patients settle within 48 hours' },
+      ],
+      ctaBox: {
+        title: 'Fever while breastfeeding?',
+        text: 'Coming in early with mastitis keeps it from turning into an abscess. Be seen the same day — and without stopping breastfeeding.',
+      },
+      related: [
+        {
+          key: 'granulomatoz',
+          title: 'Granulomatous Mastitis',
+          text: 'Inflammation that will not settle and keeps returning.',
+        },
+        {
+          key: 'agri',
+          title: 'Breast Pain',
+          text: 'Causes of pain other than infection.',
+        },
+        {
+          key: 'kitle',
+          title: 'Breast Lumps and Fibroadenoma',
+          text: 'The firmness that can remain once inflammation passes.',
+        },
+      ],
+      band: {
+        title: 'We can treat it without stopping breastfeeding',
+        text: 'In mastitis, emptying the milk is part of the treatment. Together with the right feeding support, medication settles it quickly in most patients.',
+      },
+      indexBody:
+        'Mastitis and abscess in breastfeeding mothers, the right order of treatment, and recurring abscesses in women who are not breastfeeding.',
+      indexWhen:
+        'Come in if there is redness, severe pain and fever in the breast, or if inflammation is not settling within 48 hours despite treatment.',
+      sections: [
+        {
+          h2: 'Mastitis and abscess while breastfeeding',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Mastitis causes redness, severe pain, fever and a flu-like weariness in the breast. It usually starts quickly and leaves the mother seriously worn down.',
+            },
+            {
+              kind: 'p',
+              text: 'If it is left too long, pus collects inside the breast and an abscess develops. At that point antibiotics alone are not enough: the abscess has to be drained.',
+            },
+          ],
+        },
+        {
+          h2: 'How mastitis is treated',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'The biggest mistake is stopping breastfeeding. The opposite is needed: the milk has to be emptied, because inflammation feeds on milk left in the duct.',
+            },
+            {
+              kind: 'steps',
+              items: [
+                {
+                  k: 'Early stage',
+                  v: 'With antibiotics, painkillers, warm compresses and the right breastfeeding advice, most patients settle within 48 hours.',
+                },
+                {
+                  k: 'If an abscess has formed',
+                  v: 'Instead of large incisions we now drain it with a needle under ultrasound guidance, or through a small incision.',
+                },
+                {
+                  k: 'Afterwards',
+                  v: 'Breastfeeding can continue once the abscess has been drained; it speeds up recovery.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          h2: 'Infection in women who are not breastfeeding',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Breast infection also occurs in women who are not breastfeeding. In smokers in particular, recurring abscesses can appear in the ducts beneath the nipple.',
+            },
+            {
+              kind: 'p',
+              text: 'In this picture, preventing recurrence may mean dealing with the duct tissue at the source of the inflammation. Giving up smoking is an inseparable part of the treatment.',
+            },
+          ],
+        },
+      ] as Section[],
+    },
+
+    {
+      slug: 'granulomatous-mastitis',
+      key: 'granulomatoz',
+      group: 'hastalik',
+      no: '10',
+      title: 'Granulomatous mastitis',
+      crumb: 'Granulomatous mastitis',
+      navTitle: 'Granulomatous Mastitis',
+      seoTitle: 'What Is Granulomatous Mastitis? Treatment and Surgery in Antalya',
+      meta: 'Breast inflammation that will not settle may be granulomatous mastitis. Symptoms, mistaken cancer diagnoses and current treatment in Antalya.',
+      lede: 'Granulomatous mastitis is the breast condition most often mistaken for cancer. It is not an infection: it is a chronic inflammation the body directs at its own breast tissue.',
+      img: '/img/konu-iyi-huylu.jpg',
+      imgAlt: 'The washbasin and height-and-weight scale in the examination room',
+      quickFacts: [
+        { label: 'Is it cancer', value: 'No — but it imitates cancer on imaging' },
+        { label: 'Who it affects', value: 'Usually women aged 30 to 40 who have given birth' },
+        { label: 'Definite diagnosis', value: 'Tru-cut biopsy' },
+        { label: 'Length of treatment', value: '6 months to a year, but it resolves fully' },
+      ],
+      ctaBox: {
+        title: 'Inflammation that will not settle?',
+        text: 'Breast inflammation that has not cleared for months and keeps returning may be granulomatous mastitis. Bring any biopsy and imaging results you have.',
+      },
+      related: [
+        {
+          key: 'mastit',
+          title: 'Breast Infection and Abscess',
+          text: 'How it differs from bacterial inflammation.',
+        },
+        {
+          key: 'kitle',
+          title: 'Breast Lumps and Fibroadenoma',
+          text: 'A firm lump does not always mean a tumour.',
+        },
+        {
+          key: 'meme-kanseri',
+          title: 'What Breast Cancer Is',
+          text: 'Why the two can be confused in the differential.',
+        },
+      ],
+      band: {
+        title: 'Unnecessary surgery can be avoided',
+        text: 'In this condition wide surgery usually makes the picture worse. The right diagnosis and a patient treatment plan make recovery without an operation possible.',
+      },
+      indexBody:
+        'Why it is confused with cancer, how the definite diagnosis is made, and the current approach to treatment.',
+      indexWhen:
+        'Come in if you have recurring breast inflammation, openings that discharge, or a firm lump that will not settle despite antibiotics.',
+      sections: [
+        {
+          h2: 'Can it be confused with cancer',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Granulomatous mastitis is not cancer. But it imitates cancer closely on examination, on ultrasound and on mammography alike. That is why patients can spend months with the wrong diagnosis.',
+            },
+            {
+              kind: 'p',
+              text: 'It is usually seen in women in their thirties who have given birth and breastfed. There is redness, a firm lump, abscess formation, openings that discharge and inflammation that simply will not heal. It recurs often.',
+            },
+          ],
+        },
+        {
+          h2: 'Diagnosis and treatment',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'The definite diagnosis is made by tru-cut biopsy alone. Treatment calls for patience. Surgery used to be recommended straight away; today we know that unnecessary, wide operations make the condition worse.',
+            },
+            {
+              kind: 'steps',
+              items: [
+                {
+                  k: 'Medication',
+                  v: 'Corticosteroids and immune-modulating drugs form the basis of treatment.',
+                },
+                {
+                  k: 'Drainage if needed',
+                  v: 'Where an abscess has formed, it is drained under ultrasound guidance.',
+                },
+                {
+                  k: 'In resistant cases',
+                  v: 'In patients who do not respond, limited surgery comes onto the agenda; wide operations are avoided.',
+                },
+              ],
+            },
+            {
+              kind: 'p',
+              text: 'Follow-up by an experienced surgeon matters in this condition. Treatment can take between six months and a year, but it resolves completely.',
+            },
+          ],
+        },
+      ] as Section[],
     },
   ],
 };

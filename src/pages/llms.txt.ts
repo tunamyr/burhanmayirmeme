@@ -41,9 +41,14 @@ function section(lang: Locale, abs: (path: string) => string): string[] {
   ];
 }
 
+/** Sayfalar dizin olarak yayınlanıyor (/meme-agrisi/index.html); canonical de
+ *  sonu eğik çizgili. Sitemap ile llms.txt aynı biçimi kullanmazsa her adres
+ *  gereksiz bir yönlendirmeye düşer. */
+const egikCizgili = (yol: string) => (yol.endsWith('/') ? yol : yol + '/');
+
 export const GET: APIRoute = ({ site }) => {
   const base = site ?? new URL('https://burhanmayir.com');
-  const abs = (path: string) => new URL(path, base).href;
+  const abs = (path: string) => new URL(egikCizgili(path), base).href;
 
   const tr = DICTS.tr;
 

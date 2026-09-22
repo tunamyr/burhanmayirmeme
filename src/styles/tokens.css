@@ -1,45 +1,47 @@
 /* Tasarımdaki (blog.dc.html / site-nav / site-footer) sabit renk ve ölçüler. */
 :root {
   /* Yüzeyler */
-  --bg: #FCFBFA;
-  --surface: #F7F4F5;
+  --bg: #FDFAFB;
+  --surface: #F9EDF1;
+  /* Üst menü zemini — sayfadan bir ton daha pembe. */
+  --nav-bg: #FAEAF0;
 
   /* Çizgiler — açıktan koyuya */
-  --line: #E8E2E4;
-  --line-strong: #E0D8DB;
-  --line-hover: #C9BCC2;
+  --line: #EEDFE5;
+  --line-strong: #E5D1D9;
+  --line-hover: #CDA9B8;
 
   /* Metin — koyudan açığa */
-  --ink: #1E1A1C;
-  --text: #4A4246;
-  --text-soft: #574D51;
-  --muted: #77696F;
-  --faint: #8A7E83;
-  --fainter: #A69AA0;
+  --ink: #221A1D;
+  --text: #4E4247;
+  --text-soft: #5B4D53;
+  --muted: #7E6B73;
+  --faint: #8F7C84;
+  --fainter: #AC98A1;
 
   /* Vurgu */
-  --accent: #6E3B4E;
-  --accent-dark: #48222F;
-  --accent-tint: #EBD9E0;
+  --accent: #9C4368;
+  --accent-dark: #6E2B45;
+  --accent-tint: #F2D8E2;
   /* Koyu zeminde accent'in hover'ı; --accent-dark orada okunmuyor. */
-  --accent-light: #8A4C63;
+  --accent-light: #C4738F;
 
   /* Makale gövdesi, ikinci seviye çizgi, form alanı çizgisi */
-  --text-strong: #3E3639;
-  --rule: #DFD7DA;
-  --field: #D5CCD0;
-  --hover-tint: #F3EEF0;
-  --placeholder: #EFEAEC;
+  --text-strong: #42363A;
+  --rule: #E7D5DC;
+  --field: #DCC5CF;
+  --hover-tint: #F7E8EE;
+  --placeholder: #F4E6EC;
 
   /* Koyu bölümler (randevu bandı, hakkımda şeridi, kenar kutusu) */
-  --dark-bg: #1E1A1C;
-  --dark-surface: #33292D;
-  --dark-hair: #332B2E;
-  --dark-line: #453A3E;
-  --dark-ink: #FCFBFA;
-  --dark-soft: #E6DDE0;
-  --dark-text: #C4B9BE;
-  --dark-kicker: #C79BAD;
+  --dark-bg: #2A1A21;
+  --dark-surface: #3D2730;
+  --dark-hair: #3A2630;
+  --dark-line: #4E3640;
+  --dark-ink: #FDFAFB;
+  --dark-soft: #EDDCE3;
+  --dark-text: #CDB8C1;
+  --dark-kicker: #D9A0B6;
 
   --serif: 'Libre Baskerville', Georgia, serif;
   --sans: Barlow, system-ui, -apple-system, 'Segoe UI', sans-serif;

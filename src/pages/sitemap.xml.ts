@@ -28,9 +28,14 @@ function entries(): Entry[] {
   return out;
 }
 
+/** Sayfalar dizin olarak yayınlanıyor (/meme-agrisi/index.html); canonical de
+ *  sonu eğik çizgili. Sitemap ile llms.txt aynı biçimi kullanmazsa her adres
+ *  gereksiz bir yönlendirmeye düşer. */
+const egikCizgili = (yol: string) => (yol.endsWith('/') ? yol : yol + '/');
+
 export const GET: APIRoute = ({ site }) => {
   const base = site ?? new URL('https://burhanmayir.com');
-  const abs = (p: string) => new URL(p, base).href;
+  const abs = (p: string) => new URL(egikCizgili(p), base).href;
 
   const urls = entries()
     .map((e) => {

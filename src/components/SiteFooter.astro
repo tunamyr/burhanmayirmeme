@@ -10,7 +10,8 @@ interface Props {
 const { lang, alts } = Astro.props;
 const d = t(lang);
 
-const TOPICS = d.footer.topicLinks.map((label, i) => ({ label, href: topicHref(lang, i) }));
+/* Konu listesi sözlükten türüyor; yeni konu eklenince footer kendiliğinden güncelleniyor. */
+const TOPICS = d.topics.map((topic, i) => ({ label: topic.title, href: topicHref(lang, i) }));
 
 const SITE_LINKS = [
   { label: d.footer.home, href: pageHref(lang, 'home') },

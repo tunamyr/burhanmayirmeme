@@ -16,10 +16,16 @@ const TOPICS = d.topics.map((topic, i) => ({
   label: topic.navTitle,
   href: topicHref(lang, i),
   key: topic.key,
+  group: topic.group,
 }));
 
-/* Menü sırası: Ana Sayfa · Hakkımda · Hastalıklar · Blog · İletişim.
-   Hastalıklar dropdown'ı ortada durduğu için liste ikiye bölünüyor. */
+/* Konular iki açılır menüye ayrılıyor: meme hastalıkları ve meme kanseri. */
+const GROUPS = [
+  { label: d.nav.conditions, items: TOPICS.filter((x) => x.group === 'hastalik') },
+  { label: d.nav.cancer, items: TOPICS.filter((x) => x.group === 'kanser') },
+];
+
+/* Menü sırası: Ana Sayfa · Hakkımda · [iki grup] · Blog · İletişim. */
 const LINKS_BEFORE = [
   { label: d.nav.home, href: pageHref(lang, 'home'), key: 'home' },
   { label: d.nav.about, href: pageHref(lang, 'about'), key: 'about' },
@@ -30,7 +36,6 @@ const LINKS_AFTER = [
   { label: d.nav.contact, href: pageHref(lang, 'contact'), key: 'contact' },
 ];
 
-const topicActive = TOPICS.some((x) => x.key === active);
 const topicsHref = `${pageHref(lang, 'home')}#konular`;
 const contactHref = pageHref(lang, 'contact');
 ---
@@ -38,6 +43,7 @@ const contactHref = pageHref(lang, 'contact');
 <header class="nav">
   <div class="nav__bar">
     <a class="brand" href={pageHref(lang, 'home')}>
+      <span class="brand__pre">{d.brandPre}</span>
       <span class="brand__name">{d.brandName}</span>
       <span class="brand__kicker">{d.nav.kicker}</span>
     </a>
@@ -51,20 +57,26 @@ const contactHref = pageHref(lang, 'contact');
         ))
       }
 
-      <div class="drop">
-        <a class="link drop__trigger" href={topicsHref} aria-current={topicActive ? 'true' : undefined}>
-          {d.nav.topics} <span class="drop__caret" aria-hidden="true">▾</span>
-        </a>
-        <div class="drop__panel">
-          {
-            TOPICS.map((x) => (
-              <a class="drop__item" href={x.href} aria-current={x.key === active ? 'page' : undefined}>
-                {x.label}
-              </a>
-            ))
-          }
-        </div>
-      </div>
+      {
+        GROUPS.map((g) => (
+          <div class="drop">
+            <a
+              class="link drop__trigger"
+              href={topicsHref}
+              aria-current={g.items.some((x) => x.key === active) ? 'true' : undefined}
+            >
+              {g.label} <span class="drop__caret" aria-hidden="true">▾</span>
+            </a>
+            <div class="drop__panel">
+              {g.items.map((x) => (
+                <a class="drop__item" href={x.href} aria-current={x.key === active ? 'page' : undefined}>
+                  {x.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        ))
+      }
 
       {
         LINKS_AFTER.map((l) => (
@@ -99,8 +111,18 @@ const contactHref = pageHref(lang, 'contact');
       <summary aria-label={d.nav.openMenu}><span aria-hidden="true">☰</span></summary>
       <div class="mobile__panel">
         {LINKS_BEFORE.map((l) => <a href={l.href}>{l.label}</a>)}
-        <span class="mobile__head">{d.nav.topics}</span>
-        {TOPICS.map((x) => <a class="mobile__topic" href={x.href}>{x.label}</a>)}
+        {
+          GROUPS.map((g) => (
+            <>
+              <span class="mobile__head">{g.label}</span>
+              {g.items.map((x) => (
+                <a class="mobile__topic" href={x.href}>
+                  {x.label}
+                </a>
+              ))}
+            </>
+          ))
+        }
         {LINKS_AFTER.map((l) => <a href={l.href}>{l.label}</a>)}
         <span class="mobile__langs">
           {
@@ -127,7 +149,7 @@ const contactHref = pageHref(lang, 'contact');
     position: sticky;
     top: 0;
     z-index: 40;
-    background: var(--bg);
+    background: var(--nav-bg);
     border-bottom: 1px solid var(--line);
     font-family: var(--sans);
   }
@@ -136,26 +158,34 @@ const contactHref = pageHref(lang, 'contact');
     display: grid;
     grid-template-columns: 1fr auto;
     align-items: center;
-    height: 76px;
+    height: 88px;
     gap: 40px;
   }
 
+  /* Unvan üstte küçük, ad ortada büyük, uzmanlık altta. */
   .brand {
-    display: flex;
-    align-items: baseline;
-    gap: 12px;
+    display: grid;
+    gap: 1px;
     color: var(--ink);
+    line-height: 1.15;
   }
   .brand:hover { color: var(--ink); }
+  .brand__pre {
+    font-size: 12px;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: var(--accent);
+    white-space: nowrap;
+  }
   .brand__name {
     font-family: var(--serif);
-    font-size: 20px;
-    letter-spacing: -0.01em;
+    font-size: 27px;
+    letter-spacing: -0.015em;
     white-space: nowrap;
   }
   .brand__kicker {
-    font-size: 11px;
-    letter-spacing: 0.24em;
+    font-size: 13px;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
     color: var(--accent);
     white-space: nowrap;
@@ -198,7 +228,7 @@ const contactHref = pageHref(lang, 'contact');
     top: 100%;
     left: -20px;
     min-width: 320px;
-    background: var(--bg);
+    background: var(--nav-bg);
     border: 1px solid var(--line);
     border-top: 0;
     display: grid;
@@ -259,8 +289,8 @@ const contactHref = pageHref(lang, 'contact');
     position: absolute;
     left: 0;
     right: 0;
-    top: 76px;
-    background: var(--bg);
+    top: 88px;
+    background: var(--nav-bg);
     border-bottom: 1px solid var(--line);
     display: grid;
     gap: 2px;
@@ -304,8 +334,18 @@ const contactHref = pageHref(lang, 'contact');
     text-transform: uppercase;
   }
 
-  @media (max-width: 1100px) {
+  /* İki açılır menü eklenince masaüstü satırı uzadı; hamburger daha erken devreye giriyor. */
+  @media (max-width: 1240px) {
     .nav__links { display: none; }
     .mobile { display: block; justify-self: end; }
+  }
+
+  /* Dar ekranda marka küçülüyor; Rusça ad en uzunu, hamburgerle çakışmasın. */
+  @media (max-width: 480px) {
+    .nav__bar { height: 78px; }
+    .brand__name { font-size: 22px; }
+    .brand__pre { font-size: 11px; }
+    .brand__kicker { font-size: 11.5px; letter-spacing: 0.16em; }
+    .mobile__panel { top: 78px; }
   }
 </style>
