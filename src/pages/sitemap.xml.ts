@@ -1,5 +1,5 @@
 import type { APIRoute } from 'astro';
-import { LOCALES, DICTS, pageHref, topicHref, type Locale } from '../i18n';
+import { LOCALES, DICTS, pageHref, topicHref, postHref, type Locale } from '../i18n';
 
 /**
  * Üç dilin bütün sayfaları. Her <url> kendi dil alternatiflerini de bildiriyor,
@@ -23,6 +23,7 @@ function entries(): Entry[] {
   ekle((l) => pageHref(l, 'blog'));
   ekle((l) => pageHref(l, 'contact'));
   DICTS.tr.topics.forEach((_, i) => ekle((l) => topicHref(l, i)));
+  DICTS.tr.blog.posts.forEach((_, i) => ekle((l) => postHref(l, i)));
 
   return out;
 }

@@ -30,6 +30,11 @@ export function topicHref(lang: Locale, index: number): string {
   return `${prefix(lang)}/${DICTS[lang].topics[index].slug}`;
 }
 
+/** Bilgi yazısının o dildeki adresi: blog yolu + yazının kendi slug'ı. */
+export function postHref(lang: Locale, index: number): string {
+  return `${pageHref(lang, 'blog')}/${DICTS[lang].blog.posts[index].slug}`;
+}
+
 /** "İlgili konular" kutusundaki anahtarı o dildeki adrese çevirir. */
 export function keyHref(lang: Locale, key: string): string {
   if (key === 'blog') return pageHref(lang, 'blog');
