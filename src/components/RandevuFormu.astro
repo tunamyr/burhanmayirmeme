@@ -126,6 +126,9 @@ const secili = konu ?? d.form.subjects[0];
     display: grid;
     gap: 22px;
   }
+  /* .state ile aynı tuzak: display kuralı tarayıcının [hidden] kuralını
+     eziyordu, gönderimden sonra form ekranda kalıyordu. */
+  .form__body[hidden] { display: none; }
   .form__row {
     display: grid;
     grid-template-columns: 1fr 1fr;
