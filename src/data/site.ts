@@ -26,10 +26,11 @@ export const SITE = {
 } as const;
 
 /**
- * Randevu formunun POST edeceği adres.
+ * Randevu formunun POST edeceği adres — sitenin kendi uç noktası.
+ * Bkz. src/pages/api/randevu.ts (Vercel'de sunucu tarafında çalışır).
  *
  * BOŞ BIRAKILIRSA form hiçbir yere gitmez; "alındı" da demez, hastayı
- * telefon/e-postaya yönlendiren bir panel gösterir. Yayına almadan önce
- * burayı gerçek bir uç noktaya bağlayın.
+ * telefon/e-postaya yönlendiren bir panel gösterir. Uç nokta çalışsa bile
+ * SMTP değişkenleri Vercel'de tanımlı değilse aynı panel gösterilir.
  */
-export const FORM_ENDPOINT = '';
+export const FORM_ENDPOINT = '/api/randevu';

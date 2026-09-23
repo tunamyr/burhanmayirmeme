@@ -11,6 +11,11 @@
     "i18n:check": "node scripts/i18n-check.mjs"
   },
   "dependencies": {
-    "astro": "^5.0.0"
+    "@astrojs/vercel": "^9.0.5",
+    "astro": "^5.0.0",
+    "nodemailer": "^10.0.10"
+  },
+  "devDependencies": {
+    "@types/nodemailer": "^8.0.2"
   }
 }

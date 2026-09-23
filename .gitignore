@@ -2,3 +2,11 @@ node_modules/
 dist/
 .astro/
 .DS_Store
+
+# Ortam degiskenleri (SMTP bilgileri) — asla commitlenmez
+.env
+.env.local
+.env.production
+
+# Vercel CLI
+.vercel/

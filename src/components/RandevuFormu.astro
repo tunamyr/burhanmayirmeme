@@ -38,6 +38,18 @@ const secili = konu ?? d.form.subjects[0];
       <textarea class="field__area" name="not" rows="3"></textarea>
     </label>
 
+    {/* Talebin hangi dildeki formdan geldiği e-postada görünsün. */}
+    <input type="hidden" name="dil" value={lang} />
+
+    {/* Bal küpü: ekranda görünmüyor, klavyeyle de atlanıyor. Doldurulmuşsa
+        gönderen bir bot demektir; sunucu talebi sessizce düşürüyor. */}
+    <div class="hp" aria-hidden="true">
+      <label>
+        Bu alanı boş bırakın
+        <input type="text" name="website" tabindex="-1" autocomplete="off" />
+      </label>
+    </div>
+
     <button class="form__submit" type="submit" data-submit>{d.form.submit}</button>
     <p class="form__note">{d.form.privacy}</p>
   </form>
@@ -103,6 +115,7 @@ const secili = konu ?? d.form.subjects[0];
 
 <style>
   .form {
+    position: relative;
     font-family: var(--sans);
     background: var(--bg);
     border: 1px solid var(--line);
@@ -185,6 +198,16 @@ const secili = konu ?? d.form.subjects[0];
     font-size: 12.5px;
     line-height: 1.55;
     color: var(--fainter);
+  }
+
+  /* display:none yerine ekran dışına alıyoruz; bazı botlar gizli alanları
+     atlıyor, bu şekilde doldurma ihtimalleri daha yüksek. */
+  .hp {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
   }
 
   /* --- Gönderim sonrası --- */
