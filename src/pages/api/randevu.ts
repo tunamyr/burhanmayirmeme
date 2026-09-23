@@ -102,8 +102,13 @@ export const POST: APIRoute = async ({ request }) => {
 
   try {
     await transporter.sendMail({
-      from: `"burhanmayir.com" <${SMTP_USER}>`,
+      // Görünen ad bilerek alan adı gibi durmuyor: "burhanmayir.com" yazıp
+      // gmail.com adresinden göndermek spam filtrelerinde kimlik taklidi
+      // desenine giriyor ve mail spam klasörüne düşüyordu.
+      from: `"Randevu Formu" <${SMTP_USER}>`,
       to: MAIL_TO,
+      // Otomatik üretilmiş bildirim olduğunu söylüyoruz (RFC 3834).
+      headers: { 'Auto-Submitted': 'auto-generated' },
       subject: `Yeni randevu talebi — ${isim} (${konu})`,
       text: [
         `Ad Soyad: ${isim}`,
