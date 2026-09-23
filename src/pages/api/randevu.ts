@@ -29,7 +29,32 @@ const DIL_ADI: Record<string, string> = {
   ru: 'Rusça',
 };
 
+/**
+ * Kendi origin kontrolümüz.
+ *
+ * Astro'nun yerleşik `security.checkOrigin` kontrolü `origin` başlığını
+ * `url.origin` ile karşılaştırıyor; Vercel'in ters vekilinin arkasında
+ * `url.origin` isteğin gerçek adresini vermediği için aynı origin'den gelen
+ * gönderimler bile 403 alıyordu. Burada protokolü hesaba katmadan yalnızca
+ * host'ları karşılaştırıyoruz — vekil kaç katman olursa olsun çalışır.
+ */
+const ayniOrigin = (request: Request) => {
+  const origin = request.headers.get('origin');
+  if (!origin) return false;
+  const host = request.headers.get('x-forwarded-host') ?? request.headers.get('host');
+  if (!host) return false;
+  try {
+    return new URL(origin).host === host;
+  } catch {
+    return false;
+  }
+};
+
 export const POST: APIRoute = async ({ request }) => {
+  if (!ayniOrigin(request)) {
+    return json({ error: 'Farklı kaynaktan gönderim kabul edilmiyor' }, 403);
+  }
+
   let form: FormData;
   try {
     form = await request.formData();

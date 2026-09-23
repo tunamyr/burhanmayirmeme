@@ -13,6 +13,17 @@ export default defineConfig({
   adapter: vercel(),
 
   /**
+   * Astro'nun yerleşik origin kontrolü Vercel'in ters vekilinin arkasında
+   * yanlış çalışıyor: aynı origin'den gelen form gönderimleri de
+   * "Cross-site POST form submissions are forbidden" ile 403 alıyor.
+   * Kontrolü kapatıp aynı işi randevu uç noktasının içinde, host başlıklarına
+   * bakarak yapıyoruz (bkz. src/pages/api/randevu.ts → ayniOrigin).
+   *
+   * Yeni bir sunucu rotası eklenirse origin kontrolünü orada da elle yapın.
+   */
+  security: { checkOrigin: false },
+
+  /**
    * SMTP bilgileri. Hepsi `optional` — değişkenler tanımlanmadan da site
    * derleniyor ve yayına çıkıyor; eksikse yalnızca form uç noktası hata
    * döndürüyor ve hastaya telefon/e-posta paneli gösteriliyor.
