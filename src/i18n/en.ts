@@ -71,7 +71,8 @@ export const EN: Dict = {
     subjects: [
       'Breast cancer',
       'Breast cancer surgery',
-      'Oncoplastic / breast-conserving surgery',
+      'Breast-conserving surgery',
+      'Oncoplastic breast surgery',
       'Breast reconstruction',
       'Benign breast conditions',
       'Second opinion',
@@ -144,11 +145,12 @@ export const EN: Dict = {
       'The training, hospital appointments, academic work and consulting principles of Prof. Burhan Mayir, MD.',
     kicker: 'About',
     portraitAlt: 'Prof. Burhan Mayir, MD at the desk in his practice',
+    standingAlt: 'Prof. Burhan Mayir, MD standing in his practice',
     lede: 'I am a general surgeon. For more than twenty-five years I have operated across the breadth of general surgery and pursued academic work in the same field. I see patients at my private practice in Antalya.',
     body: 'The way I work with patients rests on a single principle: the decision is made together. That requires explaining the options, their alternatives and the expected outcomes in plain language. A patient who knows what lies ahead starts treatment on stronger ground.',
     fieldsHead: 'Areas of interest',
     fields:
-      'Breast cancer surgery · Oncoplastic and breast-conserving surgery · Breast reconstruction · Benign breast conditions · General surgery',
+      'Breast cancer surgery · Breast-conserving surgery · Oncoplastic breast surgery · Breast reconstruction · Benign breast conditions · General surgery',
 
     timelineTitle: 'Training and appointments',
     timeline: [
@@ -259,11 +261,9 @@ export const EN: Dict = {
   blog: {
     title: 'Articles — Prof. Burhan Mayir, MD',
     description:
-      'The questions most often asked at the practice, written down: screening, breast cancer surgery, benign breast conditions and treatment pathways.',
-    kicker: 'Articles',
-    h1: 'The questions most often asked at the practice, written down',
+      'Patient-focused articles on breast screening, breast cancer surgery, benign breast conditions and treatment pathways. Prof. Burhan Mayir, MD.',
+    h1: 'Articles',
     lede: 'A consultation is not always long enough for every question. These articles are for the ones that come to mind afterwards.',
-    featured: 'Featured',
     readMore: ' · Read the article →',
     ctaTitle: 'Still have a question you cannot find an answer to?',
     ctaText:
@@ -320,7 +320,7 @@ export const EN: Dict = {
         },
         {
           key: 'onkoplastik',
-          title: 'Oncoplastic Surgery',
+          title: 'Oncoplastic Breast Surgery',
           text: 'Preserving the shape of the breast while removing the cancer.',
         },
         {
@@ -435,8 +435,8 @@ export const EN: Dict = {
       navTitle: 'Breast Cancer Surgery',
       meta: 'Breast-conserving surgery and mastectomy, sentinel lymph node biopsy, the day of surgery and recovery. Prof. Burhan Mayir, MD, Antalya.',
       lede: 'Surgery has two jobs: to remove the tumour with clear margins and to find out whether the disease has reached the armpit. Which operation is performed is decided by weighing the features of the tumour together with your own preferences.',
-      img: '/img/konu-cerrahi.jpg',
-      imgAlt: 'Dressing room: examination couch and examination lamp',
+      img: '/img/stok-ameliyathane.jpg',
+      imgAlt: 'Surgical team at work in an operating theatre',
       quickFacts: [
         { label: 'Anaesthesia', value: 'General anaesthesia' },
         { label: 'Duration', value: 'About 1–2 hours' },
@@ -450,13 +450,13 @@ export const EN: Dict = {
       },
       related: [
         {
-          key: 'meme-kanseri',
-          title: 'Breast Cancer',
-          text: 'Signs, diagnostic methods and staging.',
+          key: 'koruyucu',
+          title: 'Breast-Conserving Surgery',
+          text: 'Removing the tumour and keeping the rest of the breast.',
         },
         {
           key: 'onkoplastik',
-          title: 'Oncoplastic Surgery',
+          title: 'Oncoplastic Breast Surgery',
           text: 'Preserving the shape of the breast while removing the cancer.',
         },
         {
@@ -564,22 +564,23 @@ export const EN: Dict = {
     },
 
     {
-      slug: 'oncoplastic-surgery',
+      slug: 'oncoplastic-breast-surgery',
       key: 'onkoplastik',
       group: 'kanser',
       no: '03',
-      seoTitle: 'Oncoplastic and Breast-Conserving Surgery in Antalya',
-      title: 'Oncoplastic and breast-conserving surgery',
-      crumb: 'Oncoplastic and breast-conserving surgery',
-      navTitle: 'Oncoplastic and Breast-Conserving Surgery',
-      meta: 'Oncoplastic surgery removes the cancer with clear margins while preserving the shape of the breast: who it suits and what to expect afterwards.',
-      lede: 'Removing the cancer completely and preserving the appearance of the breast are not alternatives to one another. Oncoplastic surgery combines the two in a single operation.',
+      seoTitle: 'Oncoplastic Breast Surgery in Antalya | Prof. Burhan Mayir, MD',
+      title: 'Oncoplastic breast surgery',
+      crumb: 'Oncoplastic breast surgery',
+      navTitle: 'Oncoplastic Breast Surgery',
+      meta: 'What is oncoplastic breast surgery and who does it suit? Techniques that remove the cancer with clear margins while preserving the shape of the breast.',
+      lede: 'Oncoplastic surgery is not a separate operation but a way of performing breast cancer surgery. The tumour is removed according to oncological rules while the remaining breast tissue is reshaped in the same session.',
       img: '/img/konu-onkoplastik.jpg',
       imgAlt: 'Consulting room: desk and seating area with a slatted wood wall',
       quickFacts: [
         { label: 'Aim', value: 'Clear margins and a preserved breast shape' },
         { label: 'In the same session', value: 'Reshaping with the breast’s own tissue' },
-        { label: 'Afterwards', value: 'Radiotherapy is required' },
+        { label: 'The other breast', value: 'Adjusted for symmetry if needed' },
+        { label: 'If the breast is conserved', value: 'Radiotherapy is required afterwards' },
         { label: 'When the result settles', value: 'Within a few months' },
       ],
       ctaBox: {
@@ -587,6 +588,11 @@ export const EN: Dict = {
         text: 'Bring your imaging and pathology reports so we can assess whether a breast-conserving option is possible.',
       },
       related: [
+        {
+          key: 'koruyucu',
+          title: 'Breast-Conserving Surgery',
+          text: 'Removing the tumour and keeping the rest of the breast.',
+        },
         {
           key: 'cerrahi',
           title: 'Breast Cancer Surgery',
@@ -597,23 +603,18 @@ export const EN: Dict = {
           title: 'Breast Reconstruction',
           text: 'Rebuilding the breast when all of it has been removed.',
         },
-        {
-          key: 'meme-kanseri',
-          title: 'Breast Cancer',
-          text: 'Signs, diagnostic methods and staging.',
-        },
       ],
       band: {
-        title: 'Let us assess the conserving option',
-        text: 'It is not possible in every patient, but it is usually worth discussing. Come with your reports and we will look together.',
+        title: 'Let us discuss whether the shape can be preserved',
+        text: 'The same technique does not suit every patient. Come with your reports and we will look at what is possible for your breast.',
       },
       indexBody:
-        'An approach that combines removing the cancerous tissue with preserving the shape of the breast in one operation. In suitable patients the whole breast is not removed.',
+        'Techniques that combine removing the cancerous tissue with preserving the shape of the breast in one operation. Plastic surgery principles are used inside oncological surgery.',
       indexWhen:
-        'If you have been told that your whole breast will be removed, you can seek a second opinion on whether a conserving option is possible.',
+        'If breast cancer surgery is being planned and the appearance afterwards matters to you, let us talk before the surgical plan is made.',
       sections: [
         {
-          h2: 'What the approach does',
+          h2: 'What oncoplastic surgery is',
           blocks: [
             {
               kind: 'p',
@@ -621,11 +622,11 @@ export const EN: Dict = {
             },
             {
               kind: 'p',
-              text: 'Two things are then achieved together: oncological safety, meaning clear margins; and a breast that stays full and close to symmetrical. Where needed, the other breast is reduced or lifted so that the two sides balance.',
+              text: 'In other words, oncoplastic surgery applies breast cancer surgery and breast reshaping techniques within a single procedure. It combines the rules of oncological surgery with the methods of plastic and reconstructive surgery.',
             },
             {
               kind: 'p',
-              text: 'The approach also allows the surgeon to remove a wider piece of tissue. In other words, preserving the shape does not mean taking less tissue from around the tumour.',
+              text: 'The approach also allows the surgeon to remove a wider piece of tissue. Preserving the shape does not mean taking less tissue from around the tumour; clear margins always come first.',
             },
           ],
         },
@@ -634,13 +635,14 @@ export const EN: Dict = {
           blocks: [
             {
               kind: 'p',
-              text: 'The main criterion is the size of the tumour relative to the volume of the breast. In the assessment we look at:',
+              text: 'Oncoplastic surgery is not applied in the same way in every patient; the surgical plan is drawn up individually. The main criterion is the size of the tumour relative to the volume of the breast. In the assessment we look at:',
             },
             {
               kind: 'ul',
               items: [
                 { text: 'The size and position of the tumour and whether it is in a single focus' },
-                { text: 'Breast volume and the degree of existing sagging' },
+                { text: 'Breast volume, shape and the degree of existing sagging' },
+                { text: 'The stage of the disease and any treatment already given' },
                 { text: 'Whether you are able to receive radiotherapy after surgery' },
                 { text: 'Factors affecting wound healing, such as smoking and diabetes' },
                 { text: 'Your own expectations about appearance' },
@@ -648,7 +650,33 @@ export const EN: Dict = {
             },
             {
               kind: 'p',
-              text: 'If the tumour has spread to more than one area of the breast, if the same breast has previously been irradiated, or if clear margins cannot be achieved, removing the whole breast is safer. Reconstruction then comes into play.',
+              text: 'In suitable patients oncoplastic techniques are used together with breast-conserving surgery. When the whole of the breast tissue has to be removed, reconstruction options after mastectomy are assessed instead.',
+            },
+          ],
+        },
+        {
+          h2: 'The difference from breast-conserving surgery',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'The two terms are often confused. One describes how much tissue is removed, the other what is done with the tissue that remains.',
+            },
+            {
+              kind: 'cards',
+              items: [
+                {
+                  k: 'Breast-conserving surgery',
+                  v: 'The cancerous tumour and the necessary surrounding breast tissue are removed and the rest of the breast is kept. It defines the extent of the operation.',
+                },
+                {
+                  k: 'Oncoplastic surgery',
+                  v: 'The remaining breast tissue is reshaped once the tumour has been removed. It defines how the operation is carried out, and is most often applied as part of breast-conserving surgery.',
+                },
+              ],
+            },
+            {
+              kind: 'p',
+              text: 'Put differently, oncoplastic surgery is a technique that improves the result of breast-conserving surgery. For breast-conserving surgery itself, who it suits and the treatment that follows, see the Breast-Conserving Surgery page.',
             },
           ],
         },
@@ -657,15 +685,211 @@ export const EN: Dict = {
           blocks: [
             {
               kind: 'p',
-              text: 'Swelling and altered sensation in the breast are normal in the first weeks. The final shape settles within a few months, partly under the effect of radiotherapy, so we do not judge the result by the first month.',
+              text: 'Swelling and altered sensation in the breast are normal in the first weeks. If the breast has been conserved, the final shape settles within a few months, partly under the effect of radiotherapy, so we do not judge the result by the first month.',
             },
             {
               kind: 'p',
-              text: 'After breast-conserving surgery, radiotherapy is required in almost every patient and clearly reduces the risk of recurrence. The two treatments are one whole; accepting the operation but not planning radiotherapy is not a sound path.',
+              text: 'If the other breast has been reduced or lifted for symmetry, the two sides may heal at different rates. That evens out with time as well.',
             },
             {
               kind: 'p',
               text: 'Follow-up continues with examinations every six months in the early years and annual imaging. Keeping your check-ups in the same place is preferable, as it makes comparison easier.',
+            },
+          ],
+        },
+        {
+          h2: 'Frequently asked questions',
+          blocks: [
+            {
+              kind: 'qa',
+              items: [
+                {
+                  q: 'Is oncoplastic breast surgery cancer surgery?',
+                  a: 'Yes. It is the joint use of oncological surgical principles and breast reshaping techniques. The cosmetic result never takes precedence over the cancer treatment.',
+                },
+                {
+                  q: 'Is the whole breast removed in oncoplastic surgery?',
+                  a: 'Not always. In suitable patients it is applied together with breast-conserving surgery. In some patients mastectomy is medically necessary, and reconstruction then comes into play.',
+                },
+                {
+                  q: 'Can it be applied to every breast cancer patient?',
+                  a: 'No. Suitability is determined by the characteristics of the tumour, the structure of the breast, the stage of the disease and the other treatments planned.',
+                },
+                {
+                  q: 'Will there be a scar?',
+                  a: 'As with any operation, scars form at the incision sites. Their position and appearance depend on the technique used, the structure of the breast and how you heal.',
+                },
+              ],
+            },
+          ],
+        },
+      ],
+    },
+
+    {
+      slug: 'breast-conserving-surgery',
+      key: 'koruyucu',
+      group: 'kanser',
+      no: '04',
+      seoTitle: 'Breast-Conserving Surgery in Antalya | Prof. Burhan Mayir, MD',
+      title: 'Breast-conserving surgery',
+      crumb: 'Breast-conserving surgery',
+      navTitle: 'Breast-Conserving Surgery',
+      meta: 'What is breast-conserving surgery and who does it suit? Lumpectomy, sentinel lymph node biopsy, radiotherapy afterwards and how it differs from mastectomy.',
+      lede: 'In breast cancer, removing the tumour with the necessary surrounding tissue and keeping the rest of the breast is, in suitable patients, as safe as removing the whole breast. Suitability is decided by several factors together, not a single measurement.',
+      img: '/img/stok-cerrahi-ekip.jpg',
+      imgAlt: 'Surgical team at work in an operating theatre',
+      quickFacts: [
+        { label: 'Other names', value: 'Lumpectomy, partial mastectomy' },
+        { label: 'Aim', value: 'Clear margins while keeping the breast' },
+        { label: 'Armpit', value: 'Sentinel lymph node biopsy first' },
+        { label: 'Afterwards', value: 'Radiotherapy in almost every patient' },
+        { label: 'Survival', value: 'No different from mastectomy in suitable patients' },
+      ],
+      ctaBox: {
+        title: 'If you have been told your breast must be removed',
+        text: 'Whether a conserving option is possible can be reassessed. Come with your mammogram, ultrasound, MRI and pathology results.',
+      },
+      related: [
+        {
+          key: 'onkoplastik',
+          title: 'Oncoplastic Breast Surgery',
+          text: 'Preserving the shape of the breast once the tumour is out.',
+        },
+        {
+          key: 'cerrahi',
+          title: 'Breast Cancer Surgery',
+          text: 'All surgical options and assessment of the armpit.',
+        },
+        {
+          key: 'meme-kanseri',
+          title: 'Breast Cancer',
+          text: 'Signs, diagnostic methods and staging.',
+        },
+      ],
+      band: {
+        title: 'Let us look together at whether your breast can be kept',
+        text: 'The decision is not made on tumour size alone. Bring your imaging and pathology reports and we will go through the options in detail.',
+      },
+      indexBody:
+        'Removing the tumour and the necessary surrounding tissue while keeping the rest of the breast. In suitable patients no difference in survival compared with removing the whole breast has been shown.',
+      indexWhen:
+        'If you have been told that your whole breast will be removed, you can seek a second opinion on whether a conserving option is possible.',
+      sections: [
+        {
+          h2: 'What breast-conserving surgery is',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'The aim is to remove the cancerous tumour together with the necessary margin of healthy tissue and to keep the rest of the breast. The operation is also called lumpectomy, segmental mastectomy or partial mastectomy; all describe the same logic.',
+            },
+            {
+              kind: 'p',
+              text: 'Its extent depends on the size and position of the tumour and on the characteristics of the breast tissue. In the past many patients diagnosed with breast cancer had to have the whole breast removed; today, in suitable patients, the breast tissue can be preserved.',
+            },
+            {
+              kind: 'p',
+              text: 'In suitable patients no difference in survival has been shown between breast-conserving surgery and mastectomy. That removes the need to decide on the principle that more removal is always safer.',
+            },
+          ],
+        },
+        {
+          h2: 'Who it suits',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Breast-conserving surgery may not be suitable for every patient. Several factors are weighed together:',
+            },
+            {
+              kind: 'ul',
+              items: [
+                { text: 'The size and position of the tumour and the number of tumours' },
+                { text: 'Breast volume and the size of the tumour relative to it' },
+                { text: 'The stage of the disease and how widely it is spread within the breast' },
+                { text: 'Treatment already given, in particular radiotherapy to the same breast' },
+                { text: 'Whether radiotherapy can be given after the operation' },
+              ],
+            },
+            {
+              kind: 'p',
+              text: 'In some patients chemotherapy or other systemic treatment is given first to shrink the tumour, which then makes breast-conserving surgery possible. The decision is therefore not based on the tumour size measured at diagnosis alone.',
+            },
+            {
+              kind: 'p',
+              text: 'If the tumour has spread to more than one area of the breast, if the same breast has previously been irradiated, or if clear margins cannot be achieved, removing the whole breast is safer.',
+            },
+          ],
+        },
+        {
+          h2: 'How the operation is done',
+          blocks: [
+            {
+              kind: 'steps',
+              items: [
+                {
+                  k: 'Before',
+                  v: 'Examination, mammography, ultrasound and, where needed, MRI are assessed together to establish the position and borders of the tumour. Tumours that cannot be felt are marked before the operation.',
+                },
+                {
+                  k: 'Removing the tumour',
+                  v: 'The incision is planned and the tumour is removed with the necessary margin of healthy tissue around it. The removed tissue is sent for pathological examination.',
+                },
+                {
+                  k: 'The armpit',
+                  v: 'Sentinel lymph node biopsy is performed where needed. In selected patients with spread, wider surgery to the armpit lymph nodes may be carried out.',
+                },
+                {
+                  k: 'Reshaping',
+                  v: 'If the amount of tissue removed or the position of the tumour would leave a deformity, the remaining tissue is rearranged with oncoplastic techniques in the same session.',
+                },
+                {
+                  k: 'Pathology',
+                  v: 'The margins and the characteristics of the tumour are reported, usually within a week. If there is a problem with the margins, further surgery may be needed.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          h2: 'Radiotherapy after surgery',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'After breast-conserving surgery radiotherapy is needed in almost every patient and clearly reduces the risk of recurrence. Surgery and radiotherapy are one whole; accepting the operation but not planning radiotherapy is not a sound path.',
+            },
+            {
+              kind: 'p',
+              text: 'If you are not in a position to receive radiotherapy, breast-conserving surgery is usually not a suitable option. This is one of the first things we discuss when the surgical decision is made.',
+            },
+            {
+              kind: 'p',
+              text: 'Depending on the pathology result, chemotherapy, hormone therapy or targeted treatment may also be considered. The treatment plan is drawn up jointly by surgery, radiation oncology and medical oncology.',
+            },
+          ],
+        },
+        {
+          h2: 'Frequently asked questions',
+          blocks: [
+            {
+              kind: 'qa',
+              items: [
+                {
+                  q: 'Breast-conserving surgery or mastectomy?',
+                  a: 'The decision is made by weighing the characteristics of the tumour, how widely the disease is spread, the structure of the breast and the other treatments available. For some patients conserving surgery is a suitable option; for others mastectomy is safer.',
+                },
+                {
+                  q: 'Is radiotherapy essential after breast-conserving surgery?',
+                  a: 'It is needed in most patients. The treatments required depend on the characteristics of the tumour, but if you cannot receive radiotherapy the surgical plan changes too.',
+                },
+                {
+                  q: 'Is the breast preserved completely?',
+                  a: 'Most of the breast tissue is kept, but there is tissue loss where the tumour was removed. In suitable patients oncoplastic techniques help to preserve the shape of the breast.',
+                },
+                {
+                  q: 'What happens if the cancer comes back after surgery?',
+                  a: 'If it recurs in the same breast, mastectomy is usually required. This is why follow-up and annual imaging after surgery must be kept up.',
+                },
+              ],
             },
           ],
         },
@@ -676,7 +900,7 @@ export const EN: Dict = {
       slug: 'breast-reconstruction',
       key: 'rekonstruksiyon',
       group: 'kanser',
-      no: '04',
+      no: '05',
       seoTitle: 'Breast Reconstruction and Repair in Antalya | Prof. Burhan Mayir, MD',
       title: 'Breast reconstruction',
       crumb: 'Breast reconstruction',
@@ -698,7 +922,7 @@ export const EN: Dict = {
       related: [
         {
           key: 'onkoplastik',
-          title: 'Oncoplastic Surgery',
+          title: 'Oncoplastic Breast Surgery',
           text: 'Preserving the shape of the breast while removing the cancer.',
         },
         {
@@ -798,7 +1022,7 @@ export const EN: Dict = {
       slug: 'breast-pain',
       key: 'agri',
       group: 'hastalik',
-      no: '05',
+      no: '06',
       title: 'Breast pain',
       crumb: 'Breast pain',
       navTitle: 'Breast Pain — Mastalgia',
@@ -912,15 +1136,15 @@ export const EN: Dict = {
       slug: 'breast-lump-fibroadenoma',
       key: 'kitle',
       group: 'hastalik',
-      no: '06',
+      no: '07',
       title: 'Breast lumps and fibroadenoma',
       crumb: 'Breast lumps',
       navTitle: 'Breast Lump — Fibroadenoma',
       seoTitle: 'Breast Lumps and Fibroadenoma in Antalya | Benign Breast Lumps',
       meta: 'Why does a lump appear in the breast? What is a fibroadenoma and is it dangerous? Follow-up and surgery for benign breast lumps in Antalya.',
       lede: 'Feeling a lump in your breast is frightening. But know this from the start: in women under 30, 90% of palpable lumps are benign. Even so, every new lump should be examined.',
-      img: '/img/blog-fibroadenom.jpg',
-      imgAlt: 'Dressing room: examination couch and examination lamp',
+      img: '/img/stok-gorusme.jpg',
+      imgAlt: 'A doctor and patient talking in the consulting room',
       quickFacts: [
         { label: 'Under the age of 30', value: '90% of lumps are benign' },
         { label: 'Most common benign tumour', value: 'Fibroadenoma' },
@@ -1021,15 +1245,15 @@ export const EN: Dict = {
       slug: 'breast-cysts',
       key: 'kist',
       group: 'hastalik',
-      no: '07',
+      no: '08',
       title: 'Breast cysts',
       crumb: 'Breast cysts',
       navTitle: 'Breast Cysts',
       seoTitle: 'Are Breast Cysts Dangerous? Treatment and Follow-up in Antalya',
       meta: 'Why do cysts form in the breast? Symptoms of breast cysts in Antalya, the difference between simple and complex cysts, and treatment. Prof. Burhan Mayir, MD.',
       lede: 'Breast cysts are sacs filled with fluid, and about half of all women have them at some point in life. They are especially common between the ages of 30 and 50.',
-      img: '/img/blog-kitle.jpg',
-      imgAlt: 'Dressing room and examination couch',
+      img: '/img/stok-ultrason.jpg',
+      imgAlt: 'Breast ultrasound machine in the examination room',
       quickFacts: [
         { label: 'How common', value: 'In about half of all women' },
         { label: 'Most common age', value: 'Between 30 and 50' },
@@ -1108,7 +1332,7 @@ export const EN: Dict = {
       slug: 'nipple-discharge',
       key: 'akinti',
       group: 'hastalik',
-      no: '08',
+      no: '09',
       title: 'Nipple discharge',
       crumb: 'Nipple discharge',
       navTitle: 'Nipple Discharge',
@@ -1195,7 +1419,7 @@ export const EN: Dict = {
       slug: 'mastitis-breast-abscess',
       key: 'mastit',
       group: 'hastalik',
-      no: '09',
+      no: '10',
       title: 'Breast infection, abscess and mastitis',
       crumb: 'Breast infection',
       navTitle: 'Breast Infection — Mastitis',
@@ -1299,7 +1523,7 @@ export const EN: Dict = {
       slug: 'granulomatous-mastitis',
       key: 'granulomatoz',
       group: 'hastalik',
-      no: '10',
+      no: '11',
       title: 'Granulomatous mastitis',
       crumb: 'Granulomatous mastitis',
       navTitle: 'Granulomatous Mastitis',

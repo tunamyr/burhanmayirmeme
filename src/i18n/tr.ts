@@ -79,7 +79,8 @@ export const TR = {
     subjects: [
       'Meme kanseri',
       'Meme kanseri cerrahisi',
-      'Onkoplastik / meme koruyucu cerrahi',
+      'Meme koruyucu cerrahi',
+      'Onkoplastik meme cerrahisi',
       'Meme rekonstrüksiyonu',
       'İyi huylu meme hastalıkları',
       'İkinci görüş',
@@ -153,11 +154,12 @@ export const TR = {
       "Prof. Dr. Burhan Mayir'in eğitimi, görev yaptığı kurumlar, akademik çalışmaları ve muayenehanedeki çalışma ilkeleri.",
     kicker: 'Hakkımda',
     portraitAlt: 'Prof. Dr. Burhan Mayir, muayenehanesindeki çalışma masasında',
+    standingAlt: 'Prof. Dr. Burhan Mayir, muayenehanesinde ayakta',
     lede: "Genel cerrahi uzmanıyım. Yirmi beş yılı aşkın süredir genel cerrahinin farklı alanlarında ameliyat yapıyor, aynı alanda akademik çalışmalar yürütüyorum. Antalya'daki özel muayenehanemde hasta kabul ediyorum.",
     body: 'Hastalarımla çalışma biçimim tek bir ilkeye dayanıyor: kararı birlikte vermek. Bunun için seçenekleri, alternatiflerini ve beklenen sonuçları anlaşılır bir dille anlatmak gerekiyor. Ne olacağını bilen bir hasta, tedaviye daha güçlü başlıyor.',
     fieldsHead: 'İlgi alanları',
     fields:
-      'Meme kanseri cerrahisi · Onkoplastik ve meme koruyucu cerrahi · Meme rekonstrüksiyonu · İyi huylu meme hastalıkları · Genel cerrahi',
+      'Meme kanseri cerrahisi · Meme koruyucu cerrahi · Onkoplastik meme cerrahisi · Meme rekonstrüksiyonu · İyi huylu meme hastalıkları · Genel cerrahi',
 
     timelineTitle: 'Eğitim ve görevler',
     timeline: [
@@ -264,11 +266,9 @@ export const TR = {
   blog: {
     title: 'Bilgi Yazıları — Prof. Dr. Burhan Mayir',
     description:
-      'Muayenehanede en çok sorulan soruların yazılı halleri: tarama, meme kanseri cerrahisi, iyi huylu meme hastalıkları ve tedavi süreçleri üzerine bilgi yazıları.',
-    kicker: 'Bilgi yazıları',
-    h1: 'Muayenehanede en çok sorulan soruların yazılı halleri',
+      'Meme taraması, meme kanseri cerrahisi, iyi huylu meme hastalıkları ve tedavi süreçleri üzerine hasta odaklı bilgi yazıları. Prof. Dr. Burhan Mayir.',
+    h1: 'Bilgi Yazıları',
     lede: 'Görüşme süresi her zaman her soruya yetmiyor. Bu yazılar, aklınıza sonradan gelenler için.',
-    featured: 'Öne çıkan',
     readMore: ' · Yazıyı oku →',
     ctaTitle: 'Yanıtını bulamadığınız bir soru mu var?',
     ctaText:
@@ -326,7 +326,7 @@ export const TR = {
         },
         {
           key: 'onkoplastik',
-          title: 'Onkoplastik Cerrahi',
+          title: 'Onkoplastik Meme Cerrahisi',
           text: 'Kanseri çıkarırken memenin şeklini korumak.',
         },
         {
@@ -441,8 +441,8 @@ export const TR = {
       navTitle: 'Meme Kanseri Cerrahisi',
       meta: 'Meme koruyucu cerrahi ve mastektomi seçenekleri, sentinel lenf nodu biyopsisi, ameliyat günü ve iyileşme süreci. Prof. Dr. Burhan Mayir, Antalya.',
       lede: 'Cerrahinin iki işi vardır: tümörü sağlam sınırlarla çıkarmak ve hastalığın koltuk altına yayılıp yayılmadığını öğrenmek. Hangi ameliyatın yapılacağı, tümörün özellikleri ve sizin tercihleriniz birlikte değerlendirilerek belirlenir.',
-      img: '/img/konu-cerrahi.jpg',
-      imgAlt: 'Pansuman odası: muayene masası ve muayene lambası',
+      img: '/img/stok-ameliyathane.jpg',
+      imgAlt: 'Ameliyathanede çalışan cerrahi ekip',
       quickFacts: [
         { label: 'Anestezi', value: 'Genel anestezi' },
         { label: 'Süre', value: 'Yaklaşık 1–2 saat' },
@@ -456,13 +456,13 @@ export const TR = {
       },
       related: [
         {
-          key: 'meme-kanseri',
-          title: 'Meme Kanseri',
-          text: 'Belirtiler, tanı yöntemleri ve evreleme.',
+          key: 'koruyucu',
+          title: 'Meme Koruyucu Cerrahi',
+          text: 'Tümörü çıkarıp memenin geri kalanını korumak.',
         },
         {
           key: 'onkoplastik',
-          title: 'Onkoplastik Cerrahi',
+          title: 'Onkoplastik Meme Cerrahisi',
           text: 'Kanseri çıkarırken memenin şeklini korumak.',
         },
         {
@@ -570,22 +570,23 @@ export const TR = {
     },
 
     {
-      slug: 'onkoplastik-cerrahi',
+      slug: 'onkoplastik-meme-cerrahisi',
       key: 'onkoplastik',
       group: 'kanser',
       no: '03',
-      seoTitle: 'Antalya Onkoplastik ve Meme Koruyucu Cerrahi | Prof. Dr. Burhan Mayir',
-      title: 'Onkoplastik ve meme koruyucu cerrahi',
-      crumb: 'Onkoplastik ve meme koruyucu cerrahi',
-      navTitle: 'Onkoplastik ve Meme Koruyucu Cerrahi',
-      meta: 'Kanseri temiz sınırlarla çıkarırken memenin şeklini koruyan onkoplastik cerrahi: kimlere uygun, sonrasında ne bekleniyor. Prof. Dr. Burhan Mayir.',
-      lede: 'Kanserin tam olarak çıkarılmasıyla memenin görünümünün korunması birbirinin alternatifi değildir. Onkoplastik cerrahi, ikisini aynı ameliyatta birleştirir.',
+      seoTitle: 'Antalya Onkoplastik Meme Cerrahisi | Prof. Dr. Burhan Mayir',
+      title: 'Onkoplastik meme cerrahisi',
+      crumb: 'Onkoplastik meme cerrahisi',
+      navTitle: 'Onkoplastik Meme Cerrahisi',
+      meta: 'Onkoplastik meme cerrahisi nedir, kimlere uygulanır? Kanserli dokuyu temiz sınırla çıkarırken meme şeklini koruyan cerrahi teknikler. Prof. Dr. Burhan Mayir, Antalya.',
+      lede: 'Onkoplastik cerrahi ayrı bir ameliyat değil, meme kanseri ameliyatının nasıl yapıldığıdır. Tümör onkolojik kurallara göre çıkarılırken kalan meme dokusu aynı seansta yeniden şekillendirilir.',
       img: '/img/konu-onkoplastik.jpg',
       imgAlt: 'Görüşme odası: çalışma masası ve ahşap panelli oturma alanı',
       quickFacts: [
-        { label: 'Amaç', value: 'Temiz sınır ve korunmuş meme şekli' },
+        { label: 'Amaç', value: 'Temiz cerrahi sınır ve korunmuş meme şekli' },
         { label: 'Aynı seansta', value: 'Memenin kendi dokusuyla şekillendirme' },
-        { label: 'Sonrasında', value: 'Işın tedavisi gerekir' },
+        { label: 'Karşı meme', value: 'Gerekirse simetri için düzenlenir' },
+        { label: 'Meme korunduysa', value: 'Sonrasında ışın tedavisi gerekir' },
         { label: 'Sonuç ne zaman oturur', value: 'Birkaç ay içinde' },
       ],
       ctaBox: {
@@ -593,6 +594,11 @@ export const TR = {
         text: 'Koruyucu bir seçeneğin mümkün olup olmadığını değerlendirmek için görüntüleme ve patoloji raporlarınızı getirin.',
       },
       related: [
+        {
+          key: 'koruyucu',
+          title: 'Meme Koruyucu Cerrahi',
+          text: 'Tümörü çıkarıp memenin geri kalanını korumak.',
+        },
         {
           key: 'cerrahi',
           title: 'Meme Kanseri Cerrahisi',
@@ -603,50 +609,46 @@ export const TR = {
           title: 'Meme Rekonstrüksiyonu',
           text: 'Memenin tamamı alındığında yeniden oluşturma.',
         },
-        {
-          key: 'meme-kanseri',
-          title: 'Meme Kanseri',
-          text: 'Belirtiler, tanı yöntemleri ve evreleme.',
-        },
       ],
       band: {
-        title: 'Koruyucu seçeneği değerlendirelim',
-        text: 'Her hastada mümkün olmasa da, çoğu zaman konuşulmaya değer. Raporlarınızla gelin, birlikte bakalım.',
+        title: 'Şeklin korunup korunamayacağını konuşalım',
+        text: 'Her hastada aynı teknik uygulanmaz. Raporlarınızla gelin, sizin memeniz için neyin mümkün olduğuna birlikte bakalım.',
       },
       indexBody:
-        'Kanserli dokunun çıkarılmasıyla memenin şeklinin korunmasını aynı ameliyatta birleştiren yaklaşım. Uygun hastalarda memenin tamamı alınmaz.',
+        'Kanserli dokunun çıkarılmasıyla memenin şeklinin korunmasını aynı ameliyatta birleştiren teknikler. Plastik cerrahi prensipleri, onkolojik cerrahinin içinde kullanılır.',
       indexWhen:
-        'Memenizin tamamının alınacağı söylendiyse, koruyucu bir seçeneğin mümkün olup olmadığı için ikinci görüş alabilirsiniz.',
+        'Meme kanseri ameliyatı planlanıyorsa ve ameliyat sonrası görünüm sizin için önemliyse, cerrahi planı yapılmadan önce konuşalım.',
       sections: [
         {
-          h2: 'Yaklaşım ne yapıyor',
+          h2: 'Onkoplastik cerrahi nedir',
           blocks: [
             {
               kind: 'p',
-              text: 'Tümör, çevresindeki sağlam doku sınırıyla birlikte çıkarıldığında memede bir boşluk kalır. Bu boşluk kendiliğine bırakıldığında memede çökme, asimetri ya da meme başında kayma görülebilir. Onkoplastik cerrahide, tümör çıkarıldıktan sonra memenin kendi dokusu aynı seansta yeniden şekillendirilerek bu boşluk kapatılır.',
+              text: 'Tümör, çevresindeki sağlam doku sınırıyla birlikte çıkarıldığında memede bir boşluk kalır. Bu boşluk kendi haline bırakıldığında memede çökme, asimetri ya da meme başında kayma görülebilir. Onkoplastik cerrahide, tümör çıkarıldıktan sonra memenin kendi dokusu aynı seansta yeniden şekillendirilerek bu boşluk kapatılır.',
             },
             {
               kind: 'p',
-              text: 'Böylece iki şey birlikte sağlanır: onkolojik güvenlik, yani sınırların temiz olması; ve memenin dolgun, simetriye yakın bir görünümde kalması. Gerektiğinde diğer memeye de küçültme ya da toparlama uygulanarak iki taraf dengelenir.',
+              text: 'Yani onkoplastik cerrahi, meme kanseri ameliyatı ile meme şekillendirme tekniklerinin tek bir cerrahi işlem içinde uygulanmasıdır. Onkolojik cerrahinin kurallarını plastik ve rekonstrüktif cerrahinin yöntemleriyle birleştirir.',
             },
             {
               kind: 'p',
-              text: 'Bu yaklaşım, cerrahın daha geniş bir doku parçası çıkarmasına da izin verir. Yani şekli korumak, tümörün çevresinden daha az doku almak anlamına gelmez.',
+              text: 'Bu yaklaşım, cerrahın daha geniş bir doku parçası çıkarmasına da izin verir. Şekli korumak, tümörün çevresinden daha az doku almak anlamına gelmez; önceliğimiz her zaman temiz cerrahi sınırdır.',
             },
           ],
         },
         {
-          h2: 'Kimlere uygundur',
+          h2: 'Kimlere uygulanabilir',
           blocks: [
             {
               kind: 'p',
-              text: 'Kararı belirleyen temel ölçüt, tümörün boyutunun meme hacmine oranıdır. Değerlendirmede şunlara bakıyoruz:',
+              text: 'Onkoplastik cerrahi her meme kanseri hastasında aynı şekilde uygulanmaz; cerrahi plan kişiye özel çıkarılır. Kararı belirleyen temel ölçüt, tümörün boyutunun meme hacmine oranıdır. Değerlendirmede şunlara bakıyoruz:',
             },
             {
               kind: 'ul',
               items: [
                 { text: 'Tümörün boyutu, memedeki yerleşimi ve tek odakta mı olduğu' },
-                { text: 'Meme hacmi ve mevcut sarkma derecesi' },
+                { text: 'Meme hacmi, şekli ve mevcut sarkma derecesi' },
+                { text: 'Hastalığın evresi ve daha önce alınmış tedaviler' },
                 { text: 'Ameliyat sonrası ışın tedavisi alabilecek durumda olup olmadığınız' },
                 { text: 'Sigara kullanımı, diyabet gibi yara iyileşmesini etkileyen faktörler' },
                 { text: 'Sizin görünüme dair beklentileriniz' },
@@ -654,7 +656,33 @@ export const TR = {
             },
             {
               kind: 'p',
-              text: 'Tümör memenin birden fazla bölgesine yayılmışsa, daha önce aynı memeye ışın tedavisi uygulanmışsa ya da temiz sınır elde edilemiyorsa memenin tamamının alınması daha güvenli olur. Bu durumda rekonstrüksiyon devreye girer.',
+              text: 'Uygun hastalarda onkoplastik teknikler meme koruyucu cerrahi ile birlikte kullanılır. Meme dokusunun tamamının alınması gerektiğinde ise mastektomi sonrası rekonstrüksiyon seçenekleri değerlendirilir.',
+            },
+          ],
+        },
+        {
+          h2: 'Onkoplastik cerrahi ile meme koruyucu cerrahi arasındaki fark',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'İki kavram sık karıştırılır. Biri ne kadar doku çıkarıldığını, diğeri kalan dokunun ne yapıldığını anlatır.',
+            },
+            {
+              kind: 'cards',
+              items: [
+                {
+                  k: 'Meme koruyucu cerrahi',
+                  v: 'Kanserli tümör ve çevresindeki gerekli meme dokusu çıkarılır, memenin geri kalanı korunur. Ameliyatın kapsamını tanımlar.',
+                },
+                {
+                  k: 'Onkoplastik cerrahi',
+                  v: 'Tümör çıkarıldıktan sonra kalan meme dokusunun yeniden şekillendirilmesidir. Ameliyatın nasıl yapıldığını tanımlar ve çoğunlukla meme koruyucu cerrahinin bir parçası olarak uygulanır.',
+                },
+              ],
+            },
+            {
+              kind: 'p',
+              text: 'Başka bir ifadeyle onkoplastik cerrahi, meme koruyucu cerrahinin sonucunu iyileştiren bir tekniktir. Meme koruyucu cerrahinin kendisi, kimlere uygun olduğu ve sonrasında gereken tedaviler için Meme Koruyucu Cerrahi sayfasına bakabilirsiniz.',
             },
           ],
         },
@@ -663,15 +691,211 @@ export const TR = {
           blocks: [
             {
               kind: 'p',
-              text: 'İlk haftalarda memede ödem ve his farklılığı olağandır. Nihai şekil, ışın tedavisinin de etkisiyle birkaç ay içinde oturur; bu yüzden sonucu ilk aya göre değerlendirmiyoruz.',
+              text: 'İlk haftalarda memede ödem ve his farklılığı olağandır. Nihai şekil, meme korunduysa ışın tedavisinin de etkisiyle birkaç ay içinde oturur; bu yüzden sonucu ilk aya göre değerlendirmiyoruz.',
             },
             {
               kind: 'p',
-              text: 'Meme koruyucu cerrahiden sonra ışın tedavisi neredeyse her hastada gereklidir ve nüks riskini belirgin biçimde azaltır. Bu iki tedavi bir bütündür; ameliyatı kabul edip ışın tedavisini planlamamak doğru bir yol değildir.',
+              text: 'Simetri için karşı memeye küçültme ya da toparlama uygulanmışsa, iki tarafın iyileşme hızı farklı olabilir. Bu da zamanla dengelenir.',
             },
             {
               kind: 'p',
               text: 'Takip, ilk yıllarda altı aylık aralıklarla muayene ve yıllık görüntüleme ile sürer. Kontrollerinizi aynı yerde sürdürmeniz, karşılaştırmayı kolaylaştırdığı için tercih edilir.',
+            },
+          ],
+        },
+        {
+          h2: 'Sık sorulan sorular',
+          blocks: [
+            {
+              kind: 'qa',
+              items: [
+                {
+                  q: 'Onkoplastik meme cerrahisi kanser ameliyatı mıdır?',
+                  a: 'Evet. Onkolojik cerrahi prensipleriyle meme şekillendirme tekniklerinin birlikte kullanılmasıdır. Estetik sonuç, kanser tedavisinin önüne geçmez.',
+                },
+                {
+                  q: 'Onkoplastik cerrahide meme tamamen alınır mı?',
+                  a: 'Her zaman değil. Uygun hastalarda meme koruyucu cerrahi ile birlikte uygulanır. Bazı hastalarda ise mastektomi tıbben gereklidir; o durumda rekonstrüksiyon devreye girer.',
+                },
+                {
+                  q: 'Her meme kanseri hastasına uygulanabilir mi?',
+                  a: 'Hayır. Uygunluk; tümörün özellikleri, meme yapısı, hastalığın evresi ve uygulanacak diğer tedaviler değerlendirilerek belirlenir.',
+                },
+                {
+                  q: 'İz kalır mı?',
+                  a: 'Her cerrahi işlemde olduğu gibi kesi yerlerinde iz oluşur. Kesinin yeri ve görünümü uygulanan tekniğe, meme yapısına ve kişinin yara iyileşmesine göre değişir.',
+                },
+              ],
+            },
+          ],
+        },
+      ] as Section[],
+    },
+
+    {
+      slug: 'meme-koruyucu-cerrahi',
+      key: 'koruyucu',
+      group: 'kanser',
+      no: '04',
+      seoTitle: 'Antalya Meme Koruyucu Cerrahi | Prof. Dr. Burhan Mayir',
+      title: 'Meme koruyucu cerrahi',
+      crumb: 'Meme koruyucu cerrahi',
+      navTitle: 'Meme Koruyucu Cerrahi',
+      meta: 'Meme koruyucu cerrahi nedir, kimlere uygulanır? Lumpektomi, sentinel lenf nodu biyopsisi, ameliyat sonrası ışın tedavisi ve mastektomi ile farkı. Prof. Dr. Burhan Mayir, Antalya.',
+      lede: 'Meme kanserinde tümörü ve çevresindeki gerekli dokuyu çıkarıp memenin geri kalanını korumak, uygun hastalarda memenin tamamının alınması kadar güvenlidir. Kimin uygun olduğu tek bir ölçüte değil, birkaç faktöre birlikte bakılarak belirlenir.',
+      img: '/img/stok-cerrahi-ekip.jpg',
+      imgAlt: 'Ameliyathanede cerrahi ekip',
+      quickFacts: [
+        { label: 'Diğer adları', value: 'Lumpektomi, parsiyel mastektomi' },
+        { label: 'Amaç', value: 'Tümörü temiz sınırla çıkarmak, memeyi korumak' },
+        { label: 'Koltuk altı', value: 'Öncelikle sentinel lenf nodu biyopsisi' },
+        { label: 'Sonrasında', value: 'Neredeyse her hastada ışın tedavisi' },
+        { label: 'Yaşam süresi', value: 'Uygun hastada mastektomiden farklı değil' },
+      ],
+      ctaBox: {
+        title: 'Memenizin alınması gerektiği söylendiyse',
+        text: 'Koruyucu bir seçeneğin mümkün olup olmadığı yeniden değerlendirilebilir. Mamografi, ultrason, MR ve patoloji sonuçlarınızla gelin.',
+      },
+      related: [
+        {
+          key: 'onkoplastik',
+          title: 'Onkoplastik Meme Cerrahisi',
+          text: 'Tümör çıkarıldıktan sonra meme şeklinin korunması.',
+        },
+        {
+          key: 'cerrahi',
+          title: 'Meme Kanseri Cerrahisi',
+          text: 'Bütün ameliyat seçenekleri ve koltuk altının değerlendirilmesi.',
+        },
+        {
+          key: 'meme-kanseri',
+          title: 'Meme Kanseri',
+          text: 'Belirtiler, tanı yöntemleri ve evreleme.',
+        },
+      ],
+      band: {
+        title: 'Memenizin korunup korunamayacağına birlikte bakalım',
+        text: 'Karar yalnızca tümörün boyutuna bakılarak verilmez. Görüntüleme ve patoloji raporlarınızı getirin, seçenekleri ayrıntılı konuşalım.',
+      },
+      indexBody:
+        'Tümörün ve çevresindeki gerekli dokunun çıkarılması, memenin geri kalanının korunması. Uygun hastalarda memenin tamamının alınması ile arasında yaşam süresi farkı gösterilmemiştir.',
+      indexWhen:
+        'Memenizin tamamının alınacağı söylendiyse, koruyucu bir seçeneğin mümkün olup olmadığı için ikinci görüş alabilirsiniz.',
+      sections: [
+        {
+          h2: 'Meme koruyucu cerrahi nedir',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Amaç, kanserli tümörü çevresindeki gerekli sağlam doku ile birlikte çıkarmak ve memenin geri kalanını korumaktır. Bu ameliyat lumpektomi, segmental mastektomi ya da parsiyel mastektomi gibi farklı isimlerle de anılır; hepsi aynı mantığı anlatır.',
+            },
+            {
+              kind: 'p',
+              text: 'Ameliyatın kapsamı tümörün boyutuna, memedeki yerleşimine ve meme dokusunun özelliklerine göre değişir. Geçmişte meme kanseri tanısı alan birçok hastada memenin tamamının alınması gerekirken, bugün uygun hastalarda meme dokusunun korunması mümkün.',
+            },
+            {
+              kind: 'p',
+              text: 'Uygun hastalarda meme koruyucu cerrahi ile mastektomi arasında yaşam süresi farkı gösterilmemiştir. Bu, kararı yalnızca "ne kadar alınırsa o kadar güvenli" mantığıyla vermemizi gereksiz kılar.',
+            },
+          ],
+        },
+        {
+          h2: 'Kimlere uygulanabilir',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Meme koruyucu cerrahi her hasta için uygun olmayabilir. Karar verilirken birçok faktör birlikte değerlendirilir:',
+            },
+            {
+              kind: 'ul',
+              items: [
+                { text: 'Tümörün boyutu, memedeki konumu ve tümör sayısı' },
+                { text: 'Meme büyüklüğü ve tümörün meme hacmine oranı' },
+                { text: 'Hastalığın evresi ve meme içindeki yaygınlığı' },
+                { text: 'Daha önce uygulanmış tedaviler, özellikle aynı memeye ışın tedavisi' },
+                { text: 'Ameliyat sonrası ışın tedavisinin uygulanabilir olup olmadığı' },
+              ],
+            },
+            {
+              kind: 'p',
+              text: 'Bazı hastalarda ameliyat öncesinde kemoterapi veya diğer sistemik tedaviler uygulanarak tümör küçültülür ve meme koruyucu cerrahi böylece mümkün hale gelir. Bu nedenle karar yalnızca ilk ölçülen tümör boyutuna bakılarak verilmez.',
+            },
+            {
+              kind: 'p',
+              text: 'Tümör memenin birden fazla bölgesine yayılmışsa, daha önce aynı memeye ışın tedavisi uygulanmışsa ya da temiz sınır elde edilemiyorsa memenin tamamının alınması daha güvenli olur.',
+            },
+          ],
+        },
+        {
+          h2: 'Ameliyat nasıl yapılır',
+          blocks: [
+            {
+              kind: 'steps',
+              items: [
+                {
+                  k: 'Öncesi',
+                  v: 'Meme muayenesi, mamografi, ultrason ve gerekirse MR birlikte değerlendirilerek tümörün yeri ve sınırları belirlenir. Ele gelmeyen tümörlerde ameliyattan önce işaretleme yapılır.',
+                },
+                {
+                  k: 'Tümörün çıkarılması',
+                  v: 'Cerrahi kesi planlanır ve tümör, çevresinde gerekli sağlam doku sınırıyla birlikte çıkarılır. Çıkarılan doku patolojik incelemeye gönderilir.',
+                },
+                {
+                  k: 'Koltuk altı',
+                  v: 'Gereken hastalarda sentinel lenf nodu biyopsisi yapılır. Yayılım saptanan seçili hastalarda koltuk altı lenf bezlerine yönelik daha geniş cerrahi uygulanabilir.',
+                },
+                {
+                  k: 'Şekillendirme',
+                  v: 'Çıkarılan doku miktarı ya da tümörün yerleşimi memede şekil bozukluğu bırakacaksa, kalan doku aynı seansta onkoplastik tekniklerle yeniden düzenlenir.',
+                },
+                {
+                  k: 'Patoloji',
+                  v: 'Cerrahi sınırlar ve tümörün özellikleri rapor edilir; genellikle bir hafta içinde çıkar. Sınırlarda sorun varsa ek bir cerrahi gerekebilir.',
+                },
+              ],
+            },
+          ],
+        },
+        {
+          h2: 'Ameliyat sonrası ışın tedavisi',
+          blocks: [
+            {
+              kind: 'p',
+              text: 'Meme koruyucu cerrahiden sonra neredeyse her hastada ışın tedavisi gerekir ve nüks riskini belirgin biçimde azaltır. Cerrahi ile ışın tedavisi bir bütündür; ameliyatı kabul edip ışın tedavisini planlamamak doğru bir yol değildir.',
+            },
+            {
+              kind: 'p',
+              text: 'Işın tedavisi alamayacak durumdaysanız, meme koruyucu cerrahi çoğu zaman uygun bir seçenek olmaz. Bu, ameliyat kararı verilirken en başta konuştuğumuz konulardan biridir.',
+            },
+            {
+              kind: 'p',
+              text: 'Patoloji sonucuna göre kemoterapi, hormon tedavisi veya hedefe yönelik tedaviler de gündeme gelebilir. Tedavi planı cerrahi, radyasyon onkolojisi ve medikal onkoloji tarafından birlikte oluşturulur.',
+            },
+          ],
+        },
+        {
+          h2: 'Sık sorulan sorular',
+          blocks: [
+            {
+              kind: 'qa',
+              items: [
+                {
+                  q: 'Meme koruyucu cerrahi mi, mastektomi mi?',
+                  a: 'Bu karar tümörün özellikleri, hastalığın yaygınlığı, meme yapısı ve uygulanabilecek diğer tedaviler değerlendirilerek verilir. Bazı hastalarda koruyucu cerrahi uygun bir seçenekken, bazı hastalarda mastektomi daha güvenlidir.',
+                },
+                {
+                  q: 'Meme koruyucu cerrahi sonrası ışın tedavisi şart mı?',
+                  a: 'Birçok hastada gereklidir. Gerekli tedaviler tümörün özelliklerine göre belirlenir, ancak ışın tedavisi alamayacaksanız ameliyat planı da değişir.',
+                },
+                {
+                  q: 'Meme tamamen korunur mu?',
+                  a: 'Meme dokusunun büyük bölümü korunur, ancak tümörün çıkarıldığı bölgede doku kaybı olur. Uygun hastalarda onkoplastik tekniklerle meme şeklinin korunmasına yardımcı olunur.',
+                },
+                {
+                  q: 'Ameliyattan sonra kanser tekrarlarsa ne olur?',
+                  a: 'Aynı memede tekrarlama olursa çoğunlukla mastektomi gerekir. Bu nedenle ameliyat sonrası takip ve yıllık görüntüleme düzenli sürdürülmelidir.',
+                },
+              ],
             },
           ],
         },
@@ -682,7 +906,7 @@ export const TR = {
       slug: 'meme-rekonstruksiyonu',
       key: 'rekonstruksiyon',
       group: 'kanser',
-      no: '04',
+      no: '05',
       seoTitle: 'Antalya Meme Rekonstrüksiyonu ve Meme Onarımı | Prof. Dr. Burhan Mayir',
       title: 'Meme rekonstrüksiyonu',
       crumb: 'Meme rekonstrüksiyonu',
@@ -704,7 +928,7 @@ export const TR = {
       related: [
         {
           key: 'onkoplastik',
-          title: 'Onkoplastik Cerrahi',
+          title: 'Onkoplastik Meme Cerrahisi',
           text: 'Kanseri çıkarırken memenin şeklini korumak.',
         },
         {
@@ -801,7 +1025,7 @@ export const TR = {
       slug: 'meme-agrisi',
       key: 'agri',
       group: 'hastalik',
-      no: '05',
+      no: '06',
       title: 'Meme ağrısı',
       crumb: 'Meme ağrısı',
       navTitle: 'Meme Ağrısı — Mastalji',
@@ -915,15 +1139,15 @@ export const TR = {
       slug: 'memede-kitle-fibroadenom',
       key: 'kitle',
       group: 'hastalik',
-      no: '06',
+      no: '07',
       title: 'Memede kitle ve fibroadenom',
       crumb: 'Memede kitle',
       navTitle: 'Memede Kitle — Fibroadenom',
       seoTitle: 'Antalya Memede Kitle ve Fibroadenom Tedavisi | İyi Huylu Kitle',
       meta: "Antalya'da memede kitle neden olur? Fibroadenom nedir, tehlikeli mi? Memede iyi huylu kitlelerin takibi ve ameliyatı hakkında bilgiler.",
       lede: "Memede kitle hissetmek çok korkutucudur. Ama şunu baştan bilin: 30 yaş altı kadınlarda ele gelen kitlelerin %90'ı iyi huyludur. Yine de her yeni kitle muayene edilmelidir.",
-      img: '/img/blog-fibroadenom.jpg',
-      imgAlt: 'Pansuman odası: muayene masası ve muayene lambası',
+      img: '/img/stok-gorusme.jpg',
+      imgAlt: 'Muayenehanede hekim ve hasta görüşmesi',
       quickFacts: [
         { label: '30 yaş altında', value: "Kitlelerin %90'ı iyi huylu" },
         { label: 'En sık iyi huylu tümör', value: 'Fibroadenom' },
@@ -1024,15 +1248,15 @@ export const TR = {
       slug: 'meme-kistleri',
       key: 'kist',
       group: 'hastalik',
-      no: '07',
+      no: '08',
       title: 'Meme kistleri',
       crumb: 'Meme kistleri',
       navTitle: 'Meme Kistleri',
       seoTitle: 'Antalya Meme Kisti Tehlikeli mi? Kist Tedavisi ve Takibi',
       meta: 'Memede kist neden oluşur? Antalya meme kisti belirtileri, basit ve kompleks kist farkı ve tedavi yöntemleri. Prof. Dr. Burhan Mayir.',
       lede: 'Meme kistleri içi sıvı dolu keseciklerdir ve kadınların yaklaşık yarısında hayatın bir döneminde görülür. Özellikle 30-50 yaş arasında çok sıktır.',
-      img: '/img/blog-kitle.jpg',
-      imgAlt: 'Pansuman odası ve muayene masası',
+      img: '/img/stok-ultrason.jpg',
+      imgAlt: 'Muayene odasında meme ultrasonu cihazı',
       quickFacts: [
         { label: 'Ne sıklıkta', value: 'Kadınların yaklaşık yarısında' },
         { label: 'En sık yaş', value: '30-50 arası' },
@@ -1111,7 +1335,7 @@ export const TR = {
       slug: 'meme-basi-akintisi',
       key: 'akinti',
       group: 'hastalik',
-      no: '08',
+      no: '09',
       title: 'Meme başı akıntısı',
       crumb: 'Meme başı akıntısı',
       navTitle: 'Meme Başı Akıntısı',
@@ -1198,7 +1422,7 @@ export const TR = {
       slug: 'meme-iltihabi-mastit',
       key: 'mastit',
       group: 'hastalik',
-      no: '09',
+      no: '10',
       title: 'Meme iltihabı, apse ve mastit',
       crumb: 'Meme iltihabı',
       navTitle: 'Meme İltihabı — Mastit',
@@ -1302,7 +1526,7 @@ export const TR = {
       slug: 'granulomatoz-mastit',
       key: 'granulomatoz',
       group: 'hastalik',
-      no: '10',
+      no: '11',
       title: 'Granülomatöz mastit',
       crumb: 'Granülomatöz mastit',
       navTitle: 'Granülomatöz Mastit',

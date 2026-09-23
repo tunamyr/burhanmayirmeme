@@ -195,6 +195,9 @@ const secili = konu ?? d.form.subjects[0];
     padding: 52px 0;
     text-align: center;
   }
+  /* .state'in display'i tarayıcının [hidden] kuralını eziyordu; gönderimden
+     önce iki durum kutusu da sayfada görünür kalıyordu. */
+  .state[hidden] { display: none; }
   .state__title {
     font-family: var(--serif);
     font-size: 30px;

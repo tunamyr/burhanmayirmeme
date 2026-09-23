@@ -20,7 +20,7 @@ const alts = alternates('about');
   title={d.about.title}
   description={d.about.description}
   active="about"
-  ogImage="/img/portre-masa.png"
+  ogImage="/img/portre-masa.jpg"
   alts={alts}
 >
   <SiteNav lang={lang} active="about" alts={alts} />
@@ -29,10 +29,10 @@ const alts = alternates('about');
     <section class="intro">
       <div class="intro__media">
         <img
-          src="/img/portre-masa.png"
+          src="/img/portre-masa.jpg"
           alt={d.about.portraitAlt}
-          width="1024"
-          height="1024"
+          width="1200"
+          height="1200"
           fetchpriority="high"
         />
         <div class="stats">
@@ -103,7 +103,17 @@ const alts = alternates('about');
 
     <section class="split">
       <div class="shell split__grid">
-        <h2 class="split__title">{d.about.principlesTitle}</h2>
+        <div class="split__aside">
+          <h2 class="split__title">{d.about.principlesTitle}</h2>
+          <img
+            class="split__portrait"
+            src="/img/portre-tam-boy.jpg"
+            alt={d.about.standingAlt}
+            width="720"
+            height="1313"
+            loading="lazy"
+          />
+        </div>
         <div class="principles">
           {
             d.about.principles.map((p) => (
@@ -240,6 +250,18 @@ const alts = alternates('about');
   .split__title--sticky {
     position: sticky;
     top: 108px;
+  }
+
+  /* İlkeler bölümünde sol sütun yalnız başlıktan ibaretti; boşluğu portre dolduruyor. */
+  .split__aside {
+    display: grid;
+    gap: 32px;
+    align-content: start;
+  }
+  .split__portrait {
+    width: 100%;
+    height: auto;
+    display: block;
   }
 
   .timeline {
@@ -380,6 +402,10 @@ const alts = alternates('about');
     }
     .split__title--sticky {
       position: static;
+    }
+    /* Tek sütuna düşünce portre sayfayı kaplamasın. */
+    .split__portrait {
+      max-width: 280px;
     }
     .acad__grid {
       grid-template-columns: 1fr 1fr;
