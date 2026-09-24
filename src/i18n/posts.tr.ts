@@ -106,8 +106,8 @@ export const POSTS_TR: Post[] = [
     slug: 'memede-kitle-hissettim',
     tag: 'Ne yapmalı',
     read: '5 dk okuma',
-    img: '/img/blog-kitle.jpg',
-    alt: 'Pansuman odası ve muayene masası',
+    img: '/img/stok-gorusme.jpg',
+    alt: 'Muayenehanede hekim ve hasta görüşmesi',
     title: 'Memede kitle hissettim, sırada ne var?',
     excerpt:
       'İlk muayeneden patoloji sonucuna kadar izlenen adımlar, her adımın ne kadar sürdüğü ve hangi noktada karar verildiği.',
@@ -438,8 +438,8 @@ export const POSTS_TR: Post[] = [
     slug: 'fibroadenom-cikarilmali-mi',
     tag: 'İyi huylu',
     read: '4 dk okuma',
-    img: '/img/blog-fibroadenom.jpg',
-    alt: 'Pansuman odası: muayene masası ve muayene lambası',
+    img: '/img/stok-ultrason.jpg',
+    alt: 'Muayene odasında meme ultrasonu cihazı',
     title: 'Fibroadenom çıkarılmalı mı, izlenebilir mi?',
     excerpt:
       'Boyut, büyüme hızı ve görüntüleme bulguları kararı belirler. Hangi fibroadenomlar ultrasonla izlenebilir.',

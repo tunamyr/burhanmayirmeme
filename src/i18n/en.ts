@@ -435,8 +435,8 @@ export const EN: Dict = {
       navTitle: 'Breast Cancer Surgery',
       meta: 'Breast-conserving surgery and mastectomy, sentinel lymph node biopsy, the day of surgery and recovery. Prof. Burhan Mayir, MD, Antalya.',
       lede: 'Surgery has two jobs: to remove the tumour with clear margins and to find out whether the disease has reached the armpit. Which operation is performed is decided by weighing the features of the tumour together with your own preferences.',
-      img: '/img/stok-ameliyathane.jpg',
-      imgAlt: 'Surgical team at work in an operating theatre',
+      img: '/img/ameliyathane.jpg',
+      imgAlt: 'Breast surgery being performed in the operating theatre',
       quickFacts: [
         { label: 'Anaesthesia', value: 'General anaesthesia' },
         { label: 'Duration', value: 'About 1–2 hours' },
@@ -1143,8 +1143,8 @@ export const EN: Dict = {
       seoTitle: 'Breast Lumps and Fibroadenoma in Antalya | Benign Breast Lumps',
       meta: 'Why does a lump appear in the breast? What is a fibroadenoma and is it dangerous? Follow-up and surgery for benign breast lumps in Antalya.',
       lede: 'Feeling a lump in your breast is frightening. But know this from the start: in women under 30, 90% of palpable lumps are benign. Even so, every new lump should be examined.',
-      img: '/img/stok-gorusme.jpg',
-      imgAlt: 'A doctor and patient talking in the consulting room',
+      img: '/img/cizim-fibroadenom.jpg',
+      imgAlt: 'Illustration of a fibroadenoma in a cross-section of the breast',
       quickFacts: [
         { label: 'Under the age of 30', value: '90% of lumps are benign' },
         { label: 'Most common benign tumour', value: 'Fibroadenoma' },
@@ -1252,8 +1252,8 @@ export const EN: Dict = {
       seoTitle: 'Are Breast Cysts Dangerous? Treatment and Follow-up in Antalya',
       meta: 'Why do cysts form in the breast? Symptoms of breast cysts in Antalya, the difference between simple and complex cysts, and treatment. Prof. Burhan Mayir, MD.',
       lede: 'Breast cysts are sacs filled with fluid, and about half of all women have them at some point in life. They are especially common between the ages of 30 and 50.',
-      img: '/img/stok-ultrason.jpg',
-      imgAlt: 'Breast ultrasound machine in the examination room',
+      img: '/img/cizim-meme-kisti.jpg',
+      imgAlt: 'Illustration of cysts among the milk ducts in a cross-section of the breast',
       quickFacts: [
         { label: 'How common', value: 'In about half of all women' },
         { label: 'Most common age', value: 'Between 30 and 50' },

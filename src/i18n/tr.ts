@@ -441,8 +441,8 @@ export const TR = {
       navTitle: 'Meme Kanseri Cerrahisi',
       meta: 'Meme koruyucu cerrahi ve mastektomi seçenekleri, sentinel lenf nodu biyopsisi, ameliyat günü ve iyileşme süreci. Prof. Dr. Burhan Mayir, Antalya.',
       lede: 'Cerrahinin iki işi vardır: tümörü sağlam sınırlarla çıkarmak ve hastalığın koltuk altına yayılıp yayılmadığını öğrenmek. Hangi ameliyatın yapılacağı, tümörün özellikleri ve sizin tercihleriniz birlikte değerlendirilerek belirlenir.',
-      img: '/img/stok-ameliyathane.jpg',
-      imgAlt: 'Ameliyathanede çalışan cerrahi ekip',
+      img: '/img/ameliyathane.jpg',
+      imgAlt: 'Ameliyathanede meme cerrahisi uygulanırken',
       quickFacts: [
         { label: 'Anestezi', value: 'Genel anestezi' },
         { label: 'Süre', value: 'Yaklaşık 1–2 saat' },
@@ -1146,8 +1146,8 @@ export const TR = {
       seoTitle: 'Antalya Memede Kitle ve Fibroadenom Tedavisi | İyi Huylu Kitle',
       meta: "Antalya'da memede kitle neden olur? Fibroadenom nedir, tehlikeli mi? Memede iyi huylu kitlelerin takibi ve ameliyatı hakkında bilgiler.",
       lede: "Memede kitle hissetmek çok korkutucudur. Ama şunu baştan bilin: 30 yaş altı kadınlarda ele gelen kitlelerin %90'ı iyi huyludur. Yine de her yeni kitle muayene edilmelidir.",
-      img: '/img/stok-gorusme.jpg',
-      imgAlt: 'Muayenehanede hekim ve hasta görüşmesi',
+      img: '/img/cizim-fibroadenom.jpg',
+      imgAlt: 'Meme kesitinde fibroadenomu gösteren çizim',
       quickFacts: [
         { label: '30 yaş altında', value: "Kitlelerin %90'ı iyi huylu" },
         { label: 'En sık iyi huylu tümör', value: 'Fibroadenom' },
@@ -1255,8 +1255,8 @@ export const TR = {
       seoTitle: 'Antalya Meme Kisti Tehlikeli mi? Kist Tedavisi ve Takibi',
       meta: 'Memede kist neden oluşur? Antalya meme kisti belirtileri, basit ve kompleks kist farkı ve tedavi yöntemleri. Prof. Dr. Burhan Mayir.',
       lede: 'Meme kistleri içi sıvı dolu keseciklerdir ve kadınların yaklaşık yarısında hayatın bir döneminde görülür. Özellikle 30-50 yaş arasında çok sıktır.',
-      img: '/img/stok-ultrason.jpg',
-      imgAlt: 'Muayene odasında meme ultrasonu cihazı',
+      img: '/img/cizim-meme-kisti.jpg',
+      imgAlt: 'Meme kesitinde süt kanalları arasındaki kistleri gösteren çizim',
       quickFacts: [
         { label: 'Ne sıklıkta', value: 'Kadınların yaklaşık yarısında' },
         { label: 'En sık yaş', value: '30-50 arası' },
