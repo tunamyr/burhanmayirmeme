@@ -66,6 +66,11 @@ const SITE_LINKS = [
     <span>© {new Date().getFullYear()} {d.doctorName}</span>
     <span>{d.districtLabel}, {d.cityLabel}</span>
   </div>
+
+  <p class="foot__credit">
+    Design &amp; Development by
+    <a href="https://tunamayir.com" target="_blank" rel="noopener">Tuna Mayir</a>
+  </p>
 </footer>
 
 <style>
@@ -139,7 +144,7 @@ const SITE_LINKS = [
   }
 
   .foot__bar {
-    padding: 20px var(--page-pad) 40px;
+    padding: 20px var(--page-pad) 14px;
     border-top: 1px solid var(--line);
     font-size: 13px;
     color: var(--fainter);
@@ -148,6 +153,19 @@ const SITE_LINKS = [
     gap: 24px;
     flex-wrap: wrap;
   }
+
+  .foot__credit {
+    margin: 0;
+    padding: 0 var(--page-pad) 36px;
+    text-align: center;
+    font-size: 13px;
+    color: var(--fainter);
+  }
+  .foot__credit a {
+    color: var(--ink);
+    font-weight: 600;
+  }
+  .foot__credit a:hover { color: var(--accent); }
 
   @media (max-width: 1000px) {
     .foot__grid { grid-template-columns: 1fr 1fr; gap: 40px; }

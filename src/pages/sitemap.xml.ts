@@ -34,7 +34,7 @@ function entries(): Entry[] {
 const egikCizgili = (yol: string) => (yol.endsWith('/') ? yol : yol + '/');
 
 export const GET: APIRoute = ({ site }) => {
-  const base = site ?? new URL('https://burhanmayir.com');
+  const base = site ?? new URL('https://www.antalyamemehastaliklari.com');
   const abs = (p: string) => new URL(egikCizgili(p), base).href;
 
   const urls = entries()

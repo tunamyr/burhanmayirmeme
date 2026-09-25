@@ -3,7 +3,7 @@ import { defineConfig, envField } from 'astro/config';
 import vercel from '@astrojs/vercel';
 
 export default defineConfig({
-  site: 'https://burhanmayir.com',
+  site: 'https://www.antalyamemehastaliklari.com',
 
   /**
    * Site statik kalıyor: bütün sayfalar build sırasında HTML'e dönüyor.

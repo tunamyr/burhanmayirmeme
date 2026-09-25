@@ -11,7 +11,7 @@ import type { APIRoute } from 'astro';
  * gösterilmesi isteniyor.
  */
 export const GET: APIRoute = ({ site }) => {
-  const base = site ?? new URL('https://burhanmayir.com');
+  const base = site ?? new URL('https://www.antalyamemehastaliklari.com');
   const abs = (p: string) => new URL(p, base).href;
 
   const body = `User-agent: *

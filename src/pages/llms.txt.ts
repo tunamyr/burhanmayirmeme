@@ -47,7 +47,7 @@ function section(lang: Locale, abs: (path: string) => string): string[] {
 const egikCizgili = (yol: string) => (yol.endsWith('/') ? yol : yol + '/');
 
 export const GET: APIRoute = ({ site }) => {
-  const base = site ?? new URL('https://burhanmayir.com');
+  const base = site ?? new URL('https://www.antalyamemehastaliklari.com');
   const abs = (path: string) => new URL(egikCizgili(path), base).href;
 
   const tr = DICTS.tr;
