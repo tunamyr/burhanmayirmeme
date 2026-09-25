@@ -107,7 +107,7 @@ export const POSTS_EN: Post[] = [
     tag: 'What to do',
     read: '5 min read',
     img: '/img/stok-gorusme.jpg',
-    alt: 'A doctor and patient talking in the consulting room',
+    alt: 'A doctor taking notes on a form while the patient sits across the desk',
     title: 'I have felt a lump in my breast — what comes next?',
     excerpt:
       'The steps from the first examination to the pathology result, how long each takes and at which point the decision is made.',
@@ -439,7 +439,7 @@ export const POSTS_EN: Post[] = [
     tag: 'Benign',
     read: '4 min read',
     img: '/img/stok-ultrason.jpg',
-    alt: 'Breast ultrasound machine in the examination room',
+    alt: 'Gloved hands holding an ultrasound probe at the machine controls',
     title: 'Should a fibroadenoma be removed or watched?',
     excerpt:
       'Size, growth rate and imaging findings decide. Which fibroadenomas can be followed with ultrasound.',

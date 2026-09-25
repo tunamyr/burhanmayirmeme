@@ -107,7 +107,7 @@ export const POSTS_TR: Post[] = [
     tag: 'Ne yapmalı',
     read: '5 dk okuma',
     img: '/img/stok-gorusme.jpg',
-    alt: 'Muayenehanede hekim ve hasta görüşmesi',
+    alt: 'Görüşme sırasında hekimin not aldığı form, karşısında hasta',
     title: 'Memede kitle hissettim, sırada ne var?',
     excerpt:
       'İlk muayeneden patoloji sonucuna kadar izlenen adımlar, her adımın ne kadar sürdüğü ve hangi noktada karar verildiği.',
@@ -439,7 +439,7 @@ export const POSTS_TR: Post[] = [
     tag: 'İyi huylu',
     read: '4 dk okuma',
     img: '/img/stok-ultrason.jpg',
-    alt: 'Muayene odasında meme ultrasonu cihazı',
+    alt: 'Eldivenli eller ultrason probunu tutarken cihazın paneli',
     title: 'Fibroadenom çıkarılmalı mı, izlenebilir mi?',
     excerpt:
       'Boyut, büyüme hızı ve görüntüleme bulguları kararı belirler. Hangi fibroadenomlar ultrasonla izlenebilir.',
