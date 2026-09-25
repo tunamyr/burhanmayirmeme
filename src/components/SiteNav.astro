@@ -106,23 +106,25 @@ const contactHref = pageHref(lang, 'contact');
       <a class="cta" href={contactHref}>{d.nav.cta}</a>
     </nav>
 
+    <div class="mlangs">
+      {
+        alts.map((a) => (
+          <a
+            class:list={['mlang', { 'lang--on': a.lang === lang }]}
+            href={a.href}
+            hreflang={a.htmlLang}
+            lang={a.htmlLang}
+            aria-current={a.lang === lang ? 'true' : undefined}
+          >
+            {a.short}
+          </a>
+        ))
+      }
+    </div>
+
     <details class="mobile">
       <summary aria-label={d.nav.openMenu}><span aria-hidden="true">☰</span></summary>
       <div class="mobile__panel">
-        <span class="mobile__langs">
-          {
-            alts.map((a) => (
-              <a
-                class:list={['mobile__lang', { 'lang--on': a.lang === lang }]}
-                href={a.href}
-                hreflang={a.htmlLang}
-                lang={a.htmlLang}
-              >
-                {a.short}
-              </a>
-            ))
-          }
-        </span>
         {LINKS_BEFORE.map((l) => <a href={l.href}>{l.label}</a>)}
         {
           GROUPS.map((g) => (
@@ -309,21 +311,11 @@ const contactHref = pageHref(lang, 'contact');
   }
   .mobile__topic { padding-left: 14px; }
 
-  /* Dil seçimi panelin en üstünde: uzun listenin sonunda kalınca görülmüyordu. */
-  .mobile__langs {
-    display: flex;
-    gap: 18px;
-    padding-bottom: 4px;
-    border-bottom: 1px solid var(--line);
-  }
-  .mobile__lang {
-    border-bottom: 0 !important;
-    padding: 10px 0 !important;
-    font-size: 13px;
-    letter-spacing: 0.12em;
-    color: var(--fainter) !important;
-  }
-  .mobile__lang.lang--on { color: var(--ink) !important; }
+  /* Mobilde dil seçimi menüye gömülmüyor, hamburgerin yanında hep görünüyor. */
+  .mlangs { display: none; gap: 12px; font-size: 12px; letter-spacing: 0.12em; }
+  .mlang { color: var(--fainter); padding: 10px 0; }
+  .mlang:hover { color: var(--accent); }
+  .mlang.lang--on { color: var(--ink); }
 
   .cta--block {
     margin-top: 14px;
@@ -337,6 +329,8 @@ const contactHref = pageHref(lang, 'contact');
   @media (max-width: 1240px) {
     .nav__links { display: none; }
     .mobile { display: block; justify-self: end; }
+    .nav__bar { grid-template-columns: 1fr auto auto; gap: 14px; }
+    .mlangs { display: flex; }
   }
 
   /* Dar ekranda marka küçülüyor; unvan artık aynı satırda olduğu için
@@ -348,6 +342,9 @@ const contactHref = pageHref(lang, 'contact');
     .mobile__panel { top: 78px; max-height: calc(100dvh - 78px); }
   }
   @media (max-width: 390px) {
+    .nav__bar { gap: 8px; }
+    .mlangs { gap: 9px; font-size: 11px; letter-spacing: 0.08em; }
+    .mobile summary { padding: 10px 4px 10px 6px; }
     .brand__name { font-size: 16.5px; }
     .brand__kicker { font-size: 10px; letter-spacing: 0.14em; }
   }
