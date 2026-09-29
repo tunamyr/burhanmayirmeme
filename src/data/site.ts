@@ -33,4 +33,15 @@ export const SITE = {
  * telefon/e-postaya yönlendiren bir panel gösterir. Uç nokta çalışsa bile
  * SMTP değişkenleri Vercel'de tanımlı değilse aynı panel gösterilir.
  */
+/**
+ * Google etiketleri. Analytics ve Ads aynı gtag.js'i paylaşıyor; kimlikler
+ * BaseLayout'ta yüklenirken ve randevu formu dönüşüm bildirirken okunuyor.
+ */
+export const TRACKING = {
+  analyticsId: 'G-T3M305R25X',
+  adsId: 'AW-457793606',
+  /** Google Ads'teki dönüşüm işlemi; yalnızca başarılı randevu gönderiminde tetikleniyor. */
+  adsLeadConversion: 'AW-457793606/BWYjCIek8rgcEMbApdoB',
+} as const;
+
 export const FORM_ENDPOINT = '/api/randevu';

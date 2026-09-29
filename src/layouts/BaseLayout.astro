@@ -1,6 +1,6 @@
 ---
 import '../styles/tokens.css';
-import { SITE } from '../data/site';
+import { SITE, TRACKING } from '../data/site';
 import { t, DEFAULT_LOCALE, type Locale, type Alternate } from '../i18n';
 
 interface Props {
@@ -66,12 +66,21 @@ const jsonLd = {
       import.meta.env.PROD && (
         <Fragment>
           {/* Google tag (gtag.js) — geliştirme sunucusunda yüklenmiyor, istatistik kirlenmesin. */}
-          <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-T3M305R25X"></script>
-          <script is:inline>
+          <script is:inline async src={`https://www.googletagmanager.com/gtag/js?id=${TRACKING.analyticsId}`}></script>
+          <script is:inline define:vars={{ ga: TRACKING.analyticsId, ads: TRACKING.adsId }}>
             window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
+            window.gtag = function () { dataLayer.push(arguments); };
             gtag('js', new Date());
-            gtag('config', 'G-T3M305R25X');
+            gtag('config', ga);
+            gtag('config', ads);
+
+            // Telefon ve e-posta tıklamaları Analytics'te ayrı olay olarak görünsün.
+            document.addEventListener('click', function (e) {
+              var a = e.target instanceof Element && e.target.closest('a[href^="tel:"], a[href^="mailto:"]');
+              if (!a) return;
+              var tel = a.getAttribute('href').indexOf('tel:') === 0;
+              gtag('event', tel ? 'phone_click' : 'email_click', { link_url: a.getAttribute('href') });
+            });
           </script>
         </Fragment>
       )

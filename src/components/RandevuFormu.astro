@@ -69,6 +69,8 @@ const secili = konu ?? d.form.subjects[0];
 </div>
 
 <script>
+  import { TRACKING } from '../data/site';
+
   const box = document.querySelector<HTMLElement>('[data-randevu]');
   if (box) {
     const form = box.querySelector<HTMLFormElement>('[data-form]')!;
@@ -103,6 +105,12 @@ const secili = konu ?? d.form.subjects[0];
           headers: { Accept: 'application/json' },
         });
         show(res.ok ? ok : fail);
+        // Reklam dönüşümü yalnızca talep gerçekten ulaştığında; gtag yalnızca canlıda var.
+        const gtag = (window as { gtag?: (...args: unknown[]) => void }).gtag;
+        if (res.ok && gtag) {
+          gtag('event', 'conversion', { send_to: TRACKING.adsLeadConversion });
+          gtag('event', 'generate_lead', { form: 'randevu' });
+        }
       } catch {
         show(fail);
       } finally {
