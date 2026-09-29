@@ -86,6 +86,7 @@ export const EN: Dict = {
     relatedTopics: 'Related topics',
     whenToApply: 'When to seek care',
     readTopic: 'Read this topic →',
+    moreInfo: 'Learn more →',
     breadcrumbLabel: 'You are here',
     breadcrumbHome: 'Home',
     breadcrumbTopics: 'Conditions',
@@ -151,6 +152,9 @@ export const EN: Dict = {
     fieldsHead: 'Areas of interest',
     fields:
       'Breast cancer surgery · Breast-conserving surgery · Oncoplastic breast surgery · Breast reconstruction · Benign breast conditions · General surgery',
+    mainSiteText: 'For my work in general surgery and obesity surgery:',
+    mainSiteLabel: 'burhanmayir.com →',
+    mainSiteUrl: 'https://www.burhanmayir.com/en/',
 
     timelineTitle: 'Training and appointments',
     timeline: [

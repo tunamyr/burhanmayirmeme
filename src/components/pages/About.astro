@@ -56,6 +56,12 @@ const alts = alternates('about');
           <div class="fields__head">{d.about.fieldsHead}</div>
           <div class="fields__list">{d.about.fields}</div>
         </div>
+        <p class="mainsite">
+          {d.about.mainSiteText}{' '}
+          <a href={d.about.mainSiteUrl} target="_blank" rel="noopener">
+            {d.about.mainSiteLabel}
+          </a>
+        </p>
       </div>
     </section>
 
@@ -227,6 +233,23 @@ const alts = alternates('about');
     font-size: 16.5px;
     line-height: 1.75;
     color: var(--text-strong);
+  }
+
+  .mainsite {
+    margin: 22px 0 0;
+    font-size: 15.5px;
+    line-height: 1.7;
+    color: var(--text-soft);
+  }
+  .mainsite a {
+    color: var(--ink);
+    border-bottom: 1px solid var(--line-hover);
+    padding-bottom: 2px;
+    transition: border-color var(--ease);
+  }
+  .mainsite a:hover {
+    border-bottom-color: var(--accent);
+    color: var(--ink);
   }
 
   /* --- İki sütunlu bölümler --- */

@@ -86,6 +86,7 @@ export const RU: Dict = {
     relatedTopics: 'Смежные темы',
     whenToApply: 'Когда обращаться',
     readTopic: 'Читать эту тему →',
+    moreInfo: 'Подробнее →',
     breadcrumbLabel: 'Вы находитесь здесь',
     breadcrumbHome: 'Главная',
     breadcrumbTopics: 'Заболевания',
@@ -151,6 +152,9 @@ export const RU: Dict = {
     fieldsHead: 'Направления',
     fields:
       'Хирургия рака молочной железы · Органосохраняющая операция · Онкопластическая хирургия · Реконструкция молочной железы · Доброкачественные заболевания · Общая хирургия',
+    mainSiteText: 'О моей работе в общей хирургии и хирургии ожирения:',
+    mainSiteLabel: 'burhanmayir.com →',
+    mainSiteUrl: 'https://www.burhanmayir.com/ru/',
 
     timelineTitle: 'Образование и работа',
     timeline: [

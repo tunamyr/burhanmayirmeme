@@ -73,6 +73,7 @@ const oneCikanlar = d.blog.posts.slice(0, 3);
         <div class="acc">
           {
             d.topics.map((x, i) => (
+              <div class="item">
               <button
                 type="button"
                 class="row"
@@ -90,6 +91,10 @@ const oneCikanlar = d.blog.posts.slice(0, 3);
                   </span>
                 </span>
               </button>
+              <a class="row__more" href={topicHref(lang, i)}>
+                {d.common.moreInfo}
+              </a>
+              </div>
             ))
           }
         </div>
@@ -395,7 +400,6 @@ const oneCikanlar = d.blog.posts.slice(0, 3);
     width: 100%;
     text-align: left;
     border: 0;
-    border-bottom: 1px solid var(--rule);
     background: transparent;
     cursor: pointer;
     padding: 26px 24px 26px 4px;
@@ -403,8 +407,29 @@ const oneCikanlar = d.blog.posts.slice(0, 3);
     font: inherit;
     transition: background var(--ease);
   }
-  .row[aria-expanded='true'] {
+  /* Çizgi ve zemin satırı saran öğede: altındaki "Ayrıntılı bilgi" linki de aynı kutuda kalıyor. */
+  .item {
+    border-bottom: 1px solid var(--rule);
+    transition: background var(--ease);
+  }
+  .item:has(.row[aria-expanded='true']) {
     background: var(--bg);
+  }
+  .row__more {
+    display: inline-block;
+    margin: -8px 0 26px 80px;
+    border-bottom: 1px solid var(--line-hover);
+    padding-bottom: 3px;
+    font-size: 14.5px;
+    color: var(--ink);
+    transition: border-color var(--ease);
+  }
+  .row__more:hover {
+    border-bottom-color: var(--accent);
+    color: var(--ink);
+  }
+  [data-enhanced] .item:not(:has(.row[aria-expanded='true'])) .row__more {
+    display: none;
   }
   .row__no {
     font-size: 13px;

@@ -94,6 +94,7 @@ export const TR = {
     relatedTopics: 'İlgili konular',
     whenToApply: 'Ne zaman başvurmalı',
     readTopic: 'Bu konuyu okuyun →',
+    moreInfo: 'Ayrıntılı bilgi →',
     breadcrumbLabel: 'Neredesiniz',
     breadcrumbHome: 'Ana sayfa',
     breadcrumbTopics: 'Hastalıklar',
@@ -160,6 +161,9 @@ export const TR = {
     fieldsHead: 'İlgi alanları',
     fields:
       'Meme kanseri cerrahisi · Meme koruyucu cerrahi · Onkoplastik meme cerrahisi · Meme rekonstrüksiyonu · İyi huylu meme hastalıkları · Genel cerrahi',
+    mainSiteText: 'Genel cerrahi ve obezite cerrahisi alanındaki çalışmalarım için:',
+    mainSiteLabel: 'burhanmayir.com →',
+    mainSiteUrl: 'https://www.burhanmayir.com/',
 
     timelineTitle: 'Eğitim ve görevler',
     timeline: [
