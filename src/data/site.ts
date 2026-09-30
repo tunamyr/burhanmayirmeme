@@ -7,6 +7,7 @@ export const SITE = {
 
   phoneLabel: '+90 537 357 34 64',
   phoneHref: 'tel:+905373573464',
+  whatsappHref: 'https://wa.me/905373573464',
   email: 'burmay@yahoo.com',
 
   addressLines: [

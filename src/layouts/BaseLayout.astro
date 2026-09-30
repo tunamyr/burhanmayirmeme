@@ -1,5 +1,6 @@
 ---
 import '../styles/tokens.css';
+import WhatsAppButton from '../components/WhatsAppButton.astro';
 import { SITE, TRACKING } from '../data/site';
 import { t, DEFAULT_LOCALE, type Locale, type Alternate } from '../i18n';
 
@@ -74,12 +75,15 @@ const jsonLd = {
             gtag('config', ga);
             gtag('config', ads);
 
-            // Telefon ve e-posta tıklamaları Analytics'te ayrı olay olarak görünsün.
+            // Telefon, e-posta ve WhatsApp tıklamaları Analytics'te ayrı olay olarak görünsün.
             document.addEventListener('click', function (e) {
-              var a = e.target instanceof Element && e.target.closest('a[href^="tel:"], a[href^="mailto:"]');
+              var a = e.target instanceof Element &&
+                e.target.closest('a[href^="tel:"], a[href^="mailto:"], a[href^="https://wa.me/"]');
               if (!a) return;
-              var tel = a.getAttribute('href').indexOf('tel:') === 0;
-              gtag('event', tel ? 'phone_click' : 'email_click', { link_url: a.getAttribute('href') });
+              var href = a.getAttribute('href');
+              var name = href.indexOf('tel:') === 0 ? 'phone_click'
+                : href.indexOf('mailto:') === 0 ? 'email_click' : 'whatsapp_click';
+              gtag('event', name, { link_url: href });
             });
           </script>
         </Fragment>
@@ -121,6 +125,7 @@ const jsonLd = {
   <body data-active={active}>
     <a class="skip" href="#icerik">{d.nav.skipToContent}</a>
     <slot />
+    <WhatsAppButton lang={lang} />
   </body>
 </html>
 

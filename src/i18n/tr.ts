@@ -94,6 +94,7 @@ export const TR = {
     relatedTopics: 'İlgili konular',
     whenToApply: 'Ne zaman başvurmalı',
     readTopic: 'Bu konuyu okuyun →',
+    whatsapp: "WhatsApp'tan yazın",
     moreInfo: 'Ayrıntılı bilgi →',
     breadcrumbLabel: 'Neredesiniz',
     breadcrumbHome: 'Ana sayfa',

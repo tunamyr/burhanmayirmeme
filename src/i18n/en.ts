@@ -86,6 +86,7 @@ export const EN: Dict = {
     relatedTopics: 'Related topics',
     whenToApply: 'When to seek care',
     readTopic: 'Read this topic →',
+    whatsapp: "Message us on WhatsApp",
     moreInfo: 'Learn more →',
     breadcrumbLabel: 'You are here',
     breadcrumbHome: 'Home',

@@ -86,6 +86,7 @@ export const RU: Dict = {
     relatedTopics: 'Смежные темы',
     whenToApply: 'Когда обращаться',
     readTopic: 'Читать эту тему →',
+    whatsapp: "Написать в WhatsApp",
     moreInfo: 'Подробнее →',
     breadcrumbLabel: 'Вы находитесь здесь',
     breadcrumbHome: 'Главная',
