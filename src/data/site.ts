@@ -39,7 +39,7 @@ export const SITE = {
  * BaseLayout'ta yüklenirken ve randevu formu dönüşüm bildirirken okunuyor.
  */
 export const TRACKING = {
-  analyticsId: 'G-T3M305R25X',
+  analyticsId: 'G-7P7RRRRMDL',
   adsId: 'AW-457793606',
   /** Google Ads'teki dönüşüm işlemi; yalnızca başarılı randevu gönderiminde tetikleniyor. */
   adsLeadConversion: 'AW-457793606/BWYjCIek8rgcEMbApdoB',
